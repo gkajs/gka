@@ -1,0 +1,30 @@
+{
+  "name": "gka",
+  "version": "1.0.0",
+  "description": "Generate Keyframes Animation",
+  "keywords": [
+    "util",
+    "keyframes",
+    "animation"
+  ],
+  "author": "joeyguo",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "bin": {
+    "gka": "./bin/cli.js"
+  },
+  "license": "MIT",
+  "devDependencies": {
+    "image-size": "^0.5.0",
+    "imagemin": "^5.2.2",
+    "imagemin-pngquant": "^5.0.0",
+    "mkdirp": "^0.5.1",
+    "rxjs": "^5.0.0-rc.4"
+  },
+  "dependencies": {
+    "commander": "^2.9.0",
+    "imagemin-jpegtran": "^5.0.2"
+  }
+}
