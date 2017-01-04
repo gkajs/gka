@@ -18,7 +18,7 @@ if (program.image) {
     console.log(program.image)
     gka.tiny(program.image);
 } else {
-    gka({
+    gka.sprites({
       folder: program.folder,
       rename: program.rename,
     });

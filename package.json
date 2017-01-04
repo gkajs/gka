@@ -25,6 +25,7 @@
   },
   "dependencies": {
     "commander": "^2.9.0",
-    "imagemin-jpegtran": "^5.0.2"
+    "imagemin-jpegtran": "^5.0.2",
+    "spritesmith": "^3.1.0"
   }
 }
