@@ -26,12 +26,12 @@ Examples
 --------
 
 ```sh
-$ gka -r name -f F:/path/folder
+$ gka -r [name] -f [filepath]
 ```
 
 Test
 -----
 
 ```sh
-$ node test -r name -f F:/   
+$ node test -r [name] -f [filepath]
 ```

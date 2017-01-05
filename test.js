@@ -1,6 +1,5 @@
 var program = require('commander');
-
-var gka = require("./index");
+var gka = require("./lib/gka");
 
 function isTiny(val) {
     return val;
@@ -18,13 +17,16 @@ if (program.image) {
     console.log(program.image)
     gka.tiny(program.image);
 } else {
-    gka.sprites({
+    // gka.sprites({
+    gka({
       folder: program.folder,
       rename: program.rename,
     });
 }
-console.log(' folder: %j', program.folder);
-console.log(' rename: %j', program.rename);
+
+console.log('')
+// console.log(' folder: %j', program.folder);
+// console.log(' rename: %j', program.rename);
 
 
 

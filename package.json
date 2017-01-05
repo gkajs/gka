@@ -8,12 +8,12 @@
     "animation"
   ],
   "author": "joeyguo",
-  "main": "index.js",
+  "main": "./lib/gka.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "bin": {
-    "gka": "./bin/cli.js"
+    "gka": "./bin/gka.js"
   },
   "license": "MIT",
   "devDependencies": {
