@@ -27,6 +27,12 @@ Examples
 
 ```sh
 $ gka -r [name] -f [filepath]
+
+or
+
+Sprites
+$ gka -r [name] -f [filepath] -s true
+
 ```
 
 Test

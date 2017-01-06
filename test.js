@@ -10,21 +10,26 @@ program
   .option('-f --folder <folder>', 'img folder', /^(.*)$/i, 'test')
   .option('-r --rename <rename>', 'rename string', /^(.*)$/i, 'rename')
   .option('-i --image <imageFolder>', 'tiny img', /^(.*)$/i, false)
+  .option('-s --sprites <string>', 'sprites img', /^(.*)$/i, false)
   // .option('-i --image <imageFolder>', 'tiny img', /^(true|false)/i, isTiny)
   .parse(process.argv);
 
 if (program.image) {
     console.log(program.image)
     gka.tiny(program.image);
+} else if (program.sprites) {
+  gka.sprites({
+      folder: program.folder,
+      rename: program.rename,
+    });
 } else {
-    // gka.sprites({
     gka({
       folder: program.folder,
       rename: program.rename,
     });
 }
 
-console.log('')
+console.log('gka done.')
 // console.log(' folder: %j', program.folder);
 // console.log(' rename: %j', program.rename);
 
