@@ -1,7 +1,7 @@
 gka
 ---
 
-Generate Keyframes Animation
+Generate Keyframes Animation  or Tiny Images
 
 Install
 -------
@@ -18,26 +18,30 @@ Usage
 $ gka <options> <files>
 
 -f, --folder <string> image folder
--r, --rename <string>   
- 
+-r, --rename <string> rename
+-s, --sprites <string> sprites image
+-i, --image <string> tiny image
+
 ```
 
 Examples
 --------
 
+
+Generate Keyframes Animation - **Normal style**
+
 ```sh
-$ gka -r [name] -f [filepath]
-
-or
-
-Sprites
-$ gka -r [name] -f [filepath] -s true
-
+$ gka -r [name] -f [dirpath]
 ```
 
-Test
------
+Generate Keyframes Animation - **Sprites style**
 
 ```sh
-$ node test -r [name] -f [filepath]
+$ gka -r [name] -f [dirpath] -s true
+```
+
+Tiny Images
+
+```sh
+$ gka -i [dirpath]
 ```

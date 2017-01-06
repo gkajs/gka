@@ -20,7 +20,6 @@ program
   .parse(process.argv);
 
 if (program.image) {
-    console.log(program.image)
     gka.tiny(program.image);
 } else if (program.sprites) {
   gka.sprites({
@@ -34,7 +33,6 @@ if (program.image) {
     });
 }
 
-console.log('gka done.')
 // console.log(' folder: %j', program.folder);
 // console.log(' rename: %j', program.rename);
 

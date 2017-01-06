@@ -2,3 +2,4 @@ node_modules
 .svn
 .DS_Store
 npm-debug.log
+TODO.md
