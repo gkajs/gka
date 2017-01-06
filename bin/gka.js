@@ -1,7 +1,10 @@
 #!/usr/bin/env node
 
 var program = require('commander');
-var gka = require("../gka");
+var gka = require("../lib/gka");
+
+var pkg = require('../package.json');
+console.log('gka version:' + pkg.version)
 
 function isTiny(val) {
     return val;
