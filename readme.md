@@ -31,17 +31,17 @@ Examples
 Generate Keyframes Animation - **Normal style**
 
 ```sh
-$ gka -r [name] -f [dirpath]
+$ gka -r [name] -f [imageFolderPath]
 ```
 
 Generate Keyframes Animation - **Sprites style**
 
 ```sh
-$ gka -r [name] -f [dirpath] -s true
+$ gka -r [name] -f [imageFolderPath] -s true
 ```
 
 Tiny Images
 
 ```sh
-$ gka -i [dirpath]
+$ gka -i [imageFolderPath]
 ```
