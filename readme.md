@@ -45,3 +45,8 @@ Tiny Images
 ```sh
 $ gka -i [imageFolderPath]
 ```
+
+Log
+--------
+- v1.0.x 重命名图片文件、 生成 keyframe animation css 动画、自动化合图、自动化图片压缩、效果预览
+- v1.1.0 相同帧图片复用
