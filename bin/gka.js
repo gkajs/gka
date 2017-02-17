@@ -20,17 +20,17 @@ program
   .parse(process.argv);
 
 if (program.image) {
-    gka.tiny(program.image);
+  gka.tiny(program.image);
 } else if (program.sprites) {
   gka.sprites({
-      folder: program.folder,
-      rename: program.rename,
-    });
+    folder: program.folder,
+    rename: program.rename,
+  });
 } else {
-    gka({
-      folder: program.folder,
-      rename: program.rename,
-    });
+  gka({
+    folder: program.folder,
+    rename: program.rename,
+  });
 }
 
 // console.log(' folder: %j', program.folder);
