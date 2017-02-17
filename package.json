@@ -1,6 +1,6 @@
 {
   "name": "gka",
-  "version": "1.0.5",
+  "version": "1.1.0",
   "description": "Generate Keyframes Animation",
   "keywords": [
     "util",
@@ -27,6 +27,7 @@
     "imagemin-optipng": "^5.2.1",
     "imagemin-pngquant": "^5.0.0",
     "imagemin-svgo": "^5.2.0",
+    "md5": "^2.2.1",
     "mkdirp": "^0.5.1",
     "rxjs": "^5.0.0-rc.4",
     "spritesmith": "^3.1.0"
