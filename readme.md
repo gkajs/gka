@@ -1,9 +1,10 @@
+# `G`enerate  `K`eyframes  `A`nimation
+
 #  [gka](https://github.com/joeyguo/gka)
 
 [![license](https://img.shields.io/badge/license-MIT-blue.svg)](https://github.com/joeyguo/gka#license) 
 
 [gka](https://github.com/joeyguo/gka) 是一款高效、高性能的帧动画生成工具。
-`G`enerate  `K`eyframes  `A`nimation
 
 通过对图片集进行处理，一键式生成序列帧动画文件，并内置相关优化。
 
@@ -21,29 +22,29 @@ $ sudo npm install -g gka
 ### `gka <options> <files>`
 ```
 -f, --folder <string>     -f 图片文件夹地址
--p, --prefix <string>     -r 重命名前缀
+-p, --prefix <string>     -p 重命名前缀
 -s, --sprites <boolean>   -s true 开启合图模式
 
--t, --tiny <string>      -t 图片文件夹地址 压缩图片
+-t, --tiny <string>       -t 图片文件夹地址 压缩图片
 ```
 
 
 ```sh
 # 帧动画生成 - 普通模式
 
-$ gka -r [name] -f [imageFolderPath]
+$ gka -f [imageFolderPath] -p [prefix] 
 ```
 
 ```sh
 # 帧动画生成 - 合图模式
 
-$ gka -r [name] -f [imageFolderPath] -s true
+$ gka -f [imageFolderPath] -p [prefix] -s true
 ```
 
 ```sh
 # 压缩图片
 
-$ gka -i [imageFolderPath]
+$ gka -t [imageFolderPath]
 ```
 
 # Examples
@@ -58,9 +59,9 @@ $ gka -i [imageFolderPath]
 2.命令
 
 ```sh
-# gka -f [imageFolderPath] -r [prefix] 
+# gka -f [imageFolderPath] -p [prefix] 
 
-$ gka -f E:\gka-test\img -r prefix
+$ gka -f E:\gka-test\img -p prefix
 ```
 
 3.结果： 
@@ -81,7 +82,8 @@ $ gka -f E:\gka-test\img -r prefix
 </code></pre></td>
 <td><pre><code>
 ./img-gka
-└── animation.html
+└── gka.html
+└── gka.css
 └── img
     ├── prefix001.png
     ├── prefix002.png
@@ -103,9 +105,9 @@ $ gka -f E:\gka-test\img -r prefix
 2.命令
 
 ```sh
-# gka -f [imageFolderPath] -r [name] -s true
+# gka -f [imageFolderPath] -p [prefix] -s true
 
-$ gka -f E:\gka-test\img -r prefix -s true
+$ gka -f E:\gka-test\img -p prefix -s true
 ```
 
 3.结果： 
@@ -126,7 +128,8 @@ $ gka -f E:\gka-test\img -r prefix -s true
 </code></pre></td>
 <td><pre><code>
 ./img-gka-sprites
-└── animation.html
+└── gka.html
+└── gka.css
 └── prefix-sprites.png
 </code></pre></td>
         </tr>
@@ -141,9 +144,9 @@ $ gka -f E:\gka-test\img -r prefix -s true
 
 2.命令
 ```sh
-# gka -i [imageFolderPath]
+# gka -t [imageFolderPath]
 
-$ gka -i E:\gka-test\img
+$ gka -t E:\gka-test\img
 ```
 
 # License
