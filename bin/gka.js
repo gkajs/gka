@@ -20,21 +20,24 @@ program
   .parse(process.argv);
 
 if (program.image) {
+  console.log(33)
   gka.tiny(program.image);
 } else if (program.sprites) {
+  console.log(22)
   gka.sprites({
     folder: program.folder,
     rename: program.rename,
   });
 } else {
+  console.log(11)
   gka({
     folder: program.folder,
     rename: program.rename,
   });
 }
 
-// console.log(' folder: %j', program.folder);
-// console.log(' rename: %j', program.rename);
+console.log(' folder: %j', program.folder);
+console.log(' rename: %j', program.rename);
 
 
 

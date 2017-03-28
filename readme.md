@@ -2,7 +2,8 @@
 
 [![license](https://img.shields.io/badge/license-MIT-blue.svg)](https://github.com/joeyguo/gka#license) 
 
-[gka](https://github.com/joeyguo/gka)  是一款 帧动画 生成工具。（`G`enerate  `K`eyframes  `A`nimation）
+[gka](https://github.com/joeyguo/gka) 是一款高效、高性能的帧动画生成工具。
+`G`enerate  `K`eyframes  `A`nimation
 
 通过对图片集进行处理，一键式生成序列帧动画文件，并内置相关优化。
 
@@ -144,6 +145,10 @@ $ gka -f E:\gka-test\img -r prefix -s true
 
 $ gka -i E:\gka-test\img
 ```
+
+# License
+
+[MIT](./LICENSE) 
 
 # Log
 
