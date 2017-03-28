@@ -21,10 +21,10 @@ $ sudo npm install -g gka
 ### `gka <options> <files>`
 ```
 -f, --folder <string>     -f 图片文件夹地址
--r, --rename <string>     -r 重命名前缀
+-p, --prefix <string>     -r 重命名前缀
 -s, --sprites <boolean>   -s true 开启合图模式
 
--i, --image <string>      -i 图片文件夹地址 压缩图片
+-t, --tiny <string>      -t 图片文件夹地址 压缩图片
 ```
 
 

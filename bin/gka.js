@@ -6,38 +6,44 @@ var gka = require("../lib/gka");
 var pkg = require('../package.json');
 console.log('gka version:' + pkg.version)
 
-function isTiny(val) {
-    return val;
-}
-
 program
-  .version('0.0.1')
-  .option('-f --folder <folder>', 'img folder', /^(.*)$/i, 'test')
-  .option('-r --rename <rename>', 'rename string', /^(.*)$/i, 'rename')
-  .option('-i --image <imageFolder>', 'tiny img', /^(.*)$/i, false)
-  .option('-s --sprites <string>', 'sprites img', /^(.*)$/i, false)
-  // .option('-i --image <imageFolder>', 'tiny img', /^(true|false)/i, isTiny)
-  .parse(process.argv);
+.version('1.2.0')
+.option('-f --folder <folder>', 'img folder', /^(.*)$/i, 'test')
+.option('-p --prefix <prefix>', 'prefix name', /^(.*)$/i, 'prefix')
+.option('-t --tiny <imageFolder>', 'tiny img', /^(.*)$/i, false)
+.option('-s --sprites <string>', 'sprites img', /^(.*)$/i, false)
+.parse(process.argv);
 
-if (program.image) {
-  console.log(33)
-  gka.tiny(program.image);
-} else if (program.sprites) {
-  console.log(22)
-  gka.sprites({
-    folder: program.folder,
-    rename: program.rename,
-  });
+
+var t = program.tiny,
+    s = program.sprites,
+    f = program.folder,
+    p = program.prefix;
+
+if (t) {
+
+    // 图片压缩
+    gka.tiny(t);
+
+} else if (s) {
+
+    // 生成帧动画 - 合图模式
+    gka.sprites({
+        folder: f,
+        prefix: p,
+    });
+
 } else {
-  console.log(11)
-  gka({
-    folder: program.folder,
-    rename: program.rename,
-  });
+
+    // 生成帧动画 - 普通模式
+    gka({
+        folder: f,
+        prefix: p,
+    });
 }
 
-console.log(' folder: %j', program.folder);
-console.log(' rename: %j', program.rename);
+// console.log(' folder: %j', program.folder);
+// console.log(' rename: %j', program.rename);
 
 
 
