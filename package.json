@@ -1,9 +1,10 @@
 {
   "name": "gka",
-  "version": "1.2.0",
+  "version": "1.3.0",
   "description": "Generate Keyframes Animation",
   "keywords": [
     "util",
+    "generate",
     "keyframes",
     "animation"
   ],
@@ -11,10 +12,15 @@
   "github": "https://github.com/joeyguo/gka",
   "main": "./lib/gka.js",
   "scripts": {
-    "start": "./lib/gka.js"
+    "start": "./lib/gka.js",
+    "test": "mocha --timeout 100000"
   },
   "bin": {
     "gka": "./bin/gka.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/joeyguo/gka.git"
   },
   "license": "MIT",
   "devDependencies": {},
@@ -29,7 +35,7 @@
     "imagemin-svgo": "^5.2.0",
     "md5": "^2.2.1",
     "mkdirp": "^0.5.1",
-    "rxjs": "^5.0.0-rc.4",
+    "mocha": "^3.2.0",
     "spritesmith": "^3.1.0"
   }
 }

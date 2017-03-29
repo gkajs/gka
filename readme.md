@@ -21,7 +21,7 @@ $ sudo npm install -g gka
 
 ### `gka <options> <files>`
 ```
--f, --folder <string>     -f 图片文件夹地址
+-d, --dir <string>       -d 图片文件夹地址
 -p, --prefix <string>     -p 重命名前缀
 -s, --sprites <boolean>   -s true 开启合图模式
 
@@ -32,13 +32,13 @@ $ sudo npm install -g gka
 ```sh
 # 帧动画生成 - 普通模式
 
-$ gka -f [imageFolderPath] -p [prefix] 
+$ gka -d [imageFolderPath] -p [prefix] 
 ```
 
 ```sh
 # 帧动画生成 - 合图模式
 
-$ gka -f [imageFolderPath] -p [prefix] -s true
+$ gka -d [imageFolderPath] -p [prefix] -s true
 ```
 
 ```sh
@@ -59,9 +59,9 @@ $ gka -t [imageFolderPath]
 2.命令
 
 ```sh
-# gka -f [imageFolderPath] -p [prefix] 
+# gka -d [imageFolderPath] -p [prefix] 
 
-$ gka -f E:\gka-test\img -p prefix
+$ gka -d E:\gka-test\img -p prefix
 ```
 
 3.结果： 
@@ -105,9 +105,9 @@ $ gka -f E:\gka-test\img -p prefix
 2.命令
 
 ```sh
-# gka -f [imageFolderPath] -p [prefix] -s true
+# gka -d [imageFolderPath] -p [prefix] -s true
 
-$ gka -f E:\gka-test\img -p prefix -s true
+$ gka -d E:\gka-test\img -p prefix -s true
 ```
 
 3.结果： 

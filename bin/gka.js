@@ -2,14 +2,15 @@
 
 var program = require('commander');
 var gka = require("../lib/gka");
+var tiny = require("../lib/core/tiny");
 
 var pkg = require('../package.json');
 console.log('gka version:' + pkg.version)
 
 program
 .version('1.2.0')
-.option('-f --folder <folder>', 'img folder', /^(.*)$/i, 'test')
-.option('-p --prefix <prefix>', 'prefix name', /^(.*)$/i, 'prefix')
+.option('-d --dir <dir>', 'img dir', /^(.*)$/i, 'test')
+.option('-p --prefix <prefix>', 'prefix name', /^(.*)$/i, 'gka-')
 .option('-t --tiny <imageFolder>', 'tiny img', /^(.*)$/i, false)
 .option('-s --sprites <string>', 'sprites img', /^(.*)$/i, false)
 .parse(process.argv);
@@ -17,28 +18,30 @@ program
 
 var t = program.tiny,
     s = program.sprites,
-    f = program.folder,
+    d = program.dir,
     p = program.prefix;
 
 if (t) {
 
     // 图片压缩
-    gka.tiny(t);
+    tiny(t);
 
 } else if (s) {
 
     // 生成帧动画 - 合图模式
-    gka.sprites({
-        folder: f,
+    gka({
+        dir: d,
         prefix: p,
+        type: "sprites"
     });
 
 } else {
 
     // 生成帧动画 - 普通模式
     gka({
-        folder: f,
+        dir: d,
         prefix: p,
+        type: "normal"
     });
 }
 

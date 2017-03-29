@@ -1,8 +1,4 @@
-var fs = require('fs');
-var path = require("path");
 
-module.exports = function ghtml(dest) {
-var  str = `
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -19,11 +15,3 @@ var  str = `
     <div class="gka-animation"></div>
 </body>
 </html>
-`;
-
-    fs.writeFile(path.join(dest, "gka.html"), str, function(e){
-        if(e) throw e;
-        console.log('gka.html generated ✔ ');
-    });
-
-};
