@@ -1,8 +1,7 @@
 # `G`enerate  `K`eyframes  `A`nimation
 
 #  [gka](https://github.com/joeyguo/gka)
-
-[![license](https://img.shields.io/badge/license-MIT-blue.svg)](https://github.com/joeyguo/gka#license) 
+[![NPM version](https://img.shields.io/npm/v/gka.svg?style=flat)](https://www.npmjs.org/package/gka)  [![license](https://img.shields.io/badge/license-MIT-blue.svg)](https://github.com/joeyguo/gka#license) 
 
 [gka](https://github.com/joeyguo/gka) 是一款高效、高性能的帧动画生成工具。
 
