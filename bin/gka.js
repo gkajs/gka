@@ -5,7 +5,8 @@ var gka = require("../lib/gka");
 var tiny = require("../lib/core/tiny");
 
 var pkg = require('../package.json');
-console.log('gka version:' + pkg.version)
+console.log('gka version:' + pkg.version);
+console.log();
 
 program
 .version('1.2.0')
@@ -13,13 +14,15 @@ program
 .option('-p --prefix <prefix>', 'prefix name', /^(.*)$/i, 'gka-')
 .option('-t --tiny <imageFolder>', 'tiny img', /^(.*)$/i, false)
 .option('-s --sprites <string>', 'sprites img', /^(.*)$/i, false)
+.option('-f --frameduration <string>', 'frameDuration', /^(.*)$/i, false)
 .parse(process.argv);
 
 
 var t = program.tiny,
     s = program.sprites,
     d = program.dir,
-    p = program.prefix;
+    p = program.prefix,
+    f = program.frameduration;
 
 if (t) {
 
@@ -32,6 +35,7 @@ if (t) {
     gka({
         dir: d,
         prefix: p,
+        frameDuration: f,
         type: "sprites"
     });
 
@@ -41,6 +45,7 @@ if (t) {
     gka({
         dir: d,
         prefix: p,
+        frameDuration: f,
         type: "normal"
     });
 }
