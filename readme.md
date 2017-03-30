@@ -11,6 +11,8 @@
 * **一键式 :**  图片文件批量序列化重命名，生成 css keyframes，生成帧动画预览文件
 * **性能佳 :**  支持图片压缩✓，支持`合图模式`✓，`相同帧图片复用`✓
 
+![preview](https://cloud.githubusercontent.com/assets/10385585/24502038/ac4bd9f2-157e-11e7-87e0-a9a44aaffafa.gif)
+
 # Install
 
 ```sh
@@ -21,11 +23,12 @@ $ sudo npm install -g gka
 
 ### `gka <options> <files>`
 ```
--d, --dir <string>       -d 图片文件夹地址
--p, --prefix <string>     -p 重命名前缀
--s, --sprites <boolean>   -s true 开启合图模式
+-d, --dir <string>            -d  图片文件夹地址
+-p, --prefix <string>         -p  重命名前缀
+-s, --sprites <boolean>       -s  true 开启合图模式
+-f, --frameduration <number>  -f  每帧时长 默认为 0.04
 
--t, --tiny <string>       -t 图片文件夹地址 压缩图片
+-t, --tiny <string>           -t 图片文件夹地址 压缩图片
 ```
 
 
