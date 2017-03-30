@@ -31,7 +31,7 @@ describe('gka actual test', function () {
 
         setTimeout(()=>{
             done();
-        }, 12000);
+        }, 10000);
     });
 
     after(function cleanup () {

@@ -13,7 +13,7 @@
   "main": "./lib/gka.js",
   "scripts": {
     "start": "./lib/gka.js",
-    "test": "mocha --timeout 200000"
+    "test": "mocha --timeout 20000"
   },
   "bin": {
     "gka": "./bin/gka.js"
