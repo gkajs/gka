@@ -39,17 +39,15 @@ describe('gka actual test', function () {
         deleteall(targetDir_sprites);
     });
 
-    it('gka-normal：gka -d dir -p gka', function () {
+    it('gka-normal：gka -d dir -p gka-', function () {
         assert.deepEqual(getDirFile2Md5(expectedDir_normal), getDirFile2Md5(targetDir_normal), 'expect the same');
     });
 
-    it('gka-sprites：gka -d dir -p gka -s true', function () {
+    it('gka-sprites：gka -d dir -p gka- -s true', function () {
         assert.deepEqual(getDirFile2Md5(expectedDir_sprites), getDirFile2Md5(targetDir_sprites), 'expect the same');
     });
 
 });
-
-
 
 function getFiles (dir, _files){
     _files = _files || [];

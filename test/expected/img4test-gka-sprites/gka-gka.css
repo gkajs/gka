@@ -1,0 +1,49 @@
+.gka-animation {
+    width: 50px;
+    height: 50px;
+
+    background-image: url(./img/gka-sprites.png);
+    background-repeat: no-repeat;
+
+    /* background-size: contain;*/
+
+    animation-timing-function: steps(1);
+    animation-fill-mode: forwards;
+
+    animation-iteration-count: infinite;
+
+    /* 只播放一次，播放停止到最后一帧*/
+    /* animation-iteration-count: 1; */ 
+}
+
+.gka-animation {
+    animation-name: gka-keyframes;
+    animation-duration: 0.32s;
+}
+
+@-webkit-keyframes gka-keyframes {
+    0%{
+        background-position: 0 0;
+    }
+    14.29%{
+        background-position: -50px 0;
+    }
+    28.57%{
+        background-position: 0 -50px;
+    }
+    42.86%{
+        background-position: -50px -50px;
+    }
+    57.14%{
+        background-position: -100px 0;
+    }
+    71.43%{
+        background-position: 0 -50px;
+    }
+    85.71%{
+        background-position: -50px 0;
+    }
+    100.00%{
+        background-position: -100px -50px;
+    }
+}
