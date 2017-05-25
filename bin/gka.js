@@ -9,14 +9,13 @@ console.log('gka version:' + pkg.version);
 console.log();
 
 program
-.version('1.2.0')
+.version('gka version:' + pkg.version)
 .option('-d --dir <dir>', 'img dir', /^(.*)$/i, 'test')
 .option('-p --prefix <prefix>', 'prefix name', /^(.*)$/i, 'gka-')
 .option('-t --tiny <imageFolder>', 'tiny img', /^(.*)$/i, false)
 .option('-s --sprites <string>', 'sprites img', /^(.*)$/i, false)
 .option('-f --frameduration <string>', 'frameDuration', /^(.*)$/i, false)
 .parse(process.argv);
-
 
 var t = program.tiny,
     s = program.sprites,
@@ -29,25 +28,29 @@ if (t) {
     // 图片压缩
     tiny(t);
 
-} else if (s) {
+} else if (d) {
 
-    // 生成帧动画 - 合图模式
-    gka({
-        dir: d,
-        prefix: p,
-        frameDuration: f,
-        type: "sprites"
-    });
+    if (s) {
 
-} else {
+        // 生成帧动画 - 合图模式
+        gka({
+            dir: d,
+            prefix: p,
+            frameDuration: f,
+            type: "sprites"
+        });
+    } else {
+        
+        // 生成帧动画 - 普通模式
+        gka({
+            dir: d,
+            prefix: p,
+            frameDuration: f,
+            type: "normal"
+        });
+    }
+    
 
-    // 生成帧动画 - 普通模式
-    gka({
-        dir: d,
-        prefix: p,
-        frameDuration: f,
-        type: "normal"
-    });
 }
 
 // console.log(' folder: %j', program.folder);
