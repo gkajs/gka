@@ -1,6 +1,6 @@
 {
   "name": "gka",
-  "version": "1.4.2",
+  "version": "1.4.3",
   "description": "Generate Keyframes Animation",
   "keywords": [
     "util",
@@ -29,6 +29,7 @@
     "image-size": "^0.5.0",
     "imagemin": "^5.2.2",
     "imagemin-gifsicle": "^5.1.0",
+    "imagemin-jpeg-recompress": "^5.1.0",
     "imagemin-jpegtran": "^5.0.2",
     "imagemin-optipng": "^5.2.1",
     "imagemin-pngquant": "^5.0.0",
