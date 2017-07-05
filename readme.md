@@ -142,9 +142,10 @@ $ gka -d E:\gka-test\img -p prefix -s true
 </code></pre></td>
 <td><pre><code>
 ./img-gka-sprites
+└── img
+    └── prefix-sprites.png
 └── gka.html
 └── gka.css
-└── prefix-sprites.png
 </code></pre></td>
         </tr>
     </tbody>
