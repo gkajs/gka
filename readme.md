@@ -1,9 +1,18 @@
-# `G`enerate  `K`eyframes  `A`nimation
 
-#  [gka](https://github.com/joeyguo/gka)
-[![NPM version](https://img.shields.io/npm/v/gka.svg?style=flat)](https://www.npmjs.org/package/gka)  [![license](https://img.shields.io/badge/license-MIT-blue.svg)](https://github.com/joeyguo/gka#license) 
+<p align="center">
+  <a href ="##"><img alt="gka" src="https://user-images.githubusercontent.com/10385585/27863888-bb5e4826-61be-11e7-8994-4b19bb49bb22.png"></a>
+</p>
+<p align="center">
+简单的、高效的帧动画生成工具
+</p>
+<p align="center">
+<a href="https://www.npmjs.org/package/gka"><img src="https://img.shields.io/npm/v/gka.svg?style=flat"></a>
+<a href="https://github.com/joeyguo/gka#license"><img src="https://img.shields.io/badge/license-MIT-blue.svg"></a>
+</p>
 
-[gka](https://github.com/joeyguo/gka) 是一款高效、高性能的帧动画生成工具。
+--- 
+
+[gka](https://github.com/joeyguo/gka) 是一款简单的、高效的帧动画生成工具。
 
 通过对图片集进行处理，一键式生成序列帧动画文件，并内置相关优化。
 
@@ -24,8 +33,11 @@ $ sudo npm install -g gka
 ```
 -d, --dir <string>            -d  图片文件夹地址
 -p, --prefix <string>         -p  重命名前缀
--s, --sprites <boolean>       -s  true 开启合图模式
 -f, --frameduration <number>  -f  每帧时长 默认为 0.04
+-i, --info <boolean>          -i  是否输出信息文件 默认 false
+
+-s, --sprites <boolean>       -s  是否开启合图模式 默认 false
+-a, --algorithm <string>      -a  合图布局模式 默认 binary-tree
 
 -t, --tiny <string>           -t 图片文件夹地址 压缩图片
 ```
@@ -34,19 +46,19 @@ $ sudo npm install -g gka
 ```sh
 # 帧动画生成 - 普通模式
 
-$ gka -d [imageFolderPath] -p [prefix] 
+$ gka -d [imageDirPath] -p [prefix] 
 ```
 
 ```sh
 # 帧动画生成 - 合图模式
 
-$ gka -d [imageFolderPath] -p [prefix] -s true
+$ gka -d [imageDirPath] -p [prefix] -s true
 ```
 
 ```sh
 # 压缩图片
 
-$ gka -t [imageFolderPath]
+$ gka -t [imageDirPath]
 ```
 
 # Examples
@@ -61,7 +73,7 @@ $ gka -t [imageFolderPath]
 2.命令
 
 ```sh
-# gka -d [imageFolderPath] -p [prefix] 
+# gka -d [imageDirPath] -p [prefix] 
 
 $ gka -d E:\gka-test\img -p prefix
 ```
@@ -107,7 +119,7 @@ $ gka -d E:\gka-test\img -p prefix
 2.命令
 
 ```sh
-# gka -d [imageFolderPath] -p [prefix] -s true
+# gka -d [imageDirPath] -p [prefix] -s true
 
 $ gka -d E:\gka-test\img -p prefix -s true
 ```
@@ -146,16 +158,24 @@ $ gka -d E:\gka-test\img -p prefix -s true
 
 2.命令
 ```sh
-# gka -t [imageFolderPath]
+# gka -t [imageDirPath]
 
 $ gka -t E:\gka-test\img
 ```
+
+# Welcome
+
+* 欢迎 Pull requests、Issues 一般在24小时内处理
+* 讨论与咨询请+QQ 3201590286  :D
 
 # License
 
 [MIT](./LICENSE) 
 
+Copyright (c) 2017 - present, joeyguo
+
 # Log
 
 - v1.0.x 重命名图片文件、 生成 keyframe animation css 动画、自动化合图、自动化图片压缩、效果预览
 - v1.1.0 相同帧图片复用
+- v1.4.5 支持输出信息文件、合图布局参数

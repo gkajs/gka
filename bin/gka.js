@@ -14,6 +14,8 @@ program
 .option('-p --prefix <prefix>', 'prefix name', /^(.*)$/i, 'gka-')
 .option('-t --tiny <imageFolder>', 'tiny img', /^(.*)$/i, false)
 .option('-s --sprites <string>', 'sprites img', /^(.*)$/i, false)
+.option('-i --info <boolean>', 'get info', /^(.*)$/i, false)
+.option('-a --algorithm <string>', 'sprites algorithm', /^(.*)$/i, "binary-tree")
 .option('-f --frameduration <string>', 'frameDuration', /^(.*)$/i, false)
 .parse(process.argv);
 
@@ -21,6 +23,8 @@ var t = program.tiny,
     s = program.sprites,
     d = program.dir,
     p = program.prefix,
+    i = program.info,
+    a = program.algorithm,
     f = program.frameduration;
 
 if (t) {
@@ -37,7 +41,9 @@ if (t) {
             dir: d,
             prefix: p,
             frameDuration: f,
-            type: "sprites"
+            type: "sprites",
+            info: i,
+            algorithm: a,
         });
     } else {
         
@@ -46,7 +52,8 @@ if (t) {
             dir: d,
             prefix: p,
             frameDuration: f,
-            type: "normal"
+            type: "normal",
+            info: i
         });
     }
     
