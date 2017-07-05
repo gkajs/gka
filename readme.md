@@ -140,7 +140,7 @@ $ gka -d E:\gka-test\img -p prefix -s true
 ├── 害羞_00004.png
 └── ...
 </code></pre></td>
-<td><pre><code>
+<td><pre><code> 
 ./img-gka-sprites
 └── img
     └── prefix-sprites.png
