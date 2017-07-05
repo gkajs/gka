@@ -1,6 +1,6 @@
 
 <p align="center">
-  <a href ="##"><img alt="gka" src="https://user-images.githubusercontent.com/10385585/27863888-bb5e4826-61be-11e7-8994-4b19bb49bb22.png"></a>
+  <a href ="https://github.com/joeyguo/gka"><img alt="gka" src="https://user-images.githubusercontent.com/10385585/27863888-bb5e4826-61be-11e7-8994-4b19bb49bb22.png"></a>
 </p>
 <p align="center">
 简单的、高效的帧动画生成工具
