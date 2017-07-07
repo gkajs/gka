@@ -180,3 +180,4 @@ Copyright (c) 2017 - present, joeyguo
 - v1.0.x 重命名图片文件、 生成 keyframe animation css 动画、自动化合图、自动化图片压缩、效果预览
 - v1.1.0 相同帧图片复用
 - v1.4.5 支持输出信息文件、合图布局参数
+- v1.4.6 增加图片预加载
