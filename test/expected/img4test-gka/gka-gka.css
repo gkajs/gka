@@ -1,4 +1,4 @@
-.gka-animation {
+.gka-base {
     width: 50px;
     height: 50px;
 
@@ -9,6 +9,8 @@
     
     animation-fill-mode: forwards;
     animation-iteration-count: infinite;
+    
+    animation-timing-function: steps(1);
 
     /* 只播放一次，播放停止到最后一帧*/
     /* animation-iteration-count: 1; */ 
@@ -17,7 +19,6 @@
 .gka-animation {
     animation-name: gka-keyframes;
     animation-duration: 0.32s;
-    animation-timing-function: steps(1);
 }
 
 @-webkit-keyframes gka-keyframes {

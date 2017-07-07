@@ -1,8 +1,7 @@
-.gka-animation {
+.gka-base {
     width: 50px;
     height: 50px;
 
-    background-image: url(./img/gka-sprites.png);
     background-repeat: no-repeat;
 
     /* background-size: contain;*/
@@ -17,6 +16,8 @@
 }
 
 .gka-animation {
+    background-image: url(./img/gka-sprites.png);
+
     animation-name: gka-keyframes;
     animation-duration: 0.32s;
 }
