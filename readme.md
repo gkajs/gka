@@ -30,6 +30,7 @@ $ sudo npm install -g gka
 # Usage
 
 ### `gka <options> <files>`
+
 ```
 -d, --dir <string>            -d  图片文件夹地址
 -p, --prefix <string>         -p  重命名前缀
@@ -68,14 +69,14 @@ $ gka -t [imageDirPath]
 1.示例参数： 
 
 - 图片目录：E:\gka-test\img
-- 图片名前缀：prefix
+- 图片名前缀：prefix-
 
 2.命令
 
 ```sh
 # gka -d [imageDirPath] -p [prefix] 
 
-$ gka -d E:\gka-test\img -p prefix
+$ gka -d E:\gka-test\img -p prefix-
 ```
 
 3.结果： 
@@ -97,31 +98,31 @@ $ gka -d E:\gka-test\img -p prefix
 <td><pre><code>
 ./img-gka
 └── gka.html
-└── gka.css
+└── prefix-gka.css
 └── img
-    ├── prefix001.png
-    ├── prefix002.png
-    ├── prefix003.png
-    ├── prefix004.png
+    ├── prefix-1.png
+    ├── prefix-2.png
+    ├── prefix-3.png
+    ├── prefix-4.png
     └── ...
 </code></pre></td>
         </tr>
     </tbody>
 </table>
 
-## 生成帧动画 &middot; `合图模式`
+### 生成帧动画 &middot; `合图模式`
 
 1.示例参数： 
 
 - 图片目录：E:\gka-test\img
-- 图片名前缀：prefix
+- 图片名前缀：prefix-
 
 2.命令
 
 ```sh
 # gka -d [imageDirPath] -p [prefix] -s true
 
-$ gka -d E:\gka-test\img -p prefix -s true
+$ gka -d E:\gka-test\img -p prefix- -s true
 ```
 
 3.结果： 
@@ -145,7 +146,7 @@ $ gka -d E:\gka-test\img -p prefix -s true
 └── img
     └── prefix-sprites.png
 └── gka.html
-└── gka.css
+└── prefix-gka.css
 </code></pre></td>
         </tr>
     </tbody>
