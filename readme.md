@@ -40,6 +40,8 @@ $ sudo npm install -g gka
 -s, --sprites <boolean>       -s  是否开启合图模式 默认 false
 -a, --algorithm <string>      -a  合图布局模式 默认 binary-tree
 
+-g, --generator <string>      -g  生成文件模式 默认 normal
+
 -t, --tiny <string>           -t 图片文件夹地址 压缩图片
 ```
 
