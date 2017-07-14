@@ -33,6 +33,7 @@ var gmap = {
     nor: "normal",
     s: "sprites",
     pct: "sprites_percent",
+    c: "cut",
 };
 
 g = s? "s": g;
