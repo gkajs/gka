@@ -6,44 +6,87 @@ var assert = require('assert');
 
 var imgFolder = path.join(__dirname, "img4test");
 var expectedDir = path.join(__dirname, 'expected');
-var expectedDir_normal = path.join(expectedDir, 'img4test-gka');
-var expectedDir_sprites = path.join(expectedDir, 'img4test-gka-sprites');
+var expectedDir_normal = path.join(expectedDir, 'img4test-t-u-px_t');
+var expectedDir_sprites = path.join(expectedDir, 'img4test-u-s-pct_s-gka-');
 
-var targetDir_normal = path.join(__dirname, 'img4test-gka');
-var targetDir_sprites = path.join(__dirname, 'img4test-gka-sprites');
+var targetDir_normal = path.join(__dirname, 'img4test-t-u-px_t');
+var targetDir_sprites = path.join(__dirname, 'img4test-u-s-pct_s-gka-');
 
 describe('gka actual test', function () {
 
-     before(function runFn (done) {
-        // gka - normal model
-        gka({
-            dir: imgFolder,
-            prefix: "gka-",
-            type: "normal"
-        });
-
-        // gka - sprites model
-        gka({
-            dir: imgFolder,
-            prefix: "gka-",
-            type: "sprites"
+    before(function runFn (done) {
+        // gka dir -cgr -f 0.08
+        // ridding cut g duration 0.08
+        gka(imgFolder, {
+            // c
+            trim: true,
+            // s
+            sprites: false, 
+            // t 
+            tiny: false,
+            // r
+            unique: true,
+            // i
+            info: true,
+            // g
+            gen: true,
+            // p
+            // prefix: "gka-",
+            // f
+            duration: 0.08,
         });
 
         setTimeout(()=>{
             done();
-        }, 10000);
+        }, 2000);
     });
 
     after(function cleanup () {
         deleteall(targetDir_normal);
-        deleteall(targetDir_sprites);
     });
 
-    it('gka-normal：gka -d dir -p gka-', function () {
+    it('gka-normal：gka dir -cgr -f 0.08', function () {
         assert.deepEqual(getDirFile2Md5(expectedDir_normal), getDirFile2Md5(targetDir_normal), 'expect the same');
     });
 
-    it('gka-sprites：gka -d dir -p gka- -s true', function () {
+});
+
+describe('gka actual test', function () {
+
+    before(function runFn (done) {
+        // gka dir -sr -g pct -p gka- -a left-right
+        // sprites ridding gen pct algorithm left-right prefix gka-
+        gka(imgFolder, {
+            // c
+            trim: false,
+            // s
+            sprites: true, 
+            // t 
+            tiny: false,
+            // r
+            unique: true,
+            // i
+            info: true,
+            // g
+            gen: "pct",
+            // p
+            prefix: "gka-",
+            // f
+            duration: 0.04,
+            // a
+            algorithm: "left-right",
+        });
+
+        setTimeout(()=>{
+            done();
+        }, 2000);
+    });
+
+    after(function cleanup () {
+        deleteall(targetDir_sprites);
+    });
+
+    it('gka-sprites：gka dir -sr -g pct -p gka- -a left-right', function () {
         assert.deepEqual(getDirFile2Md5(expectedDir_sprites), getDirFile2Md5(targetDir_sprites), 'expect the same');
     });
 

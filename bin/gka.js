@@ -27,14 +27,14 @@ if (!dir) {
 // console.log(argv);
 
 gka(dir, {
-    // c
-    cut: argv.c,
+    // t
+    trim: argv.t,
     // s
     sprites: argv.s, 
-    // t 
-    tiny: argv.t,
+    // m 
+    mini: argv.m,
     // r
-    ridding: argv.r,
+    unique: argv.u,
     // i
     info: argv.i,
     // g
