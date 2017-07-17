@@ -1,6 +1,6 @@
 {
   "name": "gka",
-  "version": "1.4.7-beta.1",
+  "version": "2.0.0",
   "description": "Generate Keyframes Animation",
   "keywords": [
     "util",
@@ -29,7 +29,6 @@
   "license": "MIT",
   "devDependencies": {},
   "dependencies": {
-    "commander": "^2.9.0",
     "image-size": "^0.5.0",
     "imagemin": "^5.2.2",
     "imagemin-gifsicle": "^5.1.0",
@@ -41,6 +40,8 @@
     "md5": "^2.2.1",
     "mkdirp": "^0.5.1",
     "mocha": "^3.2.0",
-    "spritesmith": "^3.1.0"
+    "pngjs": "^3.2.0",
+    "spritesmith": "^3.1.0",
+    "yargs": "^8.0.2"
   }
 }

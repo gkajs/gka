@@ -1,0 +1,84 @@
+.gka-wrap {
+    width: 50px;
+    height: 50px;
+}
+
+.gka-base {
+   
+    background-repeat: no-repeat;
+    background-position: center center;
+    
+    /* background-size: contain;*/
+    
+    animation-fill-mode: forwards;
+    animation-iteration-count: infinite;
+    
+    animation-timing-function: steps(1);
+
+    /* 只播放一次，播放停止到最后一帧*/
+    /* animation-iteration-count: 1; */ 
+}
+
+.animation {
+    animation-name: keyframes;
+    animation-duration: 0.64s;
+}
+
+@-webkit-keyframes keyframes {
+    0%{
+        width: 27px;
+        height: 28px;
+        transform: translate(11px, 11px);
+        background-image: url(img/gkatest_1.png);
+    }
+
+    14.29%{
+        width: 35px;
+        height: 36px;
+        transform: translate(7px, 7px);
+        background-image: url(img/gkatest_2.png);
+    }
+
+    28.57%{
+        width: 37px;
+        height: 38px;
+        transform: translate(6px, 6px);
+        background-image: url(img/gkatest_3.png);
+    }
+
+    42.86%{
+        width: 44px;
+        height: 43px;
+        transform: translate(4px, 3px);
+        background-image: url(img/gkatest_4.png);
+    }
+
+    57.14%{
+        width: 44px;
+        height: 45px;
+        transform: translate(3px, 3px);
+        background-image: url(img/gkatest_5.png);
+    }
+
+    71.43%{
+        width: 37px;
+        height: 38px;
+        transform: translate(6px, 6px);
+        background-image: url(img/gkatest_3.png);
+    }
+
+    85.71%{
+        width: 35px;
+        height: 36px;
+        transform: translate(7px, 7px);
+        background-image: url(img/gkatest_2.png);
+    }
+
+    100.00%{
+        width: 33px;
+        height: 34px;
+        transform: translate(8px, 8px);
+        background-image: url(img/gkatest_8.png);
+    }
+
+}
