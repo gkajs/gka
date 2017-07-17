@@ -3,4 +3,4 @@
 * 可用于图片预加载
 */
 
-var names = ["gka-gka_sprites.png"]
+var names = ["prefix_gka_sprites.png"]

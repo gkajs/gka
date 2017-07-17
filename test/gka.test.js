@@ -6,11 +6,11 @@ var assert = require('assert');
 
 var imgFolder = path.join(__dirname, "img4test");
 var expectedDir = path.join(__dirname, 'expected');
-var expectedDir_normal = path.join(expectedDir, 'img4test-t-u-px_t');
-var expectedDir_sprites = path.join(expectedDir, 'img4test-u-s-pct_s-gka-');
+var expectedDir_normal = path.join(expectedDir, 'img4test-t-u-px_t-gka');
+var expectedDir_sprites = path.join(expectedDir, 'img4test-u-s-pct_s-prefix_-gka');
 
-var targetDir_normal = path.join(__dirname, 'img4test-t-u-px_t');
-var targetDir_sprites = path.join(__dirname, 'img4test-u-s-pct_s-gka-');
+var targetDir_normal = path.join(__dirname, 'img4test-t-u-px_t-gka');
+var targetDir_sprites = path.join(__dirname, 'img4test-u-s-pct_s-prefix_-gka');
 
 describe('gka actual test', function () {
 
@@ -70,7 +70,7 @@ describe('gka actual test', function () {
             // g
             gen: "pct",
             // p
-            prefix: "gka-",
+            prefix: "prefix_",
             // f
             duration: 0.04,
             // a

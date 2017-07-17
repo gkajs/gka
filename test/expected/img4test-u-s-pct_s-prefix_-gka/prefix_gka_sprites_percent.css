@@ -16,14 +16,14 @@
     /* animation-iteration-count: 1; */ 
 }
 
-.gka-animation {
-    background-image: url(./img/gka-gka_sprites.png);
+.prefix_animation {
+    background-image: url(./img/prefix_gka_sprites.png);
 
-    animation-name: gka-keyframes;
+    animation-name: prefix_keyframes;
     animation-duration: 0.32s;
 }
 
-@-webkit-keyframes gka-keyframes {
+@-webkit-keyframes prefix_keyframes {
     0%{
         background-position: 0% 0%;
     }
