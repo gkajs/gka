@@ -33,19 +33,20 @@ $ sudo npm install -g gka
 
 ```
 -d, --dir <string>            -d  图片文件夹地址
--u, --unique <boolean>        -u  开启相同帧图片复用 默认 true
--c, --crop <boolean>          -c  开启空白裁剪模式 默认 false
--s, --sprites <boolean>       -s  开启合图模式 默认 false
 
--p, --prefix <string>         -p  重命名前缀
--f, --frameduration <number>  -f  每帧时长 默认为 0.04
+-u, --unique [boolean]        -u  开启相同帧图片复用 默认 true
+-c, --crop                    -c  开启空白裁剪模式
+-s, --sprites                 -s  开启合图模式
+-m, --mini                    -m  开启图片压缩
 
--t, --template <string>       -t  生成文件模式 默认 px
+-p, --prefix [string]         -p  重命名前缀 默认 prefix-
+-f, --frameduration <number>  -f  每帧时长 默认 0.04
 
--i, --info <boolean>          -i  输出信息文件 默认 false
--m, --mini <boolean>          -m  图片压缩 默认 false
+-t, --template [string]       -t  生成动画文件模板 默认 px
 
--a, --algorithm <string>      -a  合图布局模式 默认 binary-tree 可选 top-down | left-right ..
+-i, --info                    -i  输出信息文件
+
+-a, --algorithm <string>      -a  合图布局模式 默认 binary-tree，可选 top-down | left-right ..
 ```
 
 
