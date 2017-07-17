@@ -6,6 +6,8 @@ var yargs = require('yargs'),
 var gka = require("../lib/gka");
 var pkg = require('../package.json');
 
+// console.log(argv);
+
 if (argv.v || argv.version) {
     console.log();
     console.log('[gka version]: ' + pkg.version);
@@ -22,27 +24,23 @@ if (!dir) {
     return;
 }
 
-
-// console.log(dir);
-// console.log(argv);
-
 gka(dir, {
-    // t
-    trim: argv.t,
+    // c
+    crop: argv.c || argv.crop,
     // s
-    sprites: argv.s, 
+    sprites: argv.s || argv.sprites,
     // m 
-    mini: argv.m,
+    mini: argv.m || argv.mini,
     // r
-    unique: argv.u,
+    unique: argv.u || argv.unique,
     // i
-    info: argv.i,
-    // g
-    gen: argv.g || argv.gen,
+    info: argv.i || argv.info,
+    // tpl
+    tpl: argv.t || argv.tpl || argv.template,
     // p
     prefix: argv.p || argv.prefix,
     // f
-    duration: argv.f || argv.frameduration,
+    frameduration: argv.f || argv.frameduration,
     // a
     algorithm: argv.a || argv.algorithm,
-})
+});

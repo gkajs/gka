@@ -6,10 +6,10 @@ var assert = require('assert');
 
 var imgFolder = path.join(__dirname, "img4test");
 var expectedDir = path.join(__dirname, 'expected');
-var expectedDir_normal = path.join(expectedDir, 'img4test-t-u-px_t-gka');
+var expectedDir_normal = path.join(expectedDir, 'img4test-c-u-px_c-gka');
 var expectedDir_sprites = path.join(expectedDir, 'img4test-u-s-pct_s-prefix_-gka');
 
-var targetDir_normal = path.join(__dirname, 'img4test-t-u-px_t-gka');
+var targetDir_normal = path.join(__dirname, 'img4test-c-u-px_c-gka');
 var targetDir_sprites = path.join(__dirname, 'img4test-u-s-pct_s-prefix_-gka');
 
 describe('gka actual test', function () {
@@ -19,7 +19,7 @@ describe('gka actual test', function () {
         // ridding cut g duration 0.08
         gka(imgFolder, {
             // c
-            trim: true,
+            crop: true,
             // s
             sprites: false, 
             // t 
@@ -29,11 +29,11 @@ describe('gka actual test', function () {
             // i
             info: true,
             // g
-            gen: true,
+            tpl: true,
             // p
             // prefix: "gka-",
             // f
-            duration: 0.08,
+            frameduration: 0.08,
         });
 
         setTimeout(()=>{
@@ -45,7 +45,7 @@ describe('gka actual test', function () {
         deleteall(targetDir_normal);
     });
 
-    it('gka-normal：gka dir -cgr -f 0.08', function () {
+    it('gka-normal：gka dir -ci -f 0.08', function () {
         assert.deepEqual(getDirFile2Md5(expectedDir_normal), getDirFile2Md5(targetDir_normal), 'expect the same');
     });
 
@@ -58,7 +58,7 @@ describe('gka actual test', function () {
         // sprites ridding gen pct algorithm left-right prefix gka-
         gka(imgFolder, {
             // c
-            trim: false,
+            crop: false,
             // s
             sprites: true, 
             // t 
@@ -68,11 +68,11 @@ describe('gka actual test', function () {
             // i
             info: true,
             // g
-            gen: "pct",
+            tpl: "pct",
             // p
             prefix: "prefix_",
             // f
-            duration: 0.04,
+            frameduration: 0.04,
             // a
             algorithm: "left-right",
         });
@@ -86,7 +86,7 @@ describe('gka actual test', function () {
         deleteall(targetDir_sprites);
     });
 
-    it('gka-sprites：gka dir -sr -g pct -p gka- -a left-right', function () {
+    it('gka-sprites：gka dir -si -t pct -p gka- -a left-right', function () {
         assert.deepEqual(getDirFile2Md5(expectedDir_sprites), getDirFile2Md5(targetDir_sprites), 'expect the same');
     });
 
@@ -107,19 +107,19 @@ function getFiles (dir, _files){
 }
 
 function deleteall(path) {  
-    var files = [];  
-    if(fs.existsSync(path)) {  
-        files = fs.readdirSync(path);  
-        files.forEach(function(file, index) {  
-            var curPath = path + "/" + file;  
-            if(fs.statSync(curPath).isDirectory()) {
-                deleteall(curPath);  
-            } else {
-                fs.unlinkSync(curPath);  
-            }  
-        });  
-        fs.rmdirSync(path);  
-    }  
+//     var files = [];  
+//     if(fs.existsSync(path)) {  
+//         files = fs.readdirSync(path);  
+//         files.forEach(function(file, index) {  
+//             var curPath = path + "/" + file;  
+//             if(fs.statSync(curPath).isDirectory()) {
+//                 deleteall(curPath);  
+//             } else {
+//                 fs.unlinkSync(curPath);  
+//             }  
+//         });  
+//         fs.rmdirSync(path);  
+//     }  
 }
 
 function getDirFile2Md5 (dir) {

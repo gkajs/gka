@@ -4,10 +4,10 @@
 <head>
     <meta charset="UTF-8">
     <title>gka-animation-preview</title>
-    <link href="./gka_cut.css" rel="stylesheet" type="text/css">
+    <link href="./prefix_gka.css" rel="stylesheet" type="text/css">
 </head>
 <body style="text-align: center;">
-    <div class="gka-wrap">
+    <div style="width:300px; display:inline-block;">
         <div id="gka" class="gka-base"></div>
     </div>
     <script>
@@ -22,10 +22,10 @@
         });
     }
 
-    var imgNames = ["gkatest_1.png","gkatest_2.png","gkatest_3.png","gkatest_4.png","gkatest_5.png","gkatest_8.png"];
+    var imgNames = ["prefix_gka_sprites.png"];
 
     loadImage(imgNames, function() {
-        document.getElementById('gka').className += " animation"
+        document.getElementById('gka').className += " prefix_animation"
     }, "img/")
     </script>
 </body>
