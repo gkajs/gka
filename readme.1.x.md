@@ -16,8 +16,8 @@
 
 通过对图片集进行处理，一键式生成序列帧动画文件，并内置相关优化。
 
-* **一键式 :**  图片文件批量序列化重命名，生成帧动画文件，支持预览
-* **性能佳 :**  支持`合图模式`✓，`相同帧图片复用`✓，`图片空白裁剪`✓，`图片压缩`✓
+* **一键式 :**  图片文件批量序列化重命名，生成 css keyframes，生成帧动画预览文件
+* **性能佳 :**  支持图片压缩✓，支持`合图模式`✓，`相同帧图片复用`✓
 
 ![preview](https://cloud.githubusercontent.com/assets/10385585/24502038/ac4bd9f2-157e-11e7-87e0-a9a44aaffafa.gif)
 
@@ -29,48 +29,37 @@ $ sudo npm install -g gka
 
 # Usage
 
-### `gka <dir> [options]`
+### `gka <options> <files>`
 
 ```
 -d, --dir <string>            -d  图片文件夹地址
--u, --unique <boolean>        -u  开启相同帧图片复用 默认 true
--c, --crop <boolean>          -c  开启空白裁剪模式 默认 false
--s, --sprites <boolean>       -s  开启合图模式 默认 false
-
 -p, --prefix <string>         -p  重命名前缀
 -f, --frameduration <number>  -f  每帧时长 默认为 0.04
+-i, --info <boolean>          -i  是否输出信息文件 默认 false
 
--t, --template <string>       -t  生成文件模式 默认 px
+-s, --sprites <boolean>       -s  是否开启合图模式 默认 false
+-a, --algorithm <string>      -a  合图布局模式 默认 binary-tree
 
--i, --info <boolean>          -i  输出信息文件 默认 false
--m, --mini <boolean>          -m  图片压缩 默认 false
-
--a, --algorithm <string>      -a  合图布局模式 默认 binary-tree 可选 top-down | left-right ..
+-t, --tiny <string>           -t 图片文件夹地址 压缩图片
 ```
 
 
 ```sh
 # 帧动画生成 - 普通模式
 
-$ gka <imageDir>
+$ gka -d [imageDirPath] -p [prefix] 
 ```
 
 ```sh
-# 帧动画生成 - 合图模式[-s] + 图片压缩[-m]
+# 帧动画生成 - 合图模式
 
-$ gka <imageDir> -sm
-```
-
-```sh
-# 帧动画生成 - 裁剪模式
-
-$ gka <imageDir> -c
+$ gka -d [imageDirPath] -p [prefix] -s true
 ```
 
 ```sh
 # 压缩图片
 
-$ gka <imageDir> -m 
+$ gka -t [imageDirPath]
 ```
 
 # Examples
@@ -85,9 +74,9 @@ $ gka <imageDir> -m
 2.命令
 
 ```sh
-# gka [-d] <imageDirPath> -p [prefix] 
+# gka -d [imageDirPath] -p [prefix] 
 
-$ gka E:\gka-test\img -p prefix-
+$ gka -d E:\gka-test\img -p prefix-
 ```
 
 3.结果： 
@@ -131,9 +120,9 @@ $ gka E:\gka-test\img -p prefix-
 2.命令
 
 ```sh
-# gka [-d] <imageDirPath> -s -p [prefix]
+# gka -d [imageDirPath] -p [prefix] -s true
 
-$ gka E:\gka-test\img -s -p prefix-
+$ gka -d E:\gka-test\img -p prefix- -s true
 ```
 
 3.结果： 
@@ -171,9 +160,9 @@ $ gka E:\gka-test\img -s -p prefix-
 
 2.命令
 ```sh
-# gka <imageDirPath> -m [-u false -t flase]
+# gka -t [imageDirPath]
 
-$ gka E:\gka-test\img -m
+$ gka -t E:\gka-test\img
 ```
 
 # Welcome
@@ -193,4 +182,3 @@ Copyright (c) 2017 - present, joeyguo
 - v1.1.0 相同帧图片复用
 - v1.4.5 支持输出信息文件、合图布局参数
 - v1.4.6 增加图片预加载
-- v2.0.0 增加图片裁剪模式、暴露图片去重开关、增加模板选择、优化图片信息文件
