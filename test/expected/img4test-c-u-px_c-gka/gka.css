@@ -29,7 +29,6 @@
         width: 27px;
         height: 28px;
         transform: translate(11px, 11px);
-        -webkit-transform: translate(11px, 11px);
         background-image: url(img/gkatest_1.png);
     }
 
@@ -37,7 +36,6 @@
         width: 35px;
         height: 36px;
         transform: translate(7px, 7px);
-        -webkit-transform: translate(7px, 7px);
         background-image: url(img/gkatest_2.png);
     }
 
@@ -45,7 +43,6 @@
         width: 37px;
         height: 38px;
         transform: translate(6px, 6px);
-        -webkit-transform: translate(6px, 6px);
         background-image: url(img/gkatest_3.png);
     }
 
@@ -53,7 +50,6 @@
         width: 44px;
         height: 43px;
         transform: translate(4px, 3px);
-        -webkit-transform: translate(4px, 3px);
         background-image: url(img/gkatest_4.png);
     }
 
@@ -61,7 +57,6 @@
         width: 44px;
         height: 45px;
         transform: translate(3px, 3px);
-        -webkit-transform: translate(3px, 3px);
         background-image: url(img/gkatest_5.png);
     }
 
@@ -69,7 +64,6 @@
         width: 37px;
         height: 38px;
         transform: translate(6px, 6px);
-        -webkit-transform: translate(6px, 6px);
         background-image: url(img/gkatest_3.png);
     }
 
@@ -77,7 +71,6 @@
         width: 35px;
         height: 36px;
         transform: translate(7px, 7px);
-        -webkit-transform: translate(7px, 7px);
         background-image: url(img/gkatest_2.png);
     }
 
@@ -85,7 +78,6 @@
         width: 33px;
         height: 34px;
         transform: translate(8px, 8px);
-        -webkit-transform: translate(8px, 8px);
         background-image: url(img/gkatest_8.png);
     }
 

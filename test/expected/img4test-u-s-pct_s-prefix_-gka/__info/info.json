@@ -1,8 +1,4 @@
-/* 输出信息
-* 
-*/
-
-var info = {
+{
     "file": "prefix_gka_sprites.png",
     "w": 300,
     "h": 50,
@@ -65,4 +61,3 @@ var info = {
         }
     }
 }
-            

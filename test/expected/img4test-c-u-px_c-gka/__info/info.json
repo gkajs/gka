@@ -1,8 +1,4 @@
-/* 输出信息
-* 
-*/
-
-var info = {
+{
     "frames": {
         "gkatest_1.png": {
             "file": "gkatest_1.png",
@@ -78,4 +74,3 @@ var info = {
         }
     }
 }
-            

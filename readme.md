@@ -70,7 +70,7 @@ $ gka <imageDir> -c
 ```sh
 # 压缩图片
 
-$ gka <imageDir> -m 
+$ gka <imageDir> -m [-u false -t flase]
 ```
 
 # Examples
