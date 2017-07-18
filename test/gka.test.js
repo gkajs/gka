@@ -107,19 +107,19 @@ function getFiles (dir, _files){
 }
 
 function deleteall(path) {  
-    var files = [];  
-    if(fs.existsSync(path)) {  
-        files = fs.readdirSync(path);  
-        files.forEach(function(file, index) {  
-            var curPath = path + "/" + file;  
-            if(fs.statSync(curPath).isDirectory()) {
-                deleteall(curPath);  
-            } else {
-                fs.unlinkSync(curPath);  
-            }  
-        });  
-        fs.rmdirSync(path);  
-    }  
+    // var files = [];  
+    // if(fs.existsSync(path)) {  
+    //     files = fs.readdirSync(path);  
+    //     files.forEach(function(file, index) {  
+    //         var curPath = path + "/" + file;  
+    //         if(fs.statSync(curPath).isDirectory()) {
+    //             deleteall(curPath);  
+    //         } else {
+    //             fs.unlinkSync(curPath);  
+    //         }  
+    //     });  
+    //     fs.rmdirSync(path);  
+    // }  
 }
 
 function getDirFile2Md5 (dir) {
