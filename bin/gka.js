@@ -200,7 +200,7 @@ gka(dir, {
     // i
     info: argv.info,
     // tpl
-    tpl: argv.tpl || argv.template,
+    tpl: argv.t || argv.tpl || argv.template,
     // p
     prefix: argv.prefix,
     // f
