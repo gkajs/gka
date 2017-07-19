@@ -6,10 +6,10 @@ var assert = require('assert');
 
 var imgFolder = path.join(__dirname, "img4test");
 var expectedDir = path.join(__dirname, 'expected');
-var expectedDir_normal = path.join(expectedDir, 'img4test-c-u-px_c-gka');
+var expectedDir_normal = path.join(expectedDir, 'img4test-c-u-c-gka');
 var expectedDir_sprites = path.join(expectedDir, 'img4test-u-s-pct_s-prefix_-gka');
 
-var targetDir_normal = path.join(__dirname, 'img4test-c-u-px_c-gka');
+var targetDir_normal = path.join(__dirname, 'img4test-c-u-c-gka');
 var targetDir_sprites = path.join(__dirname, 'img4test-u-s-pct_s-prefix_-gka');
 
 describe('gka actual test', function () {
@@ -19,9 +19,9 @@ describe('gka actual test', function () {
         // ridding cut g duration 0.08
         gka(imgFolder, {
             // c
-            crop: true,
+            // crop: true,
             // s
-            sprites: false, 
+            // sprites: false, 
             // t 
             tiny: false,
             // r
@@ -29,7 +29,7 @@ describe('gka actual test', function () {
             // i
             info: true,
             // g
-            tpl: "px",
+            tpl: "c",
             // p
             // prefix: "gka-",
             // f
@@ -58,9 +58,9 @@ describe('gka actual test', function () {
         // sprites ridding gen pct algorithm left-right prefix gka-
         gka(imgFolder, {
             // c
-            crop: false,
+            // crop: false,
             // s
-            sprites: true, 
+            // sprites: true, 
             // t 
             tiny: false,
             // r
@@ -68,7 +68,7 @@ describe('gka actual test', function () {
             // i
             info: true,
             // g
-            tpl: "pct",
+            tpl: "pct_s",
             // p
             prefix: "prefix_",
             // f

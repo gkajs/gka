@@ -5,7 +5,7 @@
 
     background-repeat: no-repeat;
 
-    background-size: 600% 100%;
+    background-size: 300% 200%;
 
     animation-timing-function: steps(1);
     animation-fill-mode: forwards;
@@ -28,28 +28,28 @@
         background-position: 0% 0%;
     }
     12.50%{
-        background-position: 20% 0%;
+        background-position: 50% 0%;
     }
     25.00%{
-        background-position: 40% 0%;
+        background-position: 0% 100%;
     }
     37.50%{
-        background-position: 60% 0%;
+        background-position: 50% 100%;
     }
     50.00%{
-        background-position: 80% 0%;
+        background-position: 100% 0%;
     }
     62.50%{
-        background-position: 40% 0%;
+        background-position: 0% 100%;
     }
     75.00%{
-        background-position: 20% 0%;
+        background-position: 50% 0%;
     }
     87.50%{
-        background-position: 100% 0%;
+        background-position: 100% 100%;
     }
     100%{
-        background-position: 100% 0%;
+        background-position: 100% 100%;
     }
 
 }

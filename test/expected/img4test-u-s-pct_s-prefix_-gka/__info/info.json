@@ -1,7 +1,7 @@
 {
     "file": "prefix_gka_sprites.png",
-    "w": 300,
-    "h": 50,
+    "w": 150,
+    "h": 100,
     "frames": {
         "gkatest_1.png": {
             "file": "prefix_1.png",
@@ -19,29 +19,29 @@
         },
         "gkatest_3.png": {
             "file": "prefix_3.png",
-            "x": 100,
-            "y": 0,
+            "x": 0,
+            "y": 50,
             "width": 50,
             "height": 50
         },
         "gkatest_4.png": {
             "file": "prefix_4.png",
-            "x": 150,
-            "y": 0,
+            "x": 50,
+            "y": 50,
             "width": 50,
             "height": 50
         },
         "gkatest_5.png": {
             "file": "prefix_5.png",
-            "x": 200,
+            "x": 100,
             "y": 0,
             "width": 50,
             "height": 50
         },
         "gkatest_6.png": {
             "file": "prefix_3.png",
-            "x": 100,
-            "y": 0,
+            "x": 0,
+            "y": 50,
             "width": 50,
             "height": 50
         },
@@ -54,8 +54,8 @@
         },
         "gkatest_8.png": {
             "file": "prefix_6.png",
-            "x": 250,
-            "y": 0,
+            "x": 100,
+            "y": 50,
             "width": 50,
             "height": 50
         }
