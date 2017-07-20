@@ -6,11 +6,11 @@ var assert = require('assert');
 
 var imgFolder = path.join(__dirname, "img4test");
 var expectedDir = path.join(__dirname, 'expected');
-var expectedDir_normal = path.join(expectedDir, 'img4test-c-u-c-gka');
-var expectedDir_sprites = path.join(expectedDir, 'img4test-u-s-pct_s-prefix_-gka');
+var expectedDir_normal = path.join(expectedDir, 'gka-img4test-c-u-c');
+var expectedDir_sprites = path.join(expectedDir, 'gka-img4test-u-s-pct_s-prefix_');
 
-var targetDir_normal = path.join(__dirname, 'img4test-c-u-c-gka');
-var targetDir_sprites = path.join(__dirname, 'img4test-u-s-pct_s-prefix_-gka');
+var targetDir_normal = path.join(__dirname, 'gka-img4test-c-u-c');
+var targetDir_sprites = path.join(__dirname, 'gka-img4test-u-s-pct_s-prefix_');
 
 describe('gka actual test', function () {
 
@@ -45,7 +45,7 @@ describe('gka actual test', function () {
         deleteall(targetDir_normal);
     });
 
-    it('gka-normal：gka dir -ci -f 0.08', function () {
+    it('gka-normal：gka dir -i -t c -f 0.08', function () {
         assert.deepEqual(getDirFile2Md5(expectedDir_normal), getDirFile2Md5(targetDir_normal), 'expect the same');
     });
 
@@ -74,7 +74,7 @@ describe('gka actual test', function () {
             // f
             frameduration: 0.04,
             // a
-            algorithm: "left-right",
+            // algorithm: "left-right",
         });
 
         setTimeout(()=>{
@@ -86,7 +86,7 @@ describe('gka actual test', function () {
         deleteall(targetDir_sprites);
     });
 
-    it('gka-sprites：gka dir -si -t pct -p gka- -a left-right', function () {
+    it('gka-sprites：gka dir  -i -t pct_s -p gka- -a left-right', function () {
         assert.deepEqual(getDirFile2Md5(expectedDir_sprites), getDirFile2Md5(targetDir_sprites), 'expect the same');
     });
 
