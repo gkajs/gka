@@ -3,7 +3,7 @@
   <a href ="https://github.com/joeyguo/gka"><img alt="gka" src="https://user-images.githubusercontent.com/10385585/27863888-bb5e4826-61be-11e7-8994-4b19bb49bb22.png"></a>
 </p>
 <p align="center">
-简单的、高效的帧动画生成工具，图片处理工具
+简单的、高效的帧动画生成工具
 </p>
 <p align="center">
 <a href="https://www.npmjs.org/package/gka"><img src="https://img.shields.io/npm/v/gka.svg?style=flat"></a>
