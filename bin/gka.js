@@ -4,6 +4,8 @@ var yargs = require('yargs'),
     argv = yargs.argv,
     inquirer = require('inquirer'),
     gka = require("../lib/gka"),
+    tpl = require("../lib/core/tpl"),
+
     pkg = require('../package.json'),
     _ = argv._;
 
@@ -185,12 +187,18 @@ if (_[0] === 'tool' || _[0] === 't' ) {
         return;
     }
 
-    if (argv.template === "") {
+    var tplMap = tpl();
+    var template = argv.template;
+    var tplList = Object.keys(tplMap).map(function(item){
+            return item.substring(8);
+        });
+    if (template === "") {
+
         inquirer.prompt([{
             type: 'list',
             name: 'template',
             message: 'which template do you like: ',
-            choices: ['c', 's'],
+            choices: tplList,
             filter: function (val) {
               return val.toLowerCase();
             }
@@ -207,7 +215,9 @@ if (_[0] === 'tool' || _[0] === 't' ) {
                 // i
                 info: argv.info,
                 // tpl
-                tpl: answers.template,
+                tpl: tplMap['gka-tpl-' + answers.template],
+                tplName: answers.template,
+                tplList: tplList,
                 // p
                 prefix: argv.prefix,
                 // f
@@ -217,6 +227,13 @@ if (_[0] === 'tool' || _[0] === 't' ) {
             });
         })
     } else {
+        // 内置别名
+        template = template === 'c'? 'crop': template;
+        template = template === 's'? 'sprites': template;
+        template = template === 'n'? 'normal': template;
+        
+        var tpl = tplMap['gka-tpl-' + template];
+
         gka(dir, {
             // c
             crop: argv.c,
@@ -229,7 +246,9 @@ if (_[0] === 'tool' || _[0] === 't' ) {
             // i
             info: argv.info,
             // tpl
-            tpl: argv.t || argv.tpl || argv.template,
+            tpl: tpl,
+            tplName: template,
+            tplList: tplList,
             // p
             prefix: argv.prefix,
             // f
