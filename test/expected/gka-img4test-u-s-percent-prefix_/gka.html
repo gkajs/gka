@@ -1,17 +1,15 @@
-module.exports = function html(obj, callback) {
-    var prefix = obj.prefix,
-        names = obj.names;
 
-var  str = `
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <title>gka-animation-preview</title>
-    <link href="./${prefix}gka.css" rel="stylesheet" type="text/css">
+    <link href="./gka.css" rel="stylesheet" type="text/css">
 </head>
 <body style="text-align: center;">
-    <div id="gka" class="gka-base"></div>
+    <div style="width:300px; display:inline-block;">
+        <div id="gka" class="gka-base"></div>
+    </div>
     <script>
     function loadImage(names, cb, prefix){
         var n = 0, img;
@@ -24,15 +22,11 @@ var  str = `
         });
     }
 
-    var imgNames = ${names};
+    var imgNames = ["prefix_gka_sprites.png"];
 
     loadImage(imgNames, function() {
-        document.getElementById('gka').className += " ${prefix}animation"
+        document.getElementById('gka').className += " prefix_animation"
     }, "img/")
     </script>
 </body>
 </html>
-`;
-
-    callback && callback(`${prefix}gka.html`, str);
-}
