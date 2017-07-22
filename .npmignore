@@ -1,0 +1,8 @@
+node_modules
+.svn
+.git
+.DS_Store
+npm-debug.log
+TODO.md
+/_lib
+ 
