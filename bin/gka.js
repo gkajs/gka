@@ -166,11 +166,11 @@ if (_[0] === 'tool' || _[0] === 't' ) {
     })
     .help('h')
     .alias('h', 'help')
-    .usage('\nUsage: \n  gka <dir> [options] \n  gka <cmd> <dir> [options]')
+    .usage('\nUsage: \n  gka <dir> [options] \n  gka tool <dir> [options]')
     .example('gka E:\\img')
     .epilog('for more detailed instructions, visit https://github.com/joeyguo/gka')
     .version()
-    .command('tool', 'images processing tools')
+    // .command('tool', 'images processing tools')
     .argv;
 
     if (argv.v || argv.version || argv.V) {
