@@ -1,0 +1,44 @@
+{
+    "frames": {
+        "gkatest_1.png": {
+            "file": "gkatest_1.png",
+            "width": 50,
+            "height": 50
+        },
+        "gkatest_2.png": {
+            "file": "gkatest_2.png",
+            "width": 50,
+            "height": 50
+        },
+        "gkatest_3.png": {
+            "file": "gkatest_3.png",
+            "width": 50,
+            "height": 50
+        },
+        "gkatest_4.png": {
+            "file": "gkatest_4.png",
+            "width": 50,
+            "height": 50
+        },
+        "gkatest_5.png": {
+            "file": "gkatest_5.png",
+            "width": 50,
+            "height": 50
+        },
+        "gkatest_6.png": {
+            "file": "gkatest_3.png",
+            "width": 50,
+            "height": 50
+        },
+        "gkatest_7.png": {
+            "file": "gkatest_2.png",
+            "width": 50,
+            "height": 50
+        },
+        "gkatest_8.png": {
+            "file": "gkatest_8.png",
+            "width": 50,
+            "height": 50
+        }
+    }
+}

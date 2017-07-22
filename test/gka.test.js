@@ -1,4 +1,5 @@
 var gka = require("../lib/gka");
+var tpl = require("../lib/core/tpl");
 var fs = require('fs');
 var path = require('path');
 var md5 = require('md5');
@@ -12,6 +13,10 @@ var expectedDir_sprites = path.join(expectedDir, 'gka-img4test-u-s-percent-prefi
 var targetDir_normal = path.join(__dirname, 'gka-img4test-c-u-crop');
 var targetDir_sprites = path.join(__dirname, 'gka-img4test-u-s-percent-prefix_');
 
+var tplMap = tpl();
+var tplList = Object.keys(tplMap).map(function(item){
+            return item.substring(8);
+        });
 describe('gka actual test', function () {
 
     before(function runFn (done) {
@@ -29,7 +34,9 @@ describe('gka actual test', function () {
             // i
             info: true,
             // g
-            tpl: "c",
+            tpl: tplMap['gka-tpl-crop'],
+            tplName: 'crop',
+            tplList: tplList,
             // p
             // prefix: "gka-",
             // f
@@ -67,8 +74,10 @@ describe('gka actual test', function () {
             unique: true,
             // i
             info: true,
-            // g
-            tpl: "percent",
+            // t
+            tpl: tplMap['gka-tpl-percent'],
+            tplName: 'percent',
+            tplList: tplList,
             // p
             prefix: "prefix_",
             // f
