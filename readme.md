@@ -1,4 +1,6 @@
-
+<p align="center">
+  <a href ="https://github.com/joeyguo/gka"><img alt="gka" src="https://user-images.githubusercontent.com/10385585/28497647-cfc6ceba-6fbe-11e7-9f32-9ff1895b893b.png"></a>
+</p>
 <p align="center">
   <a href ="https://github.com/joeyguo/gka"><img alt="gka" src="https://user-images.githubusercontent.com/10385585/27863888-bb5e4826-61be-11e7-8994-4b19bb49bb22.png"></a>
 </p>
