@@ -1,8 +1,8 @@
 <p align="center">
-  <a href ="https://github.com/joeyguo/gka"><img alt="gka" src="https://user-images.githubusercontent.com/10385585/28497647-cfc6ceba-6fbe-11e7-9f32-9ff1895b893b.png"></a>
+<a href ="https://github.com/joeyguo/gka"><img alt="gka" src="https://user-images.githubusercontent.com/10385585/28497647-cfc6ceba-6fbe-11e7-9f32-9ff1895b893b.png"></a>
 </p>
 <p align="center">
-  <a href ="https://github.com/joeyguo/gka"><img alt="gka" src="https://user-images.githubusercontent.com/10385585/27863888-bb5e4826-61be-11e7-8994-4b19bb49bb22.png"></a>
+ <a href ="https://github.com/joeyguo/gka"><img alt="gka" src="https://user-images.githubusercontent.com/10385585/27863888-bb5e4826-61be-11e7-8994-4b19bb49bb22.png"></a>
 </p>
 <p align="center">
 简单的、高效的帧动画生成工具
@@ -14,43 +14,99 @@
 
 --- 
 
+# GKA
+
 [gka](https://github.com/joeyguo/gka) 是一款简单的、高效的帧动画生成工具，图片处理工具。
 
-通过对图片集进行处理，一键式生成序列帧动画文件，并内置相关优化。
+只需一行命令，快速图片优化、生成动画文件，支持效果预览。
 
 * **一键式 :**  图片文件批量序列化重命名，生成帧动画文件，支持预览
 * **性能佳 :**  支持`相同帧图片复用`✓，`图片空白裁剪`✓，`合图模式`✓，`图片压缩`✓
+* **多模板 :**  内置多种文件输出模板，支持自定义模板
+
+点击查看 [在线文档](https://joeyguo.github.io/gka/#/)
+
+# 快速开始
+
+## 安装
+
+```bash
+sudo npm i gka -g
+```
+
+## 开始使用
+
+只需一行命令，快速生成动画文件，支持效果预览。
+
+对 E:\img 目录中的图片进行处理，只需输入命令
+
+```bash
+gka E:\img 
+```
+
+生成新的文件、效果预览
+
+<table>
+    <thead>
+        <tr><th>处理前</th><th>处理后</th></tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td><pre><code>
+./img
+├── gkatest_1.png
+├── gkatest_2.png
+├── gkatest_3.png
+└── ...
+</code></pre></td>
+<td><pre><code>
+./gka-img
+└── gka.html
+└── gka.css
+└── img
+    ├── gkatest_1.png
+    ├── gkatest_2.png
+    ├── gkatest_3.png
+    └── ...
+</code></pre></td>
+        </tr>
+    </tbody>
+</table>
 
 ![preview](https://cloud.githubusercontent.com/assets/10385585/24502038/ac4bd9f2-157e-11e7-87e0-a9a44aaffafa.gif)
 
-# Install GKA
+# 命令总览
 
-```sh
-$ sudo npm install -g gka
+gka 一键图片优化、生成动画文件。
+
+```bash
+gka <dir> [options]
 ```
 
-### Commands overview
+gka tool 快速图片处理，支持压图、合图、空白裁剪、去重、生成图片信息。
 
-```sh
-$ gka <dir> [options]         # 一键式图片处理、生成动画文件
-
-$ gka tool <dir> [options]    # 图片处理工具 压图、合图、空白裁剪、去重、生成图片信息等
+```bash
+gka tool <dir> [options]
 ```
 
-# Usage
+# 使用教程
 
-## `gka <dir> [options]`
+## gka
 
-```sh
-$ gka <dir> [options]         # 一键式图片处理、生成动画文件
+一键图片优化、生成动画文件。
+
+### Command 命令 
+
+```bash
+gka <dir> [options]
 ```
 
-### options
+### Options 参数选项 
 
 ```
 -d, --dir <string>            #  图片文件夹地址
 
--u, --unique [boolean]        #  开启相同帧图片复用 默认 true
+-u, --unique [boolean]        #  开启相同帧图片复用 默认开启
 -m, --mini                    #  开启图片压缩
 
 -p, --prefix [string]         #  重命名前缀， 默认 prefix-
@@ -58,136 +114,89 @@ $ gka <dir> [options]         # 一键式图片处理、生成动画文件
 
 -i, --info                    #  输出信息文件
 
--t, --template <string>       #  生成动画文件模板 默认 n ，可选模版见 template list
+-t, --template <string>       #  生成动画文件模板 默认 n ，可选模见 template list
 ```
 
-### template list
+### Templates 模板列表
+<!-- ### List of Templates Plugins  -->
 
-文件生成模版，内置相关优化
+文件生成模板，内置对图片进行处理及优化，使用方式
 
-- n  [normal] 默认模板
-- c  [crop]     空白裁剪模板，`开启空白裁剪优化`✓
-- s  [sprites] 合图模板，`开启合图优化`✓
-- 期待更多
-
-```sh
-# 帧动画生成 - 普通模式
-
-$ gka <imageDir>
-```
-
-```sh
-# 帧动画生成 - 空白裁剪模板
-
-$ gka <imageDir> -t c
-```
-
-```sh
-# 帧动画生成 - 合图模板[-t s] + 图片压缩[-m]
-
-$ gka <imageDir> -m -t s
-```
-
-## Examples
-
-### 生成帧动画 &middot; `普通模式`
-
-1.示例参数： 
-
-- 图片目录：E:\gka-test\img
-- 图片名前缀：prefix-
-
-2.命令
-
-```sh
-# gka [-d] <imageDirPath> -p [prefix] 
-
-$ gka E:\gka-test\img -p prefix-
-```
-
-3.结果： 
-<table>
-    <thead>
-        <tr><th>Before</th><th>After</th></tr>
-    </thead>
-    <tbody>
-        <tr>
-            <td><pre><code>
-./img
-├── 害羞_00000.png
-├── 害羞_00001.png
-├── 害羞_00002.png
-├── 害羞_00003.png
-├── 害羞_00004.png
-└── ...
-</code></pre></td>
-<td><pre><code>
-./img-gka
-└── gka.html
-└── prefix-gka.css
-└── img
-    ├── prefix-1.png
-    ├── prefix-2.png
-    ├── prefix-3.png
-    ├── prefix-4.png
-    └── ...
-</code></pre></td>
-        </tr>
-    </tbody>
-</table>
-
-### 生成帧动画 &middot; `合图模式`
-
-1.示例参数： 
-
-- 图片目录：E:\gka-test\img
-- 图片名前缀：prefix-
-
-2.命令
-
-```sh
-# gka [-d] <imageDirPath> -t s -p [prefix] 
-
-$ gka E:\gka-test\img  -t s -p prefix-
-```
-
-3.结果： 
-<table>
-    <thead>
-        <tr><th>Before</th><th>After</th></tr>
-    </thead>
-    <tbody>
-        <tr>
-            <td><pre><code>
-./img
-├── 害羞_00000.png
-├── 害羞_00001.png
-├── 害羞_00002.png
-├── 害羞_00003.png
-├── 害羞_00004.png
-└── ...
-</code></pre></td>
-<td><pre><code> 
-./img-gka-sprites
-└── img
-    └── prefix-sprites.png
-└── gka.html
-└── prefix-gka.css
-</code></pre></td>
-        </tr>
-    </tbody>
-</table>
-
-
-## `gka tool <dir> [options]`
-
-```sh
-$ gka tool <dir> [options]    # 图片处理工具 压图、合图、空白裁剪、去重、生成图片信息等
-```
-
-### options
+```bash
+gka 图片目录 -t 模板名
 
 ```
+
+#### 内置的模板列表
+
+- n  [normal]
+
+默认模板 
+
+详情：[Github 地址](https://github.com/gka-tpl/gka-tpl-normal)
+
+- c  [crop]
+
+空白裁剪模板，`开启空白裁剪优化`✓ 
+
+详情：[Github 地址](https://github.com/gka-tpl/gka-tpl-crop)
+
+- s  [sprites] 
+
+合图模板，`开启合图优化`✓ 
+
+详情：[Github 地址](https://github.com/gka-tpl/gka-tpl-sprites)
+
+- canvas 
+
+生成 canvas 文件，`开启空白裁剪优化`✓ 、`开启合图优化`✓ 
+
+详情：[Github 地址](https://github.com/gka-tpl/gka-tpl-canvas)
+
+#### 增加模板
+
+模板支持动态增加，只需安装需要的模板。即时安装，即刻可用。
+
+```bash
+sudo npm i gka-tpl-模板名 -g
+```
+
+### 示例
+
+对 E:\img 目录中的图片进行处理。
+
+使用默认模板生成帧动画
+
+```bash
+gka E:\img
+```
+
+使用空白裁剪模板生成帧动画
+
+```bash
+gka E:\img -t c
+```
+
+使用合图模板生成帧动画，并进行图片压缩
+
+```bash
+gka E:\img -m -t s
+```
+
+## gka tool
+
+gka tool 是图片快速处理工具，可支持压图、合图、空白裁剪、去重、生成图片信息
+
+
+### Command 命令
+
+```bash
+gka tool <dir> [options]
+```
+
+### Options 参数选项
+
+```bash
 -d, --dir <string>            #  图片文件夹地址
 
 -u, --unique                  #  开启图片去重
@@ -203,23 +212,41 @@ $ gka tool <dir> [options]    # 图片处理工具 压图、合图、空白裁�
 -r, --replace                 #  压缩源图片时使用，-mr
 ```
 
-```sh
-# 压缩图片 （如想直接压缩源文件，请使用 -mr）
+### 示例
 
-$ gka tool <imageDir> -m
+对 E:\img 目录中的图片进行处理。
+
+进行图片压缩 （如想直接压缩源文件，请使用 -mr）
+
+```bash
+gka tool E:\img -m
 ```
 
-```sh
-# 图片空白裁剪
+进行图片空白裁剪
 
-$ gka tool <imageDir> -c
+```bash
+gka tool E:\img -c
 ```
 
-```sh
-# 合图 + 空白裁剪 + 输出信息文件
+进行图片空白裁剪、裁剪后进行合图，并输出信息文件
 
-$ gka tool <imageDir> -csi
+```bash
+gka tool E:\img -csi
 ```
+
+# 定制化
+
+<!-- ## List of Templates -->
+
+## 开发模板 TODO
+
+#### 命名规范
+
+#### 开发流程
+
+#### 发布模版
+
+#### 使用模板
 
 # Welcome
 
@@ -232,7 +259,7 @@ $ gka tool <imageDir> -csi
 
 Copyright (c) 2017 - present, joeyguo
 
-# Log
+# Change Log
 
 - v1.0.x 重命名图片文件、 生成 keyframe animation css 动画、自动化合图、自动化图片压缩、效果预览
 - v1.1.0 相同帧图片复用
@@ -240,3 +267,7 @@ Copyright (c) 2017 - present, joeyguo
 - v1.4.6 增加图片预加载
 - v2.0.0 增加图片裁剪模式、暴露图片去重开关、增加模板选择、优化图片信息文件
 - v2.1.0 增强 help，增强 template 方案，增加 gka tool 图片工具集
+
+
+
+
