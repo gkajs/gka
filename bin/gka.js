@@ -3,6 +3,8 @@
 var yargs = require('yargs'),
     argv = yargs.argv,
     inquirer = require('inquirer'),
+    fs = require("fs"),
+    path = require("path"),
     gka = require("../lib/gka"),
     tpl = require("../lib/core/tpl"),
 
@@ -187,8 +189,59 @@ if (_[0] === 'tool' || _[0] === 't' ) {
         return;
     }
 
-    var tplMap = tpl();
     var template = argv.template;
+    
+    var stats = null;
+    try {
+        stats = fs.statSync(template);
+        console.log()
+        console.log("[local template]:", template)
+        console.log()
+    } catch(e) {}
+
+    if (stats && stats.isDirectory()) {
+        function get(dir, type) {
+            var file = path.join(dir, type);
+            return fs.existsSync(file)? require(file): null;
+        }
+
+        var tpl = {
+            config: get(template, "gka.config.js"),
+            engine: get(template, "index.js"),
+        };
+
+        var tplName = path.basename(template);
+
+        if (tplName.indexOf("gka-tpl") > -1) {
+            tplName = tplName.substring(8);
+        }
+
+        gka(dir, {
+            // c
+            crop: argv.c,
+            // s
+            sprites: argv.s,
+            // m 
+            mini: argv.mini,
+            // u
+            unique: argv.unique,
+            // i
+            info: argv.info,
+            // tpl
+            tpl: tpl,
+            tplName: tplName,
+            tplList: [],
+            // p
+            prefix: argv.prefix,
+            // f
+            frameduration: argv.frameduration,
+            // a
+            algorithm: argv.algorithm
+        });
+        return;
+    }
+
+    var tplMap = tpl();
     var tplList = Object.keys(tplMap).map(function(item){
             return item.substring(8);
         });
@@ -259,8 +312,3 @@ if (_[0] === 'tool' || _[0] === 't' ) {
     }
     
 }
-
-// console.log(argv);
-// return;
-// console.log(typeof argv.s);
-
