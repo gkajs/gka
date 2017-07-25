@@ -131,23 +131,28 @@ gka 图片目录 -t 模板名
 
 - n  [normal]
 
-  - 默认模板 
-  - 详情：[Github 地址](https://github.com/gka-tpl/gka-tpl-normal)
+    - 默认模板 
+    - [Github 地址](https://github.com/gkajs/gka-tpl-normal)
 
 - c  [crop]
 
-  - 空白裁剪模板，`开启空白裁剪优化`✓ 
-  - 详情：[Github 地址](https://github.com/gka-tpl/gka-tpl-crop)
+    - 空白裁剪模板，`开启空白裁剪优化`✓ 
+    - [Github 地址](https://github.com/gkajs/gka-tpl-crop)
 
 - s  [sprites] 
 
-  - 合图模板，`开启合图优化`✓ 
-  - 详情：[Github 地址](https://github.com/gka-tpl/gka-tpl-sprites)
+    - 合图模板，`开启合图优化`✓ 
+    - [Github 地址](https://github.com/gkajs/gka-tpl-sprites)
+
+- percent 
+
+    - 自适应缩放雪碧图模板，`开启合图优化`✓ 
+    - [Github 地址](https://github.com/gkajs/gka-tpl-sprites)
 
 - canvas 
 
-  - 生成 canvas 文件，`开启空白裁剪优化`✓ 、`开启合图优化`✓ 
-  - 详情：[Github 地址](https://github.com/gka-tpl/gka-tpl-canvas)
+    - 生成 canvas 文件，`开启空白裁剪优化`✓ 、`开启合图优化`✓ 
+    - [Github 地址](https://github.com/gkajs/gka-tpl-canvas)
 
 #### 增加模板
 

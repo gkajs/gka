@@ -1,6 +1,6 @@
 {
   "name": "gka",
-  "version": "2.2.0-beta.2",
+  "version": "2.2.0",
   "description": "Generate Keyframes Animation",
   "keywords": [
     "util",
@@ -9,10 +9,10 @@
     "animation"
   ],
   "author": "joeyguo",
-  "github": "https://github.com/joeyguo/gka",
-  "homepage": "https://github.com/joeyguo/gka",
+  "github": "https://github.com/gkajs/gka",
+  "homepage": "https://github.com/gkajs/gka",
   "bugs": {
-    "url": "https://github.com/joeyguo/gka/issues"
+    "url": "https://github.com/gkajs/gka/issues"
   },
   "main": "./lib/gka.js",
   "scripts": {
@@ -24,7 +24,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git://github.com/joeyguo/gka.git"
+    "url": "git://github.com/gkajs/gka.git"
   },
   "license": "MIT",
   "devDependencies": {},
