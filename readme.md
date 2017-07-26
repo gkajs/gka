@@ -26,6 +26,8 @@
 
 在线官方文档：[https://gka.js.org](https://gka.js.org)
 
+![gka-tiny](https://user-images.githubusercontent.com/10385585/28631776-fce677de-7260-11e7-85bf-8498fe02508d.png)
+
 # 快速开始
 
 ## 安装
