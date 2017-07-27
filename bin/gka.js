@@ -50,7 +50,7 @@ if (_[0] === 'tool' || _[0] === 't' ) {
         alias : 'prefix',
         describe: 'rename with prefix',
         coerce: function (arg) {
-            return arg || "prefix-";
+            return arg || "prefix";
         }
     })
     .option('r', {
@@ -137,7 +137,7 @@ if (_[0] === 'tool' || _[0] === 't' ) {
         describe: 'rename with prefix',
         type: "string",
         coerce: function (arg) {
-            return arg || "prefix-";
+            return arg || "prefix";
         }
     })
     .option('f', {
