@@ -1,63 +1,71 @@
 {
-    "file": "prefix_gka_sprites.png",
+    "file": "prefix-sprites.png",
     "w": 150,
     "h": 100,
-    "frames": {
-        "gkatest_1.png": {
-            "file": "prefix_1.png",
+    "frames": [
+        {
+            "name": "gkatest_1.png",
+            "file": "prefix-1.png",
             "x": 0,
             "y": 0,
             "width": 50,
             "height": 50
         },
-        "gkatest_2.png": {
-            "file": "prefix_2.png",
+        {
+            "name": "gkatest_2.png",
+            "file": "prefix-2.png",
             "x": 50,
             "y": 0,
             "width": 50,
             "height": 50
         },
-        "gkatest_3.png": {
-            "file": "prefix_3.png",
+        {
+            "name": "gkatest_3.png",
+            "file": "prefix-3.png",
             "x": 0,
             "y": 50,
             "width": 50,
             "height": 50
         },
-        "gkatest_4.png": {
-            "file": "prefix_4.png",
+        {
+            "name": "gkatest_4.png",
+            "file": "prefix-4.png",
             "x": 50,
             "y": 50,
             "width": 50,
             "height": 50
         },
-        "gkatest_5.png": {
-            "file": "prefix_5.png",
+        {
+            "name": "gkatest_5.png",
+            "file": "prefix-5.png",
             "x": 100,
             "y": 0,
             "width": 50,
             "height": 50
         },
-        "gkatest_6.png": {
-            "file": "prefix_3.png",
+        {
+            "name": "gkatest_6.png",
+            "file": "prefix-3.png",
             "x": 0,
             "y": 50,
             "width": 50,
             "height": 50
         },
-        "gkatest_7.png": {
-            "file": "prefix_2.png",
+        {
+            "name": "gkatest_7.png",
+            "file": "prefix-2.png",
             "x": 50,
             "y": 0,
             "width": 50,
             "height": 50
         },
-        "gkatest_8.png": {
-            "file": "prefix_6.png",
+        {
+            "name": "gkatest_8.png",
+            "file": "prefix-6.png",
             "x": 100,
             "y": 50,
             "width": 50,
             "height": 50
         }
-    }
+    ]
 }

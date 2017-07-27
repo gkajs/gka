@@ -8,10 +8,10 @@ var assert = require('assert');
 var imgFolder = path.join(__dirname, "img4test");
 var expectedDir = path.join(__dirname, 'expected');
 var expectedDir_normal = path.join(expectedDir, 'gka-img4test-c-u-crop');
-var expectedDir_sprites = path.join(expectedDir, 'gka-img4test-u-s-percent-prefix_');
+var expectedDir_sprites = path.join(expectedDir, 'gka-img4test-u-s-percent-prefix');
 
 var targetDir_normal = path.join(__dirname, 'gka-img4test-c-u-crop');
-var targetDir_sprites = path.join(__dirname, 'gka-img4test-u-s-percent-prefix_');
+var targetDir_sprites = path.join(__dirname, 'gka-img4test-u-s-percent-prefix');
 
 var tplMap = tpl();
 var tplList = Object.keys(tplMap).map(function(item){
@@ -38,7 +38,7 @@ describe('gka actual test', function () {
             tplName: 'crop',
             tplList: tplList,
             // p
-            // prefix: "gka-",
+            // prefix: "gka",
             // f
             frameduration: 0.08,
         });
@@ -79,7 +79,7 @@ describe('gka actual test', function () {
             tplName: 'percent',
             tplList: tplList,
             // p
-            prefix: "prefix_",
+            prefix: "prefix",
             // f
             frameduration: 0.04,
             // a
@@ -116,19 +116,19 @@ function getFiles (dir, _files){
 }
 
 function deleteall(path) {  
-    var files = [];  
-    if(fs.existsSync(path)) {  
-        files = fs.readdirSync(path);  
-        files.forEach(function(file, index) {  
-            var curPath = path + "/" + file;  
-            if(fs.statSync(curPath).isDirectory()) {
-                deleteall(curPath);  
-            } else {
-                fs.unlinkSync(curPath);  
-            }  
-        });  
-        fs.rmdirSync(path);  
-    }  
+    // var files = [];  
+    // if(fs.existsSync(path)) {  
+    //     files = fs.readdirSync(path);  
+    //     files.forEach(function(file, index) {  
+    //         var curPath = path + "/" + file;  
+    //         if(fs.statSync(curPath).isDirectory()) {
+    //             deleteall(curPath);  
+    //         } else {
+    //             fs.unlinkSync(curPath);  
+    //         }  
+    //     });  
+    //     fs.rmdirSync(path);  
+    // }  
 }
 
 function getDirFile2Md5 (dir) {

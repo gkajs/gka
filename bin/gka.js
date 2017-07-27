@@ -181,13 +181,14 @@ if (_[0] === 'tool' || _[0] === 't' ) {
     }
 
     var dir = _[0] || argv.d;
-    if (!dir) {
-        console.log();
-        console.log('[error]: ' + 'gka need dir !');
-        console.log('----------------------------');
-        yargs.showHelp();
-        return;
-    }
+
+    // if (!dir) {
+    //     console.log();
+    //     console.log('[error]: ' + 'gka need dir !');
+    //     console.log('----------------------------');
+    //     yargs.showHelp();
+    //     return;
+    // }
 
     var template = argv.template;
     
@@ -200,6 +201,11 @@ if (_[0] === 'tool' || _[0] === 't' ) {
     } catch(e) {}
 
     if (stats && stats.isDirectory()) {
+
+        function isArray(obj) {
+            return Object.prototype.toString.call(obj) == '[object Array]';
+        }
+
         function get(dir, type) {
             var file = path.join(dir, type);
             return fs.existsSync(file)? require(file): null;
@@ -216,29 +222,62 @@ if (_[0] === 'tool' || _[0] === 't' ) {
             tplName = tplName.substring(8);
         }
 
-        gka(dir, {
-            // c
-            crop: argv.c,
-            // s
-            sprites: argv.s,
-            // m 
-            mini: argv.mini,
-            // u
-            unique: argv.unique,
-            // i
-            info: argv.info,
-            // tpl
-            tpl: tpl,
-            tplName: tplName,
-            tplList: [],
-            // p
-            prefix: argv.prefix,
-            // f
-            frameduration: argv.frameduration,
-            // a
-            algorithm: argv.algorithm
-        });
+        tpl.config = isArray(tpl.config)? tpl.config: [tpl.config];
+
+        for (var i = 0, __len = tpl.config.length; i < __len; i++) {
+            gka(dir, {
+                // c
+                crop: argv.c,
+                // s
+                sprites: argv.s,
+                // m 
+                mini: argv.mini,
+                // u
+                unique: argv.unique,
+                // i
+                info: argv.info,
+                // tpl
+                tpl: {
+                    config: tpl.config[i],
+                    engine: tpl.engine
+                },
+                tplName: tplName,
+                tplList: [],
+                // p
+                prefix: argv.prefix,
+                // f
+                frameduration: argv.frameduration,
+                // a
+                algorithm: argv.algorithm,
+
+                __len: __len,
+                __index: i,
+            });
+        }
         return;
+        // gka(dir, {
+        //     // c
+        //     crop: argv.c,
+        //     // s
+        //     sprites: argv.s,
+        //     // m 
+        //     mini: argv.mini,
+        //     // u
+        //     unique: argv.unique,
+        //     // i
+        //     info: argv.info,
+        //     // tpl
+        //     tpl: tpl,
+        //     tplName: tplName,
+        //     tplList: [],
+        //     // p
+        //     prefix: argv.prefix,
+        //     // f
+        //     frameduration: argv.frameduration,
+        //     // a
+        //     algorithm: argv.algorithm
+        // });
+        // return;
     }
 
     var tplMap = tpl();

@@ -3,20 +3,27 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no"/>
     <title>gka-preview</title>
     <link href="./gka.css" rel="stylesheet" type="text/css">
 </head>
 <body style="text-align: center;">
-    <div class="gka-wrap">
+    <div id="container" style="width:50px; display:inline-block;">
         <div id="gka" class="gka-base"></div>
     </div>
-
+    <div style="position: fixed; bottom: 60px;">
+        Change the width：
+        <input type="range" min="0" max="100" value="50" class="range" id="range">
+    </div>
     <div style="position: fixed; bottom: 10px;">
         Powered By <a target="_blank" href="https://github.com/gkajs/gka">gka</a> .
-        Template By <a target="_blank" href="https://github.com/gkajs/gka-tpl-crop">gka-tpl-crop</a>
+        Template By <a target="_blank" href="https://github.com/gkajs/gka-tpl-percent">gka-tpl-percent</a>
     </div>
-
+    <script>
+        range.oninput = function () {
+          container.style.width = this.value + 'px';
+        };
+    </script>
     <script>
     function loadImage(names, cb, prefix){
         var n = 0, img;
@@ -29,11 +36,12 @@
         });
     }
 
-    var imgNames = ["gkatest_1.png","gkatest_2.png","gkatest_3.png","gkatest_4.png","gkatest_5.png","gkatest_8.png"];
+    var imgNames = ["prefix-sprites.png"];
 
     loadImage(imgNames, function() {
-        document.getElementById('gka').className += " animation"
+        document.getElementById('gka').className += " prefixanimation"
     }, "img/")
+
     </script>
 </body>
 </html>
