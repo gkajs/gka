@@ -26,7 +26,7 @@
 
 在线官方文档：[https://gka.js.org](https://gka.js.org)
 
-![gka-tiny](https://user-images.githubusercontent.com/10385585/28631776-fce677de-7260-11e7-85bf-8498fe02508d.png)
+![gka-show](https://user-images.githubusercontent.com/10385585/28651130-77b0bc80-72b2-11e7-9c42-7aad9e5774a7.jpg)
 
 # 快速开始
 
