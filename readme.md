@@ -113,7 +113,7 @@ gka <dir> [options]
 
 -o, --output <string>         #  指定生成目录地址
 
--p, --prefix [string]         #  重命名前缀， 默认 prefix-
+-p, --prefix [string]         #  重命名前缀， 默认 prefix
 -f, --frameduration <number>  #  每帧时长，默认 0.04
 
 -i, --info                    #  输出信息文件
@@ -208,7 +208,7 @@ gka tool <dir> [options]
 -c, --crop                    #  开启空白裁剪模式
 -s, --sprites                 #  开启合图模式
 -m, --mini                    #  开启图片压缩
--p, --prefix [string]         #  重命名前缀 默认 prefix-
+-p, --prefix [string]         #  重命名前缀 默认 prefix
 
 -o, --output <string>         #  指定生成目录地址
 
