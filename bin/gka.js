@@ -255,29 +255,6 @@ if (_[0] === 'tool' || _[0] === 't' ) {
             });
         }
         return;
-        // gka(dir, {
-        //     // c
-        //     crop: argv.c,
-        //     // s
-        //     sprites: argv.s,
-        //     // m 
-        //     mini: argv.mini,
-        //     // u
-        //     unique: argv.unique,
-        //     // i
-        //     info: argv.info,
-        //     // tpl
-        //     tpl: tpl,
-        //     tplName: tplName,
-        //     tplList: [],
-        //     // p
-        //     prefix: argv.prefix,
-        //     // f
-        //     frameduration: argv.frameduration,
-        //     // a
-        //     algorithm: argv.algorithm
-        // });
-        // return;
     }
 
     var tplMap = tpl();
