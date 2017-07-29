@@ -270,7 +270,7 @@ Copyright (c) 2017 - present, joeyguo
 - v1.4.6 增加图片预加载
 - v2.0.0 增加图片裁剪模式、暴露图片去重开关、增加模板选择、优化图片信息文件
 - v2.1.0 增强 help，增强 template 方案，增加 gka tool 图片工具集
-
+- v2.2.0 剥离 template、增加 template 动态增加方案、支持使用本地 template
 
 
 
