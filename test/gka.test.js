@@ -95,7 +95,7 @@ describe('gka actual test', function () {
         deleteall(targetDir_sprites);
     });
 
-    it('gka-sprites：gka dir  -i -t pct_s -p gka- -a left-right', function () {
+    it('gka-sprites：gka dir -i -t percent -p prefix -a left-right', function () {
         assert.deepEqual(getDirFile2Md5(expectedDir_sprites), getDirFile2Md5(targetDir_sprites), 'expect the same');
     });
 
