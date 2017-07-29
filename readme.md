@@ -111,6 +111,8 @@ gka <dir> [options]
 -u, --unique [boolean]        #  开启相同帧图片复用 默认开启
 -m, --mini                    #  开启图片压缩
 
+-o, --output <string>         #  指定生成目录地址
+
 -p, --prefix [string]         #  重命名前缀， 默认 prefix-
 -f, --frameduration <number>  #  每帧时长，默认 0.04
 
@@ -207,6 +209,8 @@ gka tool <dir> [options]
 -s, --sprites                 #  开启合图模式
 -m, --mini                    #  开启图片压缩
 -p, --prefix [string]         #  重命名前缀 默认 prefix-
+
+-o, --output <string>         #  指定生成目录地址
 
 -i, --info                    #  输出信息文件
 
