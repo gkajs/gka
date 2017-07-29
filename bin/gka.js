@@ -53,6 +53,10 @@ if (_[0] === 'tool' || _[0] === 't' ) {
             return arg || "prefix";
         }
     })
+    .option('o', {
+        alias : 'output',
+        describe: 'output dir path'
+    })
     .option('r', {
         boolean: true,
         default: false,
@@ -105,6 +109,8 @@ if (_[0] === 'tool' || _[0] === 't' ) {
         algorithm: argv.algorithm,
         // r
         replace: argv.replace,
+        // o
+        output: argv.output,
         cmd: cmd,
     });
 
@@ -165,6 +171,10 @@ if (_[0] === 'tool' || _[0] === 't' ) {
         choices: ['top-down', 'left-right', 'binary-tree', 'diagonal', 'alt-diagonal'],
         alias : 'algorithm',
         describe: 'sprites layout types',
+    })
+    .option('o', {
+        alias : 'output',
+        describe: 'output dir path'
     })
     .help('h')
     .alias('h', 'help')
@@ -249,6 +259,8 @@ if (_[0] === 'tool' || _[0] === 't' ) {
                 frameduration: argv.frameduration,
                 // a
                 algorithm: argv.algorithm,
+                // o
+                output: argv.output,
 
                 __len: __len,
                 __index: i,
@@ -292,7 +304,9 @@ if (_[0] === 'tool' || _[0] === 't' ) {
                 // f
                 frameduration: argv.frameduration,
                 // a
-                algorithm: argv.algorithm
+                algorithm: argv.algorithm,
+                // o
+                output: argv.output
             });
         })
     } else {
@@ -323,7 +337,9 @@ if (_[0] === 'tool' || _[0] === 't' ) {
             // f
             frameduration: argv.frameduration,
             // a
-            algorithm: argv.algorithm
+            algorithm: argv.algorithm,
+            // o
+            output: argv.output
         });
     }
     
