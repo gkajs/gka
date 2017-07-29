@@ -275,7 +275,7 @@ Copyright (c) 2017 - present, joeyguo
 - v2.0.0 增加图片裁剪模式、暴露图片去重开关、增加模板选择、优化图片信息文件
 - v2.1.0 增强 help，增强 template 方案，增加 gka tool 图片工具集
 - v2.2.0 剥离 template、增加 template 动态增加方案、支持使用本地 template
-- v2.2.1 支持制定目录生成位置 -o，template 支持多个图片目录处理
+- v2.2.1 增加指定生成目录地址 -o、template 支持多个图片目录处理
 
 
 
