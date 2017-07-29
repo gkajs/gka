@@ -103,7 +103,9 @@ gka <dir> [options]
 -u, --unique [boolean]        #  开启相同帧图片复用 默认开启
 -m, --mini                    #  开启图片压缩
 
--p, --prefix [string]         #  重命名前缀， 默认 prefix-
+-o, --output <string>         #  指定生成目录地址
+
+-p, --prefix [string]         #  重命名前缀， 默认 prefix
 -f, --frameduration <number>  #  每帧时长，默认 0.04
 
 -i, --info                    #  输出信息文件
@@ -198,7 +200,9 @@ gka tool <dir> [options]
 -c, --crop                    #  开启空白裁剪模式
 -s, --sprites                 #  开启合图模式
 -m, --mini                    #  开启图片压缩
--p, --prefix [string]         #  重命名前缀 默认 prefix-
+-p, --prefix [string]         #  重命名前缀 默认 prefix
+
+-o, --output <string>         #  指定生成目录地址
 
 -i, --info                    #  输出信息文件
 
@@ -262,4 +266,5 @@ Copyright (c) 2017 - present, joeyguo
 - v1.4.6 增加图片预加载
 - v2.0.0 增加图片裁剪模式、暴露图片去重开关、增加模板选择、优化图片信息文件
 - v2.1.0 增强 help、增强 template 方案、增加 gka tool 图片工具集
-- v2.2.0 剥离 template、增加 template 动态增加方案、支持使用本地 template 
+- v2.2.0 剥离 template、增加 template 动态增加方案、支持使用本地 template
+- v2.2.1 增加指定生成目录地址 -o、template 支持多个图片目录处理
