@@ -122,17 +122,6 @@ if (_[0] === 'tool' || _[0] === 't' ) {
         default: true,
         describe: 'remove duplicates'
     })
-    // .option('s', {
-    //     boolean: true,
-    //     alias : 'sprites',
-    //     describe: 'sprites images',
-    //     type: "boolean"
-    // })
-    // .option('c', {
-    //     boolean: true,
-    //     alias : 'crop',
-    //     describe: 'crop images',
-    // })
     .option('m', {
         boolean: true,
         alias : 'mini',
@@ -191,14 +180,6 @@ if (_[0] === 'tool' || _[0] === 't' ) {
     }
 
     var dir = _[0] || argv.d;
-
-    // if (!dir) {
-    //     console.log();
-    //     console.log('[error]: ' + 'gka need dir !');
-    //     console.log('----------------------------');
-    //     yargs.showHelp();
-    //     return;
-    // }
 
     var template = argv.template;
     
@@ -273,6 +254,7 @@ if (_[0] === 'tool' || _[0] === 't' ) {
     var tplList = Object.keys(tplMap).map(function(item){
             return item.substring(8);
         });
+    
     if (template === "") {
 
         inquirer.prompt([{
