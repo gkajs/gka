@@ -77,8 +77,6 @@ gka E:\img
 
 ![rockit](https://user-images.githubusercontent.com/10385585/28810071-499e24a2-76ba-11e7-9ee8-cd600c0035b1.gif)
 
-![preview](https://cloud.githubusercontent.com/assets/10385585/24502038/ac4bd9f2-157e-11e7-87e0-a9a44aaffafa.gif)
-
 # 命令总览
 
 gka 一键图片优化、生成动画文件。
