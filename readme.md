@@ -56,9 +56,9 @@ gka E:\img
         <tr>
             <td><pre><code>
 ./img
-├── gkatest_1.png
-├── gkatest_2.png
-├── gkatest_3.png
+├── gka_1.png
+├── gka_2.png
+├── gka_3.png
 └── ...
 </code></pre></td>
 <td><pre><code>
@@ -66,14 +66,16 @@ gka E:\img
 └── gka.html
 └── gka.css
 └── img
-    ├── gkatest_1.png
-    ├── gkatest_2.png
-    ├── gkatest_3.png
+    ├── gka_1.png
+    ├── gka_2.png
+    ├── gka_3.png
     └── ...
 </code></pre></td>
         </tr>
     </tbody>
 </table>
+
+![rockit](https://user-images.githubusercontent.com/10385585/28810071-499e24a2-76ba-11e7-9ee8-cd600c0035b1.gif)
 
 ![preview](https://cloud.githubusercontent.com/assets/10385585/24502038/ac4bd9f2-157e-11e7-87e0-a9a44aaffafa.gif)
 
