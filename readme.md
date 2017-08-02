@@ -119,6 +119,8 @@ gka <dir> [options]
 -i, --info                    #  输出信息文件
 
 -t, --template <string>       #  生成动画文件模板 默认 n ，可选模见 template list
+
+-a, --algorithm <string>      #  合图布局模式 默认 binary-tree，可选 top-down | left-right ..
 ```
 
 ### Templates 模板列表
