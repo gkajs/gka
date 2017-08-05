@@ -1,6 +1,6 @@
 {
   "name": "gka",
-  "version": "2.2.2-beta.1",
+  "version": "2.2.2",
   "description": "Generate Keyframes Animation",
   "keywords": [
     "util",
