@@ -161,6 +161,18 @@ gka 图片目录 -t 模板名
     - 生成 canvas 文件，`开启空白裁剪优化`✓ `相同帧图片复用`✓ `开启合图优化`✓ 
     - [Github 地址](https://github.com/gkajs/gka-tpl-canvas)
 
+#### 其他模板列表
+
+- svg 
+
+    - 生成 svg 动画文件，`开启空白裁剪优化`✓ `相同帧图片复用`✓ `开启合图优化`✓ `自适应缩放雪碧图`✓ 
+    - [Github 地址](https://github.com/gkajs/gka-tpl-svg)
+    
+- createjs 
+
+    - 生成 createjs 精灵图动画文件，`开启空白裁剪优化`✓ `相同帧图片复用`✓ `开启合图优化`✓ 
+    - [Github 地址](https://github.com/gkajs/gka-tpl-createjs)
+    
 #### 增加模板
 
 模板支持动态增加，只需安装需要的模板。即时安装，即刻可用。
