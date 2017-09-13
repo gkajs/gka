@@ -292,6 +292,3 @@ Copyright (c) 2017 - present, joeyguo
 - v2.2.0 剥离 template、增加 template 动态增加方案、支持使用本地 template
 - v2.2.1 增加指定生成目录地址 -o、template 支持多个图片目录处理
 - v2.2.2 优化支持相对路径、增加文件夹无图片时提示
-
-
-
