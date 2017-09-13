@@ -5,7 +5,7 @@
     "frames": [
         {
             "name": "gkatest_1.png",
-            "file": "prefix-1.png",
+            "file": "prefix-sprites.png",
             "x": 0,
             "y": 0,
             "width": 50,
@@ -13,7 +13,7 @@
         },
         {
             "name": "gkatest_2.png",
-            "file": "prefix-2.png",
+            "file": "prefix-sprites.png",
             "x": 50,
             "y": 0,
             "width": 50,
@@ -21,7 +21,7 @@
         },
         {
             "name": "gkatest_3.png",
-            "file": "prefix-3.png",
+            "file": "prefix-sprites.png",
             "x": 0,
             "y": 50,
             "width": 50,
@@ -29,7 +29,7 @@
         },
         {
             "name": "gkatest_4.png",
-            "file": "prefix-4.png",
+            "file": "prefix-sprites.png",
             "x": 50,
             "y": 50,
             "width": 50,
@@ -37,7 +37,7 @@
         },
         {
             "name": "gkatest_5.png",
-            "file": "prefix-5.png",
+            "file": "prefix-sprites.png",
             "x": 100,
             "y": 0,
             "width": 50,
@@ -45,7 +45,7 @@
         },
         {
             "name": "gkatest_6.png",
-            "file": "prefix-3.png",
+            "file": "prefix-sprites.png",
             "x": 0,
             "y": 50,
             "width": 50,
@@ -53,7 +53,7 @@
         },
         {
             "name": "gkatest_7.png",
-            "file": "prefix-2.png",
+            "file": "prefix-sprites.png",
             "x": 50,
             "y": 0,
             "width": 50,
@@ -61,7 +61,7 @@
         },
         {
             "name": "gkatest_8.png",
-            "file": "prefix-6.png",
+            "file": "prefix-sprites.png",
             "x": 100,
             "y": 50,
             "width": 50,
