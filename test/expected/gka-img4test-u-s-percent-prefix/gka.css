@@ -5,8 +5,6 @@
 
     background-repeat: no-repeat;
 
-    background-size: 300% 200%;
-
     animation-timing-function: steps(1);
     animation-fill-mode: forwards;
 
@@ -17,14 +15,14 @@
 }
 
 .prefixanimation {
-    background-image: url("./img/prefix-sprites.png");
-
     animation-name: prefixkeyframes;
     animation-duration: 0.32s;
 }
 
 @-webkit-keyframes prefixkeyframes {
     0%{
+        background-image: url("./img/prefix-sprites.png");
+        background-size: 300% 200%;
         background-position: 0% 0%;
     }
     12.50%{
