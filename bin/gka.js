@@ -63,6 +63,11 @@ if (_[0] === 'tool' || _[0] === 't' ) {
         alias : 'replace',
         describe: 'replace dir'
     })
+    .option('count', {
+        alias : 'count',
+        describe: 'sprites count',
+        type: "number"
+    })
     .option('i', {
         boolean: true,
         alias : 'info',
@@ -149,6 +154,11 @@ if (_[0] === 'tool' || _[0] === 't' ) {
         coerce: function (arg) {
             return arg //|| "n";
         }
+    })
+    .option('count', {
+        alias : 'count',
+        describe: 'sprites count',
+        type: "number"
     })
     .option('i', {
         boolean: true,
@@ -242,6 +252,8 @@ if (_[0] === 'tool' || _[0] === 't' ) {
                 algorithm: argv.algorithm,
                 // o
                 output: argv.output,
+                // count
+                spritesCount: argv.count,
 
                 __len: __len,
                 __index: i,
@@ -288,7 +300,9 @@ if (_[0] === 'tool' || _[0] === 't' ) {
                 // a
                 algorithm: argv.algorithm,
                 // o
-                output: argv.output
+                output: argv.output,
+                // count
+                spritesCount: argv.count,
             });
         })
     } else {
@@ -321,7 +335,9 @@ if (_[0] === 'tool' || _[0] === 't' ) {
             // a
             algorithm: argv.algorithm,
             // o
-            output: argv.output
+            output: argv.output,
+            // count
+            spritesCount: argv.count,
         });
     }
     
