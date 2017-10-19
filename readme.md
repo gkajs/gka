@@ -34,7 +34,7 @@
 ## 安装
 
 ```bash
-sudo npm i gka -g
+npm i gka -g
 ```
 
 ## 开始使用
@@ -188,7 +188,7 @@ gka 图片目录 -t 模板名
 模板支持动态增加，只需安装需要的模板。即时安装，即刻可用。
 
 ```bash
-sudo npm i gka-tpl-模板名 -g
+npm i gka-tpl-模板名 -g
 ```
 
 ### 示例
