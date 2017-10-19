@@ -122,6 +122,8 @@ gka <dir> [options]
 -t, --template <string>       #  生成动画文件模板 默认 n ，可选模见 template list
 
 -a, --algorithm <string>      #  合图布局模式 默认 binary-tree，可选 top-down | left-right ..
+
+--count <number>              #  生成多合图，指定几张图片合成一张合图，可选
 ```
 
 ### Templates 模板列表
@@ -151,6 +153,11 @@ gka 图片目录 -t 模板名
     - 合图模板，`相同帧图片复用`✓ `开启合图优化`✓ 
     - [Github 地址](https://github.com/gkajs/gka-tpl-sprites)
 
+- cs 
+
+    - 空白裁剪+合图模板，`开启空白裁剪优化`✓ `相同帧图片复用`✓ `开启合图优化`✓ 
+    - [Github 地址](https://github.com/gkajs/gka-tpl-cs)
+
 - percent 
 
     - 自适应缩放雪碧图模板，`相同帧图片复用`✓ `开启合图优化`✓ 
@@ -161,8 +168,6 @@ gka 图片目录 -t 模板名
     - 生成 canvas 文件，`开启空白裁剪优化`✓ `相同帧图片复用`✓ `开启合图优化`✓ 
     - [Github 地址](https://github.com/gkajs/gka-tpl-canvas)
 
-#### 其他模板列表
-
 - svg 
 
     - 生成 svg 动画文件，`开启空白裁剪优化`✓ `相同帧图片复用`✓ `开启合图优化`✓ `自适应缩放雪碧图`✓ 
@@ -172,7 +177,12 @@ gka 图片目录 -t 模板名
 
     - 生成 createjs 精灵图动画文件，`开启空白裁剪优化`✓ `相同帧图片复用`✓ `开启合图优化`✓ 
     - [Github 地址](https://github.com/gkajs/gka-tpl-createjs)
-    
+
+- studiojs 
+
+    - 生成 studiojs 精灵图动画文件，`开启空白裁剪优化`✓ `相同帧图片复用`✓ `开启合图优化`✓ 
+    - [Github 地址](https://github.com/gkajs/gka-tpl-studiojs)
+
 #### 增加模板
 
 模板支持动态增加，只需安装需要的模板。即时安装，即刻可用。
@@ -230,6 +240,8 @@ gka tool <dir> [options]
 -i, --info                    #  输出信息文件
 
 -a, --algorithm <string>      #  合图布局模式 默认 binary-tree，可选 top-down | left-right ..
+
+--count <number>              #  生成多合图，指定几张图片合成一张合图，可选
 
 -r, --replace                 #  压缩源图片时使用，-mr
 ```
@@ -293,3 +305,4 @@ Copyright (c) 2017 - present, joeyguo
 - v2.2.1 增加指定生成目录地址 -o、template 支持多个图片目录处理
 - v2.2.2 优化支持相对路径、增加文件夹无图片时提示
 - v2.2.3 剥离 imagex、合图时输出信息file指向合图
+- v2.4.0 增加 --count 参数 用于指定几张图片合成一张合图、支持多合图生成及多合图模板动画
