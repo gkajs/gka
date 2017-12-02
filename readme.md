@@ -245,6 +245,10 @@ gka tool <dir> [options]
 
 -a, --algorithm <string>      #  合图布局模式 默认 binary-tree，可选 top-down | left-right ..
 
+--diff [boolean]              #  开启图片像素差模式
+
+--bgcolor <string>            #  为图片增加背景色，可选，支持格式：'rgb(255,205,44)'、 '#ffcd2c'
+
 --count <number>              #  生成多合图，指定几张图片合成一张合图，可选
 
 -r, --replace                 #  压缩源图片时使用，-mr
