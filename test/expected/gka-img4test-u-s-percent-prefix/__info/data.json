@@ -7,8 +7,8 @@
             "y": 0,
             "width": 50,
             "height": 50,
-            "w": 150,
-            "h": 100
+            "w": 300,
+            "h": 50
         },
         {
             "name": "gkatest_2.png",
@@ -17,48 +17,48 @@
             "y": 0,
             "width": 50,
             "height": 50,
-            "w": 150,
-            "h": 100
+            "w": 300,
+            "h": 50
         },
         {
             "name": "gkatest_3.png",
-            "file": "prefix-sprites.png",
-            "x": 0,
-            "y": 50,
-            "width": 50,
-            "height": 50,
-            "w": 150,
-            "h": 100
-        },
-        {
-            "name": "gkatest_4.png",
-            "file": "prefix-sprites.png",
-            "x": 50,
-            "y": 50,
-            "width": 50,
-            "height": 50,
-            "w": 150,
-            "h": 100
-        },
-        {
-            "name": "gkatest_5.png",
             "file": "prefix-sprites.png",
             "x": 100,
             "y": 0,
             "width": 50,
             "height": 50,
-            "w": 150,
-            "h": 100
+            "w": 300,
+            "h": 50
+        },
+        {
+            "name": "gkatest_4.png",
+            "file": "prefix-sprites.png",
+            "x": 150,
+            "y": 0,
+            "width": 50,
+            "height": 50,
+            "w": 300,
+            "h": 50
+        },
+        {
+            "name": "gkatest_5.png",
+            "file": "prefix-sprites.png",
+            "x": 200,
+            "y": 0,
+            "width": 50,
+            "height": 50,
+            "w": 300,
+            "h": 50
         },
         {
             "name": "gkatest_6.png",
             "file": "prefix-sprites.png",
-            "x": 0,
-            "y": 50,
+            "x": 100,
+            "y": 0,
             "width": 50,
             "height": 50,
-            "w": 150,
-            "h": 100
+            "w": 300,
+            "h": 50
         },
         {
             "name": "gkatest_7.png",
@@ -67,18 +67,18 @@
             "y": 0,
             "width": 50,
             "height": 50,
-            "w": 150,
-            "h": 100
+            "w": 300,
+            "h": 50
         },
         {
             "name": "gkatest_8.png",
             "file": "prefix-sprites.png",
-            "x": 100,
-            "y": 50,
+            "x": 250,
+            "y": 0,
             "width": 50,
             "height": 50,
-            "w": 150,
-            "h": 100
+            "w": 300,
+            "h": 50
         }
     ]
 }

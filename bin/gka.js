@@ -40,7 +40,7 @@ if (_[0] === 'tool' || _[0] === 't' ) {
         type: "boolean"
     })
     .option('a', {
-        default: 'binary-tree',
+        default: 'left-right',
         choices: ['top-down', 'left-right', 'binary-tree', 'diagonal', 'alt-diagonal'],
         alias : 'algorithm',
         describe: 'sprites layout types',
@@ -63,15 +63,24 @@ if (_[0] === 'tool' || _[0] === 't' ) {
         alias : 'replace',
         describe: 'replace dir'
     })
+    .option('i', {
+        boolean: true,
+        alias : 'info',
+        describe: 'get images info',
+    })
     .option('count', {
         alias : 'count',
         describe: 'sprites count',
         type: "number"
     })
-    .option('i', {
+    .option('diff', {
         boolean: true,
-        alias : 'info',
-        describe: 'get images info',
+        alias : 'diff',
+        describe: 'diff images',
+    })
+    .option('bgcolor', {
+        alias : 'bgcolor',
+        describe: 'set images bgcolor',
     })
     .help('h')
     .example('gka tool E:\\img -s')
@@ -116,6 +125,13 @@ if (_[0] === 'tool' || _[0] === 't' ) {
         replace: argv.replace,
         // o
         output: argv.output,
+        // count
+        spritesCount: argv.count,
+        // diff
+        diff: argv.diff,
+        // bgcolor
+        bgColor: argv.bgcolor,
+
         cmd: cmd,
     });
 
@@ -126,6 +142,17 @@ if (_[0] === 'tool' || _[0] === 't' ) {
         alias : 'unique',
         default: true,
         describe: 'remove duplicates'
+    })
+    .option('c', {
+        boolean: true,
+        alias : 'crop',
+        describe: 'crop images',
+    })
+    .option('s', {
+        boolean: true,
+        alias : 'sprites',
+        describe: 'sprites images',
+        type: "boolean"
     })
     .option('m', {
         boolean: true,
@@ -160,13 +187,22 @@ if (_[0] === 'tool' || _[0] === 't' ) {
         describe: 'sprites count',
         type: "number"
     })
+    .option('diff', {
+        boolean: true,
+        alias : 'diff',
+        describe: 'diff images',
+    })
+    .option('bgcolor', {
+        alias : 'bgcolor',
+        describe: 'set images bgcolor',
+    })
     .option('i', {
         boolean: true,
         alias : 'info',
         describe: 'get images info',
     })
     .option('a', {
-        default: 'binary-tree',
+        default: 'left-right',
         choices: ['top-down', 'left-right', 'binary-tree', 'diagonal', 'alt-diagonal'],
         alias : 'algorithm',
         describe: 'sprites layout types',
@@ -254,6 +290,10 @@ if (_[0] === 'tool' || _[0] === 't' ) {
                 output: argv.output,
                 // count
                 spritesCount: argv.count,
+                // diff
+                diff: argv.diff,
+                // bgcolor
+                bgColor: argv.bgcolor,
 
                 __len: __len,
                 __index: i,
@@ -303,6 +343,10 @@ if (_[0] === 'tool' || _[0] === 't' ) {
                 output: argv.output,
                 // count
                 spritesCount: argv.count,
+                // diff
+                diff: argv.diff,
+                // bgcolor
+                bgColor: argv.bgcolor,
             });
         })
     } else {
@@ -338,6 +382,10 @@ if (_[0] === 'tool' || _[0] === 't' ) {
             output: argv.output,
             // count
             spritesCount: argv.count,
+            // diff
+            diff: argv.diff,
+            // bgcolor
+            bgColor: argv.bgcolor,
         });
     }
     

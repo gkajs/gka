@@ -22,32 +22,32 @@
 @-webkit-keyframes prefixkeyframes {
     0%{
         background-image: url("./img/prefix-sprites.png");
-        background-size: 300% 200%;
+        background-size: 600% 100%;
         background-position: 0% 0%;
     }
     12.50%{
-        background-position: 50% 0%;
+        background-position: 20% 0%;
     }
     25.00%{
-        background-position: 0% 100%;
+        background-position: 40% 0%;
     }
     37.50%{
-        background-position: 50% 100%;
+        background-position: 60% 0%;
     }
     50.00%{
-        background-position: 100% 0%;
+        background-position: 80% 0%;
     }
     62.50%{
-        background-position: 0% 100%;
+        background-position: 40% 0%;
     }
     75.00%{
-        background-position: 50% 0%;
+        background-position: 20% 0%;
     }
     87.50%{
-        background-position: 100% 100%;
+        background-position: 100% 0%;
     }
     100%{
-        background-position: 100% 100%;
+        background-position: 100% 0%;
     }
 
 }
