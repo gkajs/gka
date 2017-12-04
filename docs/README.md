@@ -123,11 +123,11 @@ gka <dir> [options]
 
 -a, --algorithm <string>      #  合图布局模式 默认 left-right，可选 binary-tree | top-down ..
 
---diff [boolean]              #  开启图片像素差模式
-
 --bgcolor <string>            #  为图片增加背景色，可选，支持格式：'rgb(255,205,44)'、 '#ffcd2c'
 
 --count <number>              #  生成多合图，指定几张图片合成一张合图，可选
+
+--diff [boolean]              #  开启图片像素差模式，与 gka-tpl-canvas 结合使用
 ```
 
 ### Templates 模板列表
@@ -245,6 +245,10 @@ gka tool <dir> [options]
 
 -a, --algorithm <string>      #  合图布局模式 默认 binary-tree，可选 top-down | left-right ..
 
+--diff [boolean]              #  开启图片像素差模式
+
+--bgcolor <string>            #  为图片增加背景色，可选，支持格式：'rgb(255,205,44)'、 '#ffcd2c'
+
 --count <number>              #  生成多合图，指定几张图片合成一张合图，可选
 
 -r, --replace                 #  压缩源图片时使用，-mr
@@ -310,3 +314,4 @@ Copyright (c) 2017 - present, joeyguo
 - v2.2.2 优化支持相对路径、增加文件夹无图片时提示
 - v2.2.3 剥离 imagex、合图时输出信息file指向合图
 - v2.4.0 增加 --count 参数 用于指定几张图片合成一张合图、支持多合图生成及多合图模板动画
+- v2.5.0 增加 --bgcolor 为图片增加背景色、增加 --diff 参数 用于开启像素复用优化、当生成的目标目录保持新增，不覆盖
