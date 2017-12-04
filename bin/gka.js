@@ -73,6 +73,11 @@ if (_[0] === 'tool' || _[0] === 't' ) {
         describe: 'sprites count',
         type: "number"
     })
+    .option('split', {
+        boolean: true,
+        alias : 'split',
+        describe: 'split images',
+    })
     .option('diff', {
         boolean: true,
         alias : 'diff',
@@ -127,6 +132,8 @@ if (_[0] === 'tool' || _[0] === 't' ) {
         output: argv.output,
         // count
         spritesCount: argv.count,
+        // split
+        split: argv.split,
         // diff
         diff: argv.diff,
         // bgcolor
@@ -186,6 +193,11 @@ if (_[0] === 'tool' || _[0] === 't' ) {
         alias : 'count',
         describe: 'sprites count',
         type: "number"
+    })
+    .option('split', {
+        boolean: true,
+        alias : 'split',
+        describe: 'split images',
     })
     .option('diff', {
         boolean: true,
@@ -290,6 +302,8 @@ if (_[0] === 'tool' || _[0] === 't' ) {
                 output: argv.output,
                 // count
                 spritesCount: argv.count,
+                // split
+                split: argv.split,
                 // diff
                 diff: argv.diff,
                 // bgcolor
@@ -343,6 +357,8 @@ if (_[0] === 'tool' || _[0] === 't' ) {
                 output: argv.output,
                 // count
                 spritesCount: argv.count,
+                // split
+                split: argv.split,
                 // diff
                 diff: argv.diff,
                 // bgcolor
@@ -382,6 +398,8 @@ if (_[0] === 'tool' || _[0] === 't' ) {
             output: argv.output,
             // count
             spritesCount: argv.count,
+            // split
+            split: argv.split,
             // diff
             diff: argv.diff,
             // bgcolor
