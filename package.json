@@ -1,6 +1,6 @@
 {
   "name": "gka",
-  "version": "2.5.0-beta.4",
+  "version": "2.5.0-beta.5",
   "description": "Generate Keyframes Animation",
   "keywords": [
     "util",
@@ -29,7 +29,7 @@
   "license": "MIT",
   "devDependencies": {},
   "dependencies": {
-    "gka-tpl-canvas": "^1.1.*",
+    "gka-tpl-canvas": "^1.1.3",
     "gka-tpl-createjs": "^1.1.*",
     "gka-tpl-crop": "^1.1.*",
     "gka-tpl-cs": "^1.1.*",
