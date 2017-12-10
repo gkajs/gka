@@ -127,7 +127,9 @@ gka <dir> [options]
 
 --count <number>              #  生成多合图，指定几张图片合成一张合图，可选
 
---diff [boolean]              #  开启图片像素差模式，与 gka-tpl-canvas 结合使用
+--diff [boolean]              #  开启图片像素差模式，与 -t canvas 结合使用
+
+--split [boolean]             #  开启图片拆分模式，与 -t canvas 结合使用
 ```
 
 ### Templates 模板列表
@@ -164,6 +166,7 @@ gka 图片目录 -t 模板名
 
 - percent 
 
+    - 使用该方案可进行移动端多倍图适配
     - 自适应缩放雪碧图模板，`相同帧图片复用`✓ `开启合图优化`✓ 
     - [Github 地址](https://github.com/gkajs/gka-tpl-sprites)
 
@@ -247,6 +250,8 @@ gka tool <dir> [options]
 
 --diff [boolean]              #  开启图片像素差模式
 
+--split [boolean]             #  开启图片拆分模式
+
 --bgcolor <string>            #  为图片增加背景色，可选，支持格式：'rgb(255,205,44)'、 '#ffcd2c'
 
 --count <number>              #  生成多合图，指定几张图片合成一张合图，可选
@@ -314,4 +319,4 @@ Copyright (c) 2017 - present, joeyguo
 - v2.2.2 优化支持相对路径、增加文件夹无图片时提示
 - v2.2.3 剥离 imagex、合图时输出信息file指向合图
 - v2.4.0 增加 --count 参数 用于指定几张图片合成一张合图、支持多合图生成及多合图模板动画
-- v2.5.0 增加 --bgcolor 为图片增加背景色、增加 --diff 参数 用于开启像素复用优化、当生成的目标目录保持新增，不覆盖
+- v2.5.0 增加 --bgcolor 为图片增加背景色、增加 --diff 参数 用于开启像素复用优化、增加 --split 参数 用于开启图片拆分优化、当生成的目标目录保持新增，不覆盖、修复全透明图片空白裁剪的问题
