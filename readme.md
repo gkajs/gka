@@ -9,6 +9,7 @@
 </p>
 <p align="center">
 <a href="https://www.npmjs.org/package/gka"><img src="https://img.shields.io/npm/v/gka.svg?style=flat"></a>
+<a href="https://www.npmjs.org/package/gka"><img src="https://img.shields.io/node/v/gka.svg?maxAge=2592000"></a>
 <a href="https://github.com/joeyguo/gka#license"><img src="https://img.shields.io/badge/license-MIT-blue.svg"></a>
 <a href="https://github.com/joeyguo/gka"><img src="https://camo.githubusercontent.com/d4e0f63e9613ee474a7dfdc23c240b9795712c96/68747470733a2f2f696d672e736869656c64732e696f2f62616467652f5052732d77656c636f6d652d627269676874677265656e2e737667"></a>
 </p>
@@ -248,13 +249,13 @@ gka tool <dir> [options]
 
 -a, --algorithm <string>      #  合图布局模式 默认 binary-tree，可选 top-down | left-right ..
 
---diff [boolean]              #  开启图片像素差模式
-
---split [boolean]             #  开启图片拆分模式
-
 --bgcolor <string>            #  为图片增加背景色，可选，支持格式：'rgb(255,205,44)'、 '#ffcd2c'
 
 --count <number>              #  生成多合图，指定几张图片合成一张合图，可选
+
+--diff [boolean]              #  开启图片像素差模式
+
+--split [boolean]             #  开启图片拆分模式
 
 -r, --replace                 #  压缩源图片时使用，-mr
 ```
