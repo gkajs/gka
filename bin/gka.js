@@ -107,7 +107,8 @@ if (_[0] === 'tool' || _[0] === 't' ) {
         return;
     }
 
-    gka(dir, {
+    gka({
+        src: dir,
         // c
         crop: argv.crop,
         // s
@@ -274,7 +275,8 @@ if (_[0] === 'tool' || _[0] === 't' ) {
         tpl.config = isArray(tpl.config)? tpl.config: [tpl.config];
 
         for (var i = 0, __len = tpl.config.length; i < __len; i++) {
-            gka(dir, {
+            gka({
+                src: dir,
                 // c
                 crop: argv.c,
                 // s
@@ -332,7 +334,8 @@ if (_[0] === 'tool' || _[0] === 't' ) {
               return val.toLowerCase();
             }
           }]).then((answers) => {
-            gka(dir, {
+            gka({
+                src: dir,
                 // c
                 crop: argv.c,
                 // s
@@ -373,7 +376,8 @@ if (_[0] === 'tool' || _[0] === 't' ) {
         
         var tpl = tplMap['gka-tpl-' + template];
 
-        gka(dir, {
+        gka({
+            src: dir,            
             // c
             crop: argv.c,
             // s
