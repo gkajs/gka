@@ -17,37 +17,47 @@
 .prefixanimation {
     animation-name: prefixkeyframes;
     animation-duration: 0.32s;
+    background-image: url("./img/prefix-sprites.png");
+    background-size: 600% 100%;
+
 }
 
 @-webkit-keyframes prefixkeyframes {
     0%{
-        background-image: url("./img/prefix-sprites.png");
-        background-size: 600% 100%;
         background-position: 0% 0%;
+        background-size: 600% 100%;
     }
     12.50%{
         background-position: 20% 0%;
+        background-size: 600% 100%;
     }
     25.00%{
         background-position: 40% 0%;
+        background-size: 600% 100%;
     }
     37.50%{
         background-position: 60% 0%;
+        background-size: 600% 100%;
     }
     50.00%{
         background-position: 80% 0%;
+        background-size: 600% 100%;
     }
     62.50%{
         background-position: 40% 0%;
+        background-size: 600% 100%;
     }
     75.00%{
         background-position: 20% 0%;
+        background-size: 600% 100%;
     }
     87.50%{
         background-position: 100% 0%;
+        background-size: 600% 100%;
     }
     100%{
         background-position: 100% 0%;
+        background-size: 600% 100%;
     }
 
 }
