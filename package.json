@@ -1,6 +1,6 @@
 {
   "name": "gka",
-  "version": "2.5.2",
+  "version": "2.5.3",
   "description": "Generate Keyframes Animation",
   "keywords": [
     "util",
@@ -32,10 +32,10 @@
   },
   "devDependencies": {},
   "dependencies": {
-    "gka-tpl-canvas": "^1.1.4",
+    "gka-tpl-canvas": "^1.1.5",
     "gka-tpl-createjs": "^1.1.2",
     "gka-tpl-crop": "^1.1.1",
-    "gka-tpl-cs": "^1.1.1",
+    "gka-tpl-cs": "^1.1.2",
     "gka-tpl-normal": "^1.1.1",
     "gka-tpl-percent": "^1.1.1",
     "gka-tpl-sprites": "^1.1.1",

@@ -22,7 +22,8 @@ describe('gka actual test', function () {
     before(function runFn (done) {
         // gka dir -cgr -f 0.08
         // ridding cut g duration 0.08
-        gka(imgFolder, {
+        gka({
+            src: imgFolder,
             // c
             // crop: true,
             // s
@@ -63,7 +64,8 @@ describe('gka actual test', function () {
     before(function runFn (done) {
         // gka dir -sr -g pct -p gka- -a left-right
         // sprites ridding gen pct algorithm left-right prefix gka-
-        gka(imgFolder, {
+        gka({
+            src: imgFolder,
             // c
             // crop: false,
             // s
