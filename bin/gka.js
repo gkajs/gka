@@ -5,11 +5,12 @@ var yargs = require('yargs'),
     inquirer = require('inquirer'),
     fs = require("fs"),
     path = require("path"),
+    pkg = require('../package.json'),
     gka = require("../lib/gka"),
     tpl = require("../lib/core/tpl"),
-
-    pkg = require('../package.json'),
     _ = argv._;
+
+require('update-notifier')({pkg: pkg}).notify({defer: true});
 
 var cmd = "";
 
