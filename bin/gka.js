@@ -320,9 +320,7 @@ if (_[0] === 'tool' || _[0] === 't' ) {
     }
 
     var tplMap = tpl();
-    var tplList = Object.keys(tplMap).map(function(item){
-            return item.substring(8);
-        });
+    var tplList = Object.keys(tplMap).map(t => t.substring(8));
     
     if (template === "") {
 
