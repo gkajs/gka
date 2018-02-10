@@ -246,9 +246,7 @@ if (_[0] === 'tool' || _[0] === 't' ) {
     var stats = null;
     try {
         stats = fs.statSync(template);
-        console.log()
-        console.log("[local template]:", template)
-        console.log()
+        console.log("\n[local template]:", template)
     } catch(e) {}
 
     if (stats && stats.isDirectory()) {
