@@ -186,7 +186,7 @@ if (_[0] === 'tool' || _[0] === 't' ) {
         describe: 'html/js/css template',
         type: "string",
         // demandOption: true,
-        default: "n",
+        default: "css",
         coerce: function (arg) {
             return arg //|| "n";
         }
@@ -249,7 +249,7 @@ if (_[0] === 'tool' || _[0] === 't' ) {
         console.log("\n[local template]:", template)
     } catch(e) {}
 
-    if (stats && stats.isDirectory()) {
+    if (false && stats && stats.isDirectory()) {
 
         function isArray(obj) {
             return Object.prototype.toString.call(obj) == '[object Array]';
@@ -317,8 +317,8 @@ if (_[0] === 'tool' || _[0] === 't' ) {
         return;
     }
 
-    var tplMap = tpl();
-    var tplList = Object.keys(tplMap).map(t => t.substring(8));
+    // var tplMap = tpl();
+    // var tplList = Object.keys(tplMap).map(t => t.substring(8));
     
     if (template === "") {
 
@@ -369,12 +369,12 @@ if (_[0] === 'tool' || _[0] === 't' ) {
         // 内置别名
         template = template === 'c'? 'crop': template;
         template = template === 's'? 'sprites': template;
-        template = template === 'n'? 'normal': template;
+        // template = template === 'n'? 'normal': template;
         
-        var tpl = tplMap['gka-tpl-' + template];
+        // var tpl = tplMap['gka-tpl-' + template];
 
         gka({
-            src: dir,            
+            dir: dir,            
             // c
             crop: argv.c,
             // s
@@ -386,9 +386,10 @@ if (_[0] === 'tool' || _[0] === 't' ) {
             // i
             info: argv.info,
             // tpl
-            tpl: tpl,
-            tplName: template,
-            tplList: tplList,
+            template: template,
+            // tpl: tpl,
+            // tplName: template,
+            // tplList: tplList,
             // p
             prefix: argv.prefix,
             // f
