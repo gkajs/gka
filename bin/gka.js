@@ -149,7 +149,7 @@ if (_[0] === 'tool' || _[0] === 't' ) {
     .option('u', {
         boolean: true,
         alias : 'unique',
-        default: true,
+        default: false,
         describe: 'remove duplicates'
     })
     .option('c', {
@@ -308,7 +308,7 @@ if (_[0] === 'tool' || _[0] === 't' ) {
                 // diff
                 diff: argv.diff,
                 // bgcolor
-                bgColor: argv.bgcolor,
+                bgcolor: argv.bgcolor,
 
                 __len: __len,
                 __index: i,
@@ -362,7 +362,7 @@ if (_[0] === 'tool' || _[0] === 't' ) {
                 // diff
                 diff: argv.diff,
                 // bgcolor
-                bgColor: argv.bgcolor,
+                bgcolor: argv.bgcolor,
             });
         })
     } else {
@@ -405,7 +405,7 @@ if (_[0] === 'tool' || _[0] === 't' ) {
             // diff
             diff: argv.diff,
             // bgcolor
-            bgColor: argv.bgcolor,
+            bgcolor: argv.bgcolor,
         });
     }
     
