@@ -1,47 +1,32 @@
 var gka = require("../lib/gka");
-var tpl = require("../lib/core/tpl");
 var fs = require('fs');
 var path = require('path');
 var md5 = require('md5');
 var assert = require('assert');
 
-var imgFolder = path.join(__dirname, "img4test");
 var expectedDir = path.join(__dirname, 'expected');
-var expectedDir_normal = path.join(expectedDir, 'gka-img4test-c-u-crop');
-var expectedDir_sprites = path.join(expectedDir, 'gka-img4test-u-s-percent-prefix');
 
-var targetDir_normal = path.join(__dirname, 'gka-img4test-c-u-crop');
-var targetDir_sprites = path.join(__dirname, 'gka-img4test-u-s-percent-prefix');
+var imgFolderSplit = path.join(__dirname, "split");
 
-var tplMap = tpl();
-var tplList = Object.keys(tplMap).map(function(item){
-            return item.substring(8);
-        });
+var expectedDir_split = path.join(expectedDir, 'gka-split-canvas-c-u-s-a-sp');
+var targetDir_split = path.join(__dirname, 'gka-split-canvas-c-u-s-a-sp');
+
 describe('gka actual test', function () {
 
     before(function runFn (done) {
-        // gka dir -cgr -f 0.08
-        // ridding cut g duration 0.08
         gka({
-            src: imgFolder,
-            // c
-            // crop: true,
-            // s
-            // sprites: false, 
-            // t 
-            tiny: false,
-            // r
+            dir: imgFolderSplit,
+            split: true,
+            crop: true,
             unique: true,
-            // i
-            info: true,
-            // g
-            tpl: tplMap['gka-tpl-crop'],
-            tplName: 'crop',
-            tplList: tplList,
-            // p
-            // prefix: "gka",
-            // f
+            sprites: true, 
+
+            template: 'canvas',
+            prefix: "a",
             frameduration: 0.08,
+
+            mini: false,
+            info: false,
         });
 
         setTimeout(()=>{
@@ -50,58 +35,15 @@ describe('gka actual test', function () {
     });
 
     after(function cleanup () {
-        deleteall(targetDir_normal);
+        deleteall(targetDir_split);
     });
 
-    it('gka-normal：gka dir -i -t c -f 0.08', function () {
-        assert.deepEqual(getDirFile2Md5(expectedDir_normal), getDirFile2Md5(targetDir_normal), 'expect the same');
-    });
-
-});
-
-describe('gka actual test', function () {
-
-    before(function runFn (done) {
-        // gka dir -sr -g pct -p gka- -a left-right
-        // sprites ridding gen pct algorithm left-right prefix gka-
-        gka({
-            src: imgFolder,
-            // c
-            // crop: false,
-            // s
-            // sprites: true, 
-            // t 
-            tiny: false,
-            // r
-            unique: true,
-            // i
-            info: true,
-            // t
-            tpl: tplMap['gka-tpl-percent'],
-            tplName: 'percent',
-            tplList: tplList,
-            // p
-            prefix: "prefix",
-            // f
-            frameduration: 0.04,
-            // a
-            // algorithm: "left-right",
-        });
-
-        setTimeout(()=>{
-            done();
-        }, 2000);
-    });
-
-    after(function cleanup () {
-        deleteall(targetDir_sprites);
-    });
-
-    it('gka-sprites：gka dir -i -t percent -p prefix -a left-right', function () {
-        assert.deepEqual(getDirFile2Md5(expectedDir_sprites), getDirFile2Md5(targetDir_sprites), 'expect the same');
+    it('gka dir --split -cus -p a -t canvas -f 0.08', function () {
+        assert.deepEqual(getDirFile2Md5(expectedDir_split), getDirFile2Md5(targetDir_split), 'expect the same');
     });
 
 });
+
 
 function getFiles (dir, _files){
     _files = _files || [];
@@ -134,10 +76,13 @@ function deleteall(path) {
 }
 
 function getDirFile2Md5 (dir) {
+    console.log(dir)
     var filepaths = getFiles(dir);
     var name2md5 = {};
     for (var i = 0, data, filepath; i < filepaths.length; i++) {
         filepath = filepaths[i];
+        if (filepath.indexOf('.DS_Store') > -1) continue;
+
         data = fs.readFileSync(filepath);
         name2md5[path.relative(dir, filepaths[i])] = md5(data);
     }
