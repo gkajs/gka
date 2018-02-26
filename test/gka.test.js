@@ -3,47 +3,47 @@ var fs = require('fs');
 var path = require('path');
 var md5 = require('md5');
 var assert = require('assert');
-
+var execSync = require('child_process').execSync;
 var expectedDir = path.join(__dirname, 'expected');
 
-var imgFolderSplit = path.join(__dirname, "split");
+// --- config -----
+// 不删除生成文件
+var afterDelete = true;
 
-var expectedDir_split = path.join(expectedDir, 'gka-split-canvas-c-u-s-a-sp');
-var targetDir_split = path.join(__dirname, 'gka-split-canvas-c-u-s-a-sp');
+// 测试的方法集合
+var commanderList = [
+    'node ./bin/gka.js ./test/split',
+    'node ./bin/gka.js ./test/split -t canvas',
+    'node ./bin/gka.js ./test/split -t svg',
+    'node ./bin/gka.js ./test/split --split -cus -p a -t canvas -f 0.08',
+]
+// -----------
 
-describe('gka actual test', function () {
-
-    before(function runFn (done) {
-        gka({
-            dir: imgFolderSplit,
-            split: true,
-            crop: true,
-            unique: true,
-            sprites: true, 
-
-            template: 'canvas',
-            prefix: "a",
-            frameduration: 0.08,
-
-            mini: false,
-            info: false,
+for (var i = 0, commander; i < commanderList.length; i++) {
+    commander = commanderList[i];
+    ((commander) => {
+        describe(commander, function () {
+            var output = '';
+            before(function runFn (done) {
+                var s = execSync(commander).toString();
+                s.replace(/\[output dir\]: "(.*?)"/,function($0,$1){
+                    output = $1;
+                });
+                output = path.basename(output);
+                setTimeout(()=>{
+                    done();
+                }, 2000);
+            });
+            after(function cleanup () {
+                console.log(output)
+                afterDelete && deleteall(path.join(__dirname, output));
+            });
+            it(commander, function () {
+                assert.deepEqual(getDirFile2Md5(path.join(expectedDir, output)), getDirFile2Md5(path.join(__dirname, output)), 'expect the same');
+            });
         });
-
-        setTimeout(()=>{
-            done();
-        }, 2000);
-    });
-
-    after(function cleanup () {
-        deleteall(targetDir_split);
-    });
-
-    it('gka dir --split -cus -p a -t canvas -f 0.08', function () {
-        assert.deepEqual(getDirFile2Md5(expectedDir_split), getDirFile2Md5(targetDir_split), 'expect the same');
-    });
-
-});
-
+    })(commander)
+}
 
 function getFiles (dir, _files){
     _files = _files || [];
@@ -76,7 +76,6 @@ function deleteall(path) {
 }
 
 function getDirFile2Md5 (dir) {
-    console.log(dir)
     var filepaths = getFiles(dir);
     var name2md5 = {};
     for (var i = 0, data, filepath; i < filepaths.length; i++) {
