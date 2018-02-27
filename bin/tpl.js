@@ -1,20 +1,11 @@
-/**
- * GKA (generate keyframes animation)
- * author: joeyguo
- * HomePage: https://github.com/joeyguo/gka
- * MIT Licensed.
- *
- * tpl
- */
-
 var path  = require("path"),
 	fs    = require("fs"),
     spawn = require('cross-spawn'),
-    pkg   = require('../../package.json');
+    pkg   = require('../package.json');
 
-var gkaNodeModulesDir = path.join(__dirname, '..', '..', 'node_modules');
+var gkaNodeModulesDir = path.join(__dirname, '..', 'node_modules');
 
-gkaNodeModulesDir = fs.existsSync(gkaNodeModulesDir)? gkaNodeModulesDir: path.join(__dirname, '..', '..', '..');
+gkaNodeModulesDir = fs.existsSync(gkaNodeModulesDir)? gkaNodeModulesDir: path.join(__dirname, '..', '..');
 
 function getNodePath (argument) {
     var ps = spawn.sync('npm', ['root', '-g'], {}),
@@ -59,21 +50,29 @@ function get(dir, name, type) {
     return fs.existsSync(file)? require(file): null;
 }
 
-var result = {};
+// var result = {};
 
-function setTplMap(name, dir){
-    result[name] = {
-        config: get(dir, name, "gka.config.js"),
-        engine: get(dir, name, "index.js"),
-    };
+// function setTplMap(name, dir){
+//     result[name] = get(dir, name, "index.js");
+// }
+
+var result = [];
+
+function setTplMap(name){
+    if (result.indexOf(name) === -1) {
+        result.push(name);
+    }
 }
 
-module.exports = function() {
+function getAllTpls() {
+
+    var localTpls = ['css', 'canvas', 'svg'];
+    result.concat(localTpls);
 
     getPkgTpls();
+    getGlobalTpls();
     
-    // 全局的 tpl 将覆盖 gka 自带的
-    getGlobalTpls(); 
-
     return result;
-};
+}
+
+module.exports = getAllTpls;

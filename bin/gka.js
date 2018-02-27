@@ -6,146 +6,14 @@ var yargs = require('yargs'),
     fs = require("fs"),
     path = require("path"),
     pkg = require('../package.json'),
+    tpl = require("./tpl"),
+    adaptTpl_lt_2_6_0 = require("./adapt").adaptTpl_lt_2_6_0,
     gka = require("../lib/gka"),
-    tpl = require("../lib/core/tpl"),
     _ = argv._;
 
 require('update-notifier')({pkg: pkg}).notify({defer: true});
 
-var cmd = "";
-
-if (_[0] === 'tool' || _[0] === 't' ) {
-    cmd = "tool";
-
-    argv = yargs
-    .usage('\nUsage: gka tool <dir> <option>')
-    .option('u', {
-        boolean: true,
-        alias : 'unique',
-        describe: 'remove duplicates',
-    })
-    .option('c', {
-        boolean: true,
-        alias : 'crop',
-        describe: 'crop images',
-    })
-    .option('m', {
-        boolean: true,
-        alias : 'mini',
-        describe: 'minify images',
-    })
-    .option('s', {
-        boolean: true,
-        alias : 'sprites',
-        describe: 'sprites images',
-        type: "boolean"
-    })
-    .option('a', {
-        default: 'left-right',
-        choices: ['top-down', 'left-right', 'binary-tree', 'diagonal', 'alt-diagonal'],
-        alias : 'algorithm',
-        describe: 'sprites layout types',
-    })
-    .option('p', {
-        type: "string",
-        alias : 'prefix',
-        describe: 'rename with prefix',
-        coerce: function (arg) {
-            return arg || "prefix";
-        }
-    })
-    .option('o', {
-        alias : 'output',
-        describe: 'output dir path'
-    })
-    .option('r', {
-        boolean: true,
-        default: false,
-        alias : 'replace',
-        describe: 'replace dir'
-    })
-    .option('i', {
-        boolean: true,
-        alias : 'info',
-        describe: 'get images info',
-    })
-    .option('count', {
-        alias : 'count',
-        describe: 'sprites count',
-        type: "number"
-    })
-    .option('split', {
-        boolean: true,
-        alias : 'split',
-        describe: 'split images',
-    })
-    .option('diff', {
-        boolean: true,
-        alias : 'diff',
-        describe: 'diff images',
-    })
-    .option('bgcolor', {
-        alias : 'bgcolor',
-        describe: 'set images bgcolor',
-    })
-    .help('h')
-    .example('gka tool E:\\img -s')
-    .epilog('for more detailed instructions, visit https://github.com/joeyguo/gka')
-    .version()
-    .argv;
-
-    if (argv.v || argv.version || argv.V) {
-        console.log(pkg.version);
-        return;
-    }
-
-    var dir = _[1] || argv.d;
-    if (!dir) {
-        console.log();
-        console.log('[error]: ' + 'gka tool need dir !');
-        console.log('----------------------------');
-        yargs.showHelp();
-        return;
-    }
-
-    gka({
-        src: dir,
-        // c
-        crop: argv.crop,
-        // s
-        sprites: argv.sprites,
-        // m 
-        mini: argv.mini,
-        // r
-        unique: argv.unique,
-        // i
-        info: argv.info,
-        // tpl
-        tpl: argv.t || argv.tpl || argv.template,
-        // p
-        prefix: argv.prefix,
-        // f
-        frameduration: argv.frameduration,
-        // a
-        algorithm: argv.algorithm,
-        // r
-        replace: argv.replace,
-        // o
-        output: argv.output,
-        // count
-        spritesCount: argv.count,
-        // split
-        split: argv.split,
-        // diff
-        diff: argv.diff,
-        // bgcolor
-        bgColor: argv.bgcolor,
-
-        cmd: cmd,
-    });
-
-} else {
-    argv = yargs
+argv = yargs
     .option('u', {
         boolean: true,
         alias : 'unique',
@@ -155,18 +23,26 @@ if (_[0] === 'tool' || _[0] === 't' ) {
     .option('c', {
         boolean: true,
         alias : 'crop',
+        default: false,
         describe: 'crop images',
     })
     .option('s', {
         boolean: true,
         alias : 'sprites',
+        default: false,
         describe: 'sprites images',
         type: "boolean"
     })
-    .option('m', {
-        boolean: true,
-        alias : 'mini',
-        describe: 'minify images',
+    .option('a', {
+        default: 'left-right',
+        choices: ['top-down', 'left-right', 'binary-tree', 'diagonal', 'alt-diagonal'],
+        alias : 'algorithm',
+        describe: 'sprites layout types',
+    })
+    .option('count', {
+        alias : 'count',
+        describe: 'sprites count',
+        type: "number"
     })
     .option('p', {
         alias : 'prefix',
@@ -176,10 +52,11 @@ if (_[0] === 'tool' || _[0] === 't' ) {
             return arg || "prefix";
         }
     })
-    .option('f', {
-        alias : 'frameduration',
-        describe: 'frame duration',
-        type: "number",
+    .option('m', {
+        default: false,
+        boolean: true,
+        alias : 'mini',
+        describe: 'minify images',
     })
     .option('t', {
         alias : 'template',
@@ -191,17 +68,20 @@ if (_[0] === 'tool' || _[0] === 't' ) {
             return arg //|| "n";
         }
     })
-    .option('count', {
-        alias : 'count',
-        describe: 'sprites count',
-        type: "number"
+    .option('f', {
+        default: 0.04,
+        alias : 'frameduration',
+        describe: 'frame duration',
+        type: "number",
     })
     .option('split', {
+        default: false,
         boolean: true,
         alias : 'split',
         describe: 'split images',
     })
     .option('diff', {
+        default: false,
         boolean: true,
         alias : 'diff',
         describe: 'diff images',
@@ -211,15 +91,10 @@ if (_[0] === 'tool' || _[0] === 't' ) {
         describe: 'set images bgcolor',
     })
     .option('i', {
+        default: false,
         boolean: true,
         alias : 'info',
         describe: 'get images info',
-    })
-    .option('a', {
-        default: 'left-right',
-        choices: ['top-down', 'left-right', 'binary-tree', 'diagonal', 'alt-diagonal'],
-        alias : 'algorithm',
-        describe: 'sprites layout types',
     })
     .option('o', {
         alias : 'output',
@@ -227,186 +102,79 @@ if (_[0] === 'tool' || _[0] === 't' ) {
     })
     .help('h')
     .alias('h', 'help')
-    .usage('\nUsage: \n  gka <dir> [options] \n  gka tool <dir> [options]')
+    .usage('\nUsage: \n  gka <dir> [options] \n')
     .example('gka E:\\img')
     .epilog('for more detailed instructions, visit https://github.com/joeyguo/gka')
     .version()
-    // .command('tool', 'images processing tools')
     .argv;
 
-    if (argv.v || argv.version || argv.V) {
-        console.log(pkg.version);
-        return;
-    }
+if (argv.v || argv.version || argv.V) {
+    console.log(pkg.version);
+    return;
+}
 
-    var dir = _[0] || argv.d;
+var dir = _[0] || argv.d;
 
-    var template = argv.template;
-    
-    var stats = null;
-    try {
-        stats = fs.statSync(template);
-        console.log("\n[local template]:", template)
-    } catch(e) {}
+if (!dir) {
+    console.log();
+    console.log('[error]: ' + 'dir required!');
+    console.log('----------------------------');
+    yargs.showHelp();
+    return;
+}
 
-    if (false && stats && stats.isDirectory()) {
+var template = argv.template;
 
-        function isArray(obj) {
-            return Object.prototype.toString.call(obj) == '[object Array]';
+function run(argv, dir, template) {
+    gka({
+        dir: dir,
+        // u
+        unique: argv.unique,
+        // c
+        crop: argv.c,
+        // s
+        sprites: argv.s,
+        // a
+        algorithm: argv.algorithm,
+        // count
+        spritesCount: argv.count,
+        // split
+        split: argv.split,
+        // diff
+        diff: argv.diff,
+        // bgcolor
+        bgcolor: argv.bgcolor,
+        // m 
+        mini: argv.mini,
+        // p
+        prefix: argv.prefix,
+        // o
+        output: argv.output,
+        // i
+        info: argv.info,
+        // tpl
+        template: template,
+        // f
+        frameduration: argv.frameduration,
+    });
+}
+
+if (template === "") {
+    var tplList = tpl().map(t => t.substring(8));
+    inquirer.prompt([{
+        type: 'list',
+        name: 'template',
+        message: 'which template do you like: ',
+        choices: tplList,
+        filter: function (val) {
+          return val.toLowerCase();
         }
-
-        function get(dir, type) {
-            var file = path.join(dir, type);
-            return fs.existsSync(file)? require(file): null;
-        }
-
-        var tpl = {
-            config: get(template, "gka.config.js"),
-            engine: get(template, "index.js"),
-        };
-
-        var tplName = path.basename(template);
-
-        if (tplName.indexOf("gka-tpl") > -1) {
-            tplName = tplName.substring(8);
-        }
-
-        tpl.config = isArray(tpl.config)? tpl.config: [tpl.config];
-
-        for (var i = 0, __len = tpl.config.length; i < __len; i++) {
-            gka({
-                src: dir,
-                // c
-                crop: argv.c,
-                // s
-                sprites: argv.s,
-                // m 
-                mini: argv.mini,
-                // u
-                unique: argv.unique,
-                // i
-                info: argv.info,
-                // tpl
-                tpl: {
-                    config: tpl.config[i],
-                    engine: tpl.engine
-                },
-                tplName: tplName,
-                tplList: [],
-                // p
-                prefix: argv.prefix,
-                // f
-                frameduration: argv.frameduration,
-                // a
-                algorithm: argv.algorithm,
-                // o
-                output: argv.output,
-                // count
-                spritesCount: argv.count,
-                // split
-                split: argv.split,
-                // diff
-                diff: argv.diff,
-                // bgcolor
-                bgcolor: argv.bgcolor,
-
-                __len: __len,
-                __index: i,
-            });
-        }
-        return;
-    }
-
-    // var tplMap = tpl();
-    // var tplList = Object.keys(tplMap).map(t => t.substring(8));
-    
-    if (template === "") {
-
-        inquirer.prompt([{
-            type: 'list',
-            name: 'template',
-            message: 'which template do you like: ',
-            choices: tplList,
-            filter: function (val) {
-              return val.toLowerCase();
-            }
-          }]).then((answers) => {
-            gka({
-                src: dir,
-                // c
-                crop: argv.c,
-                // s
-                sprites: argv.s,
-                // m 
-                mini: argv.mini,
-                // u
-                unique: argv.unique,
-                // i
-                info: argv.info,
-                // tpl
-                tpl: tplMap['gka-tpl-' + answers.template],
-                tplName: answers.template,
-                tplList: tplList,
-                // p
-                prefix: argv.prefix,
-                // f
-                frameduration: argv.frameduration,
-                // a
-                algorithm: argv.algorithm,
-                // o
-                output: argv.output,
-                // count
-                spritesCount: argv.count,
-                // split
-                split: argv.split,
-                // diff
-                diff: argv.diff,
-                // bgcolor
-                bgcolor: argv.bgcolor,
-            });
-        })
-    } else {
-        // 内置别名
-        template = template === 'c'? 'crop': template;
-        template = template === 's'? 'sprites': template;
-        // template = template === 'n'? 'normal': template;
-        
-        // var tpl = tplMap['gka-tpl-' + template];
-
-        gka({
-            dir: dir,            
-            // c
-            crop: argv.c,
-            // s
-            sprites: argv.s,
-            // m 
-            mini: argv.mini,
-            // u
-            unique: argv.unique,
-            // i
-            info: argv.info,
-            // tpl
-            template: template,
-            // tpl: tpl,
-            // tplName: template,
-            // tplList: tplList,
-            // p
-            prefix: argv.prefix,
-            // f
-            frameduration: argv.frameduration,
-            // a
-            algorithm: argv.algorithm,
-            // o
-            output: argv.output,
-            // count
-            spritesCount: argv.count,
-            // split
-            split: argv.split,
-            // diff
-            diff: argv.diff,
-            // bgcolor
-            bgcolor: argv.bgcolor,
-        });
-    }
-    
+    }]).then((answers) => {
+        console.log(answers.template)
+        run(argv, dir, answers.template)
+    })
+} else {
+    // 兼容旧版
+    var obj = adaptTpl_lt_2_6_0(argv, template);
+    run(obj.argv, dir, obj.template)
 }
