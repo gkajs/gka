@@ -2,19 +2,19 @@
 function adapt_lt_2_6_0(argv, template) {
 
     if (template === 'c' || template === 'crop' ) {
-        argv.crop = true;
+        argv.c = true;
         template = 'css';
     }
     if (template === 's' || template === 'sprites' ) {
-        argv.sprites = true;
+        argv.s = true;
         template = 'css';
     }
     if (template === 'n' || template === 'template' ) {
         template = 'css';
     }
     if (template === 'cs') {
-        argv.crop = true;
-        argv.sprites = true;
+        argv.c = true;
+        argv.s = true;
         template = 'css';
     }
     return {
