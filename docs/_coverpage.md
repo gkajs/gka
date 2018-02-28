@@ -1,6 +1,6 @@
 ![logo](gka.svg)
 
-# GKA <small>2.4</small>
+# GKA <small>2.6</small>
 
 > 简单的、高效的帧动画生成工具.
 
