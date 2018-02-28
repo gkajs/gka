@@ -1,0 +1,40 @@
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=0,maximum-scale=1">
+    
+    <title>gka-preview</title>
+<link href="./gka.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+    <div style="position: fixed; bottom: 60px;">
+        width：<input type="range" min="0" max="1340" value="670" oninput="container.style.width=this.value+'px';">
+    </div>
+    
+    <svg id="container" viewBox="0, 0, 670, 23" style="width: 670px">
+        <foreignobject width="670" height="23">
+            <div id="gka" class="gka-base"></div>
+        </foreignobject>
+    </svg>
+    <script>
+    function preloadImage(names, cb, prefix){
+        window.gkaCache = window.gkaCache || [];
+        var n = 0,img,imgs = {};
+        names.forEach(function(name) {
+            img = new Image();
+            window.gkaCache.push(img);
+            img.onload = (function(name, img) {
+                return function() {
+                    imgs[name] = img;
+                    (++n === names.length) && cb && cb(imgs);
+                }
+            })(name, img);
+            img.src = (prefix || '') + name;
+        });
+    }
+    preloadImage(["sprites.png"], function() {
+        document.getElementById('gka').className += " animation"
+    }, "img/")
+    </script>
+</body>
+</html>

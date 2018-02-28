@@ -1,210 +1,221 @@
 <p align="center">
-  <a href ="https://github.com/joeyguo/gka"><img alt="gka" src="gka.svg"></a>
+<a href ="https://github.com/joeyguo/gka"><img alt="gka" src="https://user-images.githubusercontent.com/10385585/28497647-cfc6ceba-6fbe-11e7-9f32-9ff1895b893b.png"></a>
 </p>
 <p align="center">
-  <a href ="https://github.com/joeyguo/gka"><img alt="gka" src="https://user-images.githubusercontent.com/10385585/27863888-bb5e4826-61be-11e7-8994-4b19bb49bb22.png"></a>
+ <a href ="https://github.com/joeyguo/gka"><img alt="gka" src="https://user-images.githubusercontent.com/10385585/27863888-bb5e4826-61be-11e7-8994-4b19bb49bb22.png"></a>
 </p>
+<p align="center">
+简单的、高效的帧动画生成工具
+</p>
+<p align="center">
+<a href="https://www.npmjs.org/package/gka"><img src="https://img.shields.io/npm/v/gka.svg?style=flat"></a>
+<a href="https://www.npmjs.org/package/gka"><img src="https://img.shields.io/node/v/gka.svg?maxAge=2592001"></a>
+<a href="https://github.com/joeyguo/gka#license"><img src="https://img.shields.io/badge/license-MIT-blue.svg"></a>
+<a href="https://github.com/joeyguo/gka"><img src="https://camo.githubusercontent.com/d4e0f63e9613ee474a7dfdc23c240b9795712c96/68747470733a2f2f696d672e736869656c64732e696f2f62616467652f5052732d77656c636f6d652d627269676874677265656e2e737667"></a>
+</p>
+
+--- 
 
 # GKA
 
-> 简单的、高效的帧动画生成工具.
-
-<a href="https://www.npmjs.org/package/gka"><img src="https://img.shields.io/npm/v/gka.svg?style=flat"></a>
-<a href="https://github.com/joeyguo/gka#license"><img src="https://img.shields.io/badge/license-MIT-blue.svg"></a>
-
 [gka](https://github.com/joeyguo/gka) 是一款简单的、高效的帧动画生成工具，图片处理工具。
 
-通过对图片集进行处理，一键式生成序列帧动画文件，并内置相关优化。
+只需一行命令，快速图片优化、生成动画文件，支持效果预览。
 
-* **一键式 :**  图片文件批量序列化重命名，生成帧动画文件，支持预览
-* **性能佳 :**  支持`相同帧图片复用`✓，`图片空白裁剪`✓，`合图模式`✓，`图片压缩`✓
+* **一键式:**  图片文件批量序列化重命名，生成帧动画文件，支持预览
+* **性能佳:**  支持`相同图片复用`✓ `图片空白裁剪`✓ `合图优化`✓ `图片压缩`✓ `图片空白拆分优化`✓ `图片像素差优化`✓
+* **多模板:**  内置多种文件输出模板，支持自定义模板
 
-# Quick Start
+在线官方文档：[https://gka.js.org](https://gka.js.org)
 
-## Install
+![gka-show](https://user-images.githubusercontent.com/10385585/28651130-77b0bc80-72b2-11e7-9c42-7aad9e5774a7.jpg)
 
-```sh
-$ sudo npm i gka -g
+# 快速开始
+
+## 安装
+
+```bash
+npm i gka -g
 ```
 
-## Just fire
+## 开始使用
 
-```sh
-$ gka <dir> [options]
+只需一行命令，快速生成动画文件，支持效果预览。
+
+```bash
+gka E:\img  # 对 E:\img 目录中的图片进行处理
 ```
 
-1.示例参数： 
+生成新的文件、效果预览
 
-- 图片目录：E:\gka-test\img
-- 图片名前缀：prefix-
-
-2.命令
-
-```sh
-# gka [-d] <imageDirPath> -p [prefix] 
-
-$ gka E:\gka-test\img -p prefix-
-```
-
-3.结果： 
 <table>
     <thead>
-        <tr><th>Before</th><th>After</th></tr>
+        <tr><th>处理前</th><th>处理后</th></tr>
     </thead>
     <tbody>
         <tr>
             <td><pre><code>
 ./img
-├── 害羞_00000.png
-├── 害羞_00001.png
-├── 害羞_00002.png
-├── 害羞_00003.png
-├── 害羞_00004.png
+├── gka_1.png
+├── gka_2.png
+├── gka_3.png
 └── ...
 </code></pre></td>
 <td><pre><code>
-./img-gka
+./gka-img
 └── gka.html
-└── prefix-gka.css
+└── gka.css
 └── img
-    ├── prefix-1.png
-    ├── prefix-2.png
-    ├── prefix-3.png
-    ├── prefix-4.png
+    ├── gka_1.png
+    ├── gka_2.png
+    ├── gka_3.png
     └── ...
 </code></pre></td>
         </tr>
     </tbody>
 </table>
 
-![preview](https://cloud.githubusercontent.com/assets/10385585/24502038/ac4bd9f2-157e-11e7-87e0-a9a44aaffafa.gif)
+![rockit](https://user-images.githubusercontent.com/10385585/28810071-499e24a2-76ba-11e7-9ee8-cd600c0035b1.gif)
 
-# Commands overview
-
-```sh
-$ gka <dir> [options]         # 一键式图片处理、生成动画文件
-
-$ gka tool <dir> [options]    # 图片处理工具 压图、合图、空白裁剪、去重、生成图片信息等
-```
-
-# Usage
+# 使用教程
 
 ## gka
 
+一键快速图片优化、生成动画文件。
 
-### Command 
+### Command 命令 
 
-```sh
-$ gka <dir> [options]         # 一键式图片处理、生成动画文件
+```bash
+gka <dir> [options]
 ```
 
-### Options
-
+### Options 参数选项 
 
 ```
 -d, --dir <string>            #  图片文件夹地址
 
--u, --unique [boolean]        #  开启相同帧图片复用 默认 true
--m, --mini                    #  开启图片压缩
+-u, --unique [boolean]        #  开启相同图片复用优化
 
--p, --prefix [string]         #  重命名前缀， 默认 prefix-
+-c, --crop [boolean]          #  开启空白裁剪优化
+
+-s, --sprites [boolean]       #  开启合图优化
+
+-m, --mini [boolean]          #  开启图片压缩
+
+-p, --prefix [string]         #  文件重命名前缀
+
+-t, --template <string>       #  生成动画文件模板 默认 css ，可选模见 Templates 模板列表
+
 -f, --frameduration <number>  #  每帧时长，默认 0.04
 
--i, --info                    #  输出信息文件
+-i, --info [boolean]          #  开启输出信息文件
 
--t, --template <string>       #  生成动画文件模板 默认 n ，可选模版见 template list
+-o, --output <string>         #  指定生成目录地址
+
+-a, --algorithm <string>      #  合图布局模式 默认 left-right，可选 binary-tree | top-down ..
+
+--bgcolor <string>            #  为图片增加背景色，可选，支持格式：'rgb(255,205,44)'、 '#ffcd2c'
+
+--count <number>              #  生成多合图，指定几张图片合成一张合图，可选
+
+--split [boolean]             #  开启图片空白拆分优化，与 -t canvas 结合使用
+
+--diff [boolean]              #  开启图片像素差优化，与 -t canvas 结合使用
+
 ```
 
-
-### Templates
+### Templates 模板列表
 <!-- ### List of Templates Plugins  -->
 
+使用方式
 
-文件生成模版，内置相关优化
-
-- n  [normal] 默认模板
-- c  [crop]     空白裁剪模板，`开启空白裁剪优化`✓
-- s  [sprites] 合图模板，`开启合图优化`✓
-- 期待更多
-
-### Examples
-
-```sh
-# 帧动画生成 - 普通模式
-
-$ gka <imageDir>
+```bash
+gka 图片目录 -t 模板名
 ```
 
-```sh
-# 帧动画生成 - 空白裁剪模板
+#### 内置的模板列表
 
-$ gka <imageDir> -t c
+- css
+
+    - 默认模板
+    - 输出 css 动画文件
+    - 结合 -ucs 支持 `相同帧图片复用`✓ `空白裁剪优化`✓ `合图优化`✓ (可选) 
+
+- canvas
+
+    - 输出 canvas 动画文件
+    - 结合 -ucs 支持 `相同帧图片复用`✓ `空白裁剪优化`✓ `合图优化`✓ (可选) 
+    - 结合 --diff 支持 `图片像素差优化`✓ (可选) 
+    - 结合 --split 支持 `图片空白拆分优化`✓ (可选) 
+
+- svg
+
+    - 输出 svg 动画文件，支持 `自适应缩放雪碧图`✓ 
+    - 结合 -ucs 支持 `相同帧图片复用`✓ `空白裁剪优化`✓ `合图优化`✓ (可选) 
+
+#### 内置的自定义模板列表
+
+- percent 
+
+    - 输出 css 百分比动画文件
+    - 使用该方案支持 `移动端多倍图适配`✓ `自适应缩放雪碧图`✓ 
+    - 结合 -u 支持 `相同帧图片复用`✓ (可选) 
+    - 默认开启 `开启合图优化`✓
+    - [Github 地址](https://github.com/gkajs/gka-tpl-percent)
+    
+- createjs 
+
+    - 输出 createjs 精灵图动画文件
+    - 结合 -uc 支持 `相同帧图片复用`✓ `空白裁剪优化`✓ (可选) 
+    - 默认开启 `开启合图优化`✓
+    - [Github 地址](https://github.com/gkajs/gka-tpl-createjs)
+
+- studiojs 
+
+    - 输出 studiojs 动画文件
+    - 结合 -uc 支持 `相同帧图片复用`✓ `空白裁剪优化`✓ (可选) 
+    - 默认开启 `开启合图优化`✓
+    - [Github 地址](https://github.com/gkajs/gka-tpl-studiojs)
+
+#### 增加模板
+
+模板支持动态增加，只需安装需要的模板。即时安装，即刻可用。
+
+```bash
+npm i gka-tpl-模板名 -g
 ```
 
-```sh
-# 帧动画生成 - 合图模板[-t s] + 图片压缩[-m]
+### 使用示例
 
-$ gka <imageDir> -m -t s
+对 E:\img 目录中的图片进行处理。
+
+1. 快速生成帧动画
+
+```bash
+gka E:\img
 ```
 
-## gka tool
+2. 进行图片去重、合图优化，输出 css 动画文件
 
-images processing tools
-
-
-###  Command
-
-`gka tool <dir> [options]`
-
-```sh
-$ gka tool <dir> [options]    # 图片处理工具 压图、合图、空白裁剪、去重、生成图片信息等
+```bash
+gka E:\img -us
 ```
 
-### Options
+3. 进行图片去重、空白裁剪、合图优化，使用 canvas 模板，输出 canvas 动画文件
 
-```
--d, --dir <string>            #  图片文件夹地址
-
--u, --unique                  #  开启图片去重
--c, --crop                    #  开启空白裁剪模式
--s, --sprites                 #  开启合图模式
--m, --mini                    #  开启图片压缩
--p, --prefix [string]         #  重命名前缀 默认 prefix-
-
--i, --info                    #  输出信息文件
-
--a, --algorithm <string>      #  合图布局模式 默认 binary-tree，可选 top-down | left-right ..
-
--r, --replace                 #  压缩源图片时使用，-mr
+```bash
+gka E:\img -ucs -t canvas
 ```
 
-### Examples
-
-```sh
-# 压缩图片 （如想直接压缩源文件，请使用 -mr）
-
-$ gka tool <imageDir> -m
-```
-
-```sh
-# 图片空白裁剪
-
-$ gka tool <imageDir> -c
-```
-
-```sh
-# 合图 + 空白裁剪 + 输出信息文件
-
-$ gka tool <imageDir> -csi
-```
-
-# Customization
+# 定制化
 
 <!-- ## List of Templates -->
+## 开发模板 TODO
 
-## Write a Template
-
-## Update Templates
+#### 命名规范
+#### 开发流程
+#### 发布模版
+#### 使用模板
 
 # Welcome
 
@@ -225,7 +236,10 @@ Copyright (c) 2017 - present, joeyguo
 - v1.4.6 增加图片预加载
 - v2.0.0 增加图片裁剪模式、暴露图片去重开关、增加模板选择、优化图片信息文件
 - v2.1.0 增强 help，增强 template 方案，增加 gka tool 图片工具集
-
-
-
-
+- v2.2.0 剥离 template、增加 template 动态增加方案、支持使用本地 template
+- v2.2.1 增加指定生成目录地址 -o、template 支持多个图片目录处理
+- v2.2.2 优化支持相对路径、增加文件夹无图片时提示
+- v2.2.3 剥离 imagex、合图时输出信息file指向合图
+- v2.4.0 增加 --count 参数 用于指定几张图片合成一张合图、支持多合图生成及多合图模板动画
+- v2.5.0 增加 --bgcolor 为图片增加背景色、增加 --diff 参数 用于开启像素复用优化、增加 --split 参数 用于开启图片拆分优化、当生成的目标目录保持新增，不覆盖、修复全透明图片空白裁剪的问题
+- v2.6.0 除去 gka tool，重构使用data数据流转，模板更新及内置

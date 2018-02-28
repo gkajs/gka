@@ -1,107 +1,52 @@
 var gka = require("../lib/gka");
-var tpl = require("../lib/core/tpl");
 var fs = require('fs');
 var path = require('path');
 var md5 = require('md5');
 var assert = require('assert');
-
-var imgFolder = path.join(__dirname, "img4test");
+var execSync = require('child_process').execSync;
 var expectedDir = path.join(__dirname, 'expected');
-var expectedDir_normal = path.join(expectedDir, 'gka-img4test-c-u-crop');
-var expectedDir_sprites = path.join(expectedDir, 'gka-img4test-u-s-percent-prefix');
 
-var targetDir_normal = path.join(__dirname, 'gka-img4test-c-u-crop');
-var targetDir_sprites = path.join(__dirname, 'gka-img4test-u-s-percent-prefix');
+// --- config -----
+// 不删除生成文件
+var afterDelete = true;
 
-var tplMap = tpl();
-var tplList = Object.keys(tplMap).map(function(item){
-            return item.substring(8);
+// 测试的方法集合
+var commanderList = [
+    'node ./bin/gka.js ./test/split',
+    'node ./bin/gka.js ./test/split -csu',
+    'node ./bin/gka.js ./test/split -t canvas',
+    'node ./bin/gka.js ./test/split -t canvas -csu',
+    'node ./bin/gka.js ./test/split -t svg',
+    'node ./bin/gka.js ./test/split -t svg -csu',
+    'node ./bin/gka.js ./test/split --split -cus -p a -t canvas -f 0.08',
+]
+// -----------
+
+for (var i = 0, commander; i < commanderList.length; i++) {
+    commander = commanderList[i];
+    ((commander) => {
+        describe(commander, function () {
+            var output = '';
+            before(function runFn (done) {
+                var s = execSync(`${commander} --env test`).toString();
+                s.replace(/\[output dir\]: "(.*?)"/,function($0,$1){
+                    output = $1;
+                });
+                output = path.basename(output);
+                setTimeout(()=>{
+                    done();
+                }, 2000);
+            });
+            after(function cleanup () {
+                console.log(output)
+                afterDelete && deleteall(path.join(__dirname, output));
+            });
+            it(commander, function () {
+                assert.deepEqual(getDirFile2Md5(path.join(expectedDir, output)), getDirFile2Md5(path.join(__dirname, output)), 'expect the same');
+            });
         });
-describe('gka actual test', function () {
-
-    before(function runFn (done) {
-        // gka dir -cgr -f 0.08
-        // ridding cut g duration 0.08
-        gka({
-            src: imgFolder,
-            // c
-            // crop: true,
-            // s
-            // sprites: false, 
-            // t 
-            tiny: false,
-            // r
-            unique: true,
-            // i
-            info: true,
-            // g
-            tpl: tplMap['gka-tpl-crop'],
-            tplName: 'crop',
-            tplList: tplList,
-            // p
-            // prefix: "gka",
-            // f
-            frameduration: 0.08,
-        });
-
-        setTimeout(()=>{
-            done();
-        }, 2000);
-    });
-
-    after(function cleanup () {
-        deleteall(targetDir_normal);
-    });
-
-    it('gka-normal：gka dir -i -t c -f 0.08', function () {
-        assert.deepEqual(getDirFile2Md5(expectedDir_normal), getDirFile2Md5(targetDir_normal), 'expect the same');
-    });
-
-});
-
-describe('gka actual test', function () {
-
-    before(function runFn (done) {
-        // gka dir -sr -g pct -p gka- -a left-right
-        // sprites ridding gen pct algorithm left-right prefix gka-
-        gka({
-            src: imgFolder,
-            // c
-            // crop: false,
-            // s
-            // sprites: true, 
-            // t 
-            tiny: false,
-            // r
-            unique: true,
-            // i
-            info: true,
-            // t
-            tpl: tplMap['gka-tpl-percent'],
-            tplName: 'percent',
-            tplList: tplList,
-            // p
-            prefix: "prefix",
-            // f
-            frameduration: 0.04,
-            // a
-            // algorithm: "left-right",
-        });
-
-        setTimeout(()=>{
-            done();
-        }, 2000);
-    });
-
-    after(function cleanup () {
-        deleteall(targetDir_sprites);
-    });
-
-    it('gka-sprites：gka dir -i -t percent -p prefix -a left-right', function () {
-        assert.deepEqual(getDirFile2Md5(expectedDir_sprites), getDirFile2Md5(targetDir_sprites), 'expect the same');
-    });
-
-});
+    })(commander)
+}
 
 function getFiles (dir, _files){
     _files = _files || [];
@@ -138,6 +83,8 @@ function getDirFile2Md5 (dir) {
     var name2md5 = {};
     for (var i = 0, data, filepath; i < filepaths.length; i++) {
         filepath = filepaths[i];
+        if (filepath.indexOf('.DS_Store') > -1) continue;
+
         data = fs.readFileSync(filepath);
         name2md5[path.relative(dir, filepaths[i])] = md5(data);
     }
