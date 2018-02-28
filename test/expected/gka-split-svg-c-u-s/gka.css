@@ -1,0 +1,33 @@
+.animation {
+    border-top: 1px solid transparent;
+    background-image: url("./img/sprites.png");
+    background-repeat: no-repeat;
+
+    animation-name: keyframes;
+    animation-duration: 0.12s;
+    animation-delay: 0s;
+    animation-iteration-count: infinite;
+    
+    animation-fill-mode: forwards;
+    animation-timing-function: steps(1);
+}
+
+@-webkit-keyframes keyframes {
+    0% {
+        width: 661px;
+        height: 20px;
+        background-image: url("./img/sprites.png");
+        margin-left: 6px;
+        border-top: 1px solid transparent;
+    }
+    33.33% {
+        background-position: -661px 0;
+    }
+    66.67% {
+        background-position: -1322px 0;
+    }
+    100% {
+        background-position: -1322px 0;
+    }
+}
+
