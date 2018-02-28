@@ -127,7 +127,7 @@ gka <dir> [options]
 ### Templates 模板列表
 <!-- ### List of Templates Plugins  -->
 
-文件生成模板，使用方式
+使用方式
 
 ```bash
 gka 图片目录 -t 模板名
@@ -155,7 +155,6 @@ gka 图片目录 -t 模板名
 
 #### 内置的自定义模板列表
 
-
 - percent 
 
     - 输出 css 百分比动画文件
@@ -175,7 +174,7 @@ gka 图片目录 -t 模板名
 
     - 输出 studiojs 动画文件
     - 结合 -uc 支持 `相同帧图片复用`✓ `空白裁剪优化`✓ (可选) 
-    - 默认开启 `开启合图优化`✓ (必须) 
+    - 默认开启 `开启合图优化`✓
     - [Github 地址](https://github.com/gkajs/gka-tpl-studiojs)
 
 #### 增加模板
@@ -188,7 +187,7 @@ npm i gka-tpl-模板名 -g
 
 ### 使用示例
 
-示例对 E:\img 目录中的图片进行处理。
+对 E:\img 目录中的图片进行处理。
 
 1. 快速生成帧动画
 
