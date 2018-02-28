@@ -25,7 +25,7 @@ for (var i = 0, commander; i < commanderList.length; i++) {
         describe(commander, function () {
             var output = '';
             before(function runFn (done) {
-                var s = execSync(commander).toString();
+                var s = execSync(`${commander} --env test`).toString();
                 s.replace(/\[output dir\]: "(.*?)"/,function($0,$1){
                     output = $1;
                 });

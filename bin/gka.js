@@ -156,6 +156,8 @@ function run(argv, dir, template) {
         template: template,
         // f
         frameduration: argv.frameduration,
+
+        env: argv.env
     });
 }
 
