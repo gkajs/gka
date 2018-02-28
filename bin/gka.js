@@ -7,7 +7,7 @@ var yargs = require('yargs'),
     path = require("path"),
     pkg = require('../package.json'),
     tpl = require("./tpl"),
-    adaptTpl_lt_2_6_0 = require("./adapt").adaptTpl_lt_2_6_0,
+    adapt_lt_2_6_0 = require("./adapt").adapt_lt_2_6_0,
     gka = require("../lib/gka"),
     _ = argv._;
 
@@ -177,6 +177,6 @@ if (template === "") {
     })
 } else {
     // 兼容旧版
-    var obj = adaptTpl_lt_2_6_0(argv, template);
+    var obj = adapt_lt_2_6_0(argv, template);
     run(obj.argv, dir, obj.template)
 }

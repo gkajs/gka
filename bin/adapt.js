@@ -1,5 +1,5 @@
 // gka < 2.6.0
-function adaptTpl_lt_2_6_0(argv, template) {
+function adapt_lt_2_6_0(argv, template) {
 
     if (template === 'c' || template === 'crop' ) {
         argv.crop = true;
@@ -24,5 +24,5 @@ function adaptTpl_lt_2_6_0(argv, template) {
 }
 
 module.exports = {
-    adaptTpl_lt_2_6_0
+    adapt_lt_2_6_0
 };
