@@ -9,7 +9,7 @@
     background-image: url("./img/new1.png");
     background-repeat: no-repeat;
 
-    animation-name: keyframes;
+    animation-name: keyframes-split;
     animation-duration: 0.12s;
     animation-delay: 0s;
     animation-iteration-count: infinite;
@@ -18,7 +18,7 @@
     animation-timing-function: steps(1);
 }
 
-@-webkit-keyframes keyframes {
+@-webkit-keyframes keyframes-split {
     0% {
         width: 670px;
         height: 23px;

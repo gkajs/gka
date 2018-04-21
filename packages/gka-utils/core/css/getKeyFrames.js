@@ -36,7 +36,7 @@ function getKeyFrames(key, frames, data, getKeyframesConfig) {
         var percent = (i * (per)).toFixed(2);
         percent = percent == 0? 0: percent; // fix 0.00 to 0;
 
-        var k = getKeyframesConfig(frame, i, frames, key);
+        var k = getKeyframesConfig(frame, i, frames, data.ratio);
 
         var frameStr = Object.keys(k).reduce(function(_str, key, i){
             // 当前的css值

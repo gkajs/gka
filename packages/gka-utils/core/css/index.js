@@ -60,7 +60,7 @@ function getKeyframesCSS(data, opts, obj) {
 
     // background-size: contain;
     var css = `.${prefix}animation {${frameStr}
-    background-image: url("${'./img/' + (data.file || firstFrame.file)}");
+    background-image: url("${'./img/' + (data.ratio == 1? '': data.ratio + 'x' + '/') + (data.file || firstFrame.file)}");
     background-repeat: no-repeat;
 
     animation-name: ${names.join(', ')};

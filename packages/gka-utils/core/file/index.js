@@ -6,17 +6,17 @@ function mkdirSync(dirpath,dirname){
 	    if(fs.existsSync(dirpath)){  
 	        return;  
 	    }else{  
-	        mkdir(dirpath,path.dirname(dirpath));  
+	        mkdirSync(dirpath,path.dirname(dirpath));  
 	    }  
 	}else{  
 	    if(dirname !== path.dirname(dirpath)){   
-	        mkdir(dirpath);  
+	        mkdirSync(dirpath);  
 	        return;  
 	    }  
 	    if(fs.existsSync(dirname)){  
 	        fs.mkdirSync(dirpath)  
 	    }else{  
-	        mkdir(dirname,path.dirname(dirname));  
+	        mkdirSync(dirname,path.dirname(dirname));  
 	        fs.mkdirSync(dirpath);  
 	    }  
 	}  

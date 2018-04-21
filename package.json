@@ -1,6 +1,6 @@
 {
   "name": "gka",
-  "version": "2.6.0",
+  "version": "2.7.0",
   "description": "Generate Keyframes Animation",
   "keywords": [
     "util",
@@ -30,7 +30,6 @@
   "engines": {
     "node": ">=6.4.0"
   },
-  "devDependencies": {},
   "dependencies": {
     "gka-tpl-createjs": "1.2.1",
     "gka-tpl-percent": "^1.2.2",
@@ -44,6 +43,7 @@
     "imagemin-pngquant": "^5.0.0",
     "imagemin-svgo": "^5.2.0",
     "inquirer": "^3.2.0",
+    "lodash": "^4.17.5",
     "md5": "^2.2.1",
     "mkdirp": "^0.5.1",
     "mocha": "^3.2.0",

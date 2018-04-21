@@ -17,6 +17,6 @@ var data = {
         }
     ],
     "animations": {
-        "": [0,1,2]
+        "split": [0,1,2]
     }
 }

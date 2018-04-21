@@ -7,7 +7,7 @@ var execSync = require('child_process').execSync;
 var expectedDir = path.join(__dirname, 'expected');
 
 // --- config -----
-// 不删除生成文件
+// 删除生成文件
 var afterDelete = true;
 
 // 测试的方法集合
