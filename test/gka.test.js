@@ -21,6 +21,9 @@ var commanderList = [
     'node ./bin/gka.js ./test/split --split -cus -p a -t canvas -f 0.08',
     'node ./bin/gka.js ./test/retina',
     'node ./bin/gka.js ./test/mulit',
+    'node ./bin/gka.js ./test/split -t percent -su',
+    'node ./bin/gka.js ./test/split -t studiojs -csu',
+    'node ./bin/gka.js ./test/split -t createjs -csu',
 ]
 // -----------
 

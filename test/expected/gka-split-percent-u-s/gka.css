@@ -1,0 +1,36 @@
+.gka-wrap {
+    width: 670px;
+    height: 23px;
+}
+
+.animation {
+    width: 100%;
+    height: 0;
+    padding-bottom: 3.4328358208955225%;
+    background-size: 300% 100%;
+    background-image: url("./img/sprites.png");
+    background-repeat: no-repeat;
+    animation-name: keyframes-split;
+    animation-duration: 0.12s;
+    animation-delay: 0s;
+    animation-iteration-count: infinite;
+    animation-fill-mode: forwards;
+    animation-timing-function: steps(1);
+}
+
+@-webkit-keyframes keyframes-split {
+    0% {
+        background-image: url("./img/sprites.png");
+        background-position: 0% 0%;
+        background-size: 300% 100%;
+    }
+    33.33% {
+        background-position: 50% 0%;
+    }
+    66.67% {
+        background-position: 100% 0%;
+    }
+    100% {
+        background-position: 100% 0%;
+    }
+}
