@@ -1,0 +1,96 @@
+.gka-wrap {
+    width: 400px;
+    height: 300px;
+}
+
+.animation {
+    width: 400px;
+    height: 300px;
+    background-size: 400px 300px;
+    background-image: url("./img/a01.png");
+    background-repeat: no-repeat;
+    animation-name: keyframes-a, keyframes-b;
+    animation-duration: 0.36s, 0.44s;
+    animation-delay: 0s, 0.36s;
+    animation-iteration-count: 1, infinite;
+    animation-fill-mode: forwards, forwards;
+    animation-timing-function: steps(1), steps(1);
+}
+
+@-webkit-keyframes keyframes-a {
+    0% {
+        width: 400px;
+        height: 300px;
+        background-image: url("./img/a01.png");
+        background-size: 400px 300px;
+    }
+    11.11% {
+        background-image: url("./img/a02.png");
+    }
+    22.22% {
+        background-image: url("./img/a03.png");
+    }
+    33.33% {
+        background-image: url("./img/a04.png");
+    }
+    44.44% {
+        background-image: url("./img/a05.png");
+    }
+    55.56% {
+        background-image: url("./img/a06.png");
+    }
+    66.67% {
+        background-image: url("./img/a07.png");
+    }
+    77.78% {
+        background-image: url("./img/a08.png");
+    }
+    88.89% {
+        background-image: url("./img/a09.png");
+    }
+    100% {
+        background-image: url("./img/a09.png");
+    }
+}
+
+@-webkit-keyframes keyframes-b {
+    0% {
+        width: 400px;
+        height: 300px;
+        background-image: url("./img/a10.png");
+        background-size: 400px 300px;
+    }
+    9.09% {
+        background-image: url("./img/a11.png");
+    }
+    18.18% {
+        background-image: url("./img/a12.png");
+    }
+    27.27% {
+        background-image: url("./img/a13.png");
+    }
+    36.36% {
+        background-image: url("./img/a14.png");
+    }
+    45.45% {
+        background-image: url("./img/a15.png");
+    }
+    54.55% {
+        background-image: url("./img/a16.png");
+    }
+    63.64% {
+        background-image: url("./img/a17.png");
+    }
+    72.73% {
+        background-image: url("./img/a18.png");
+    }
+    81.82% {
+        background-image: url("./img/a19.png");
+    }
+    90.91% {
+        background-image: url("./img/a20.png");
+    }
+    100% {
+        background-image: url("./img/a20.png");
+    }
+}

@@ -1,12 +1,10 @@
 .animation {
     background-image: url("./img/new1.png");
     background-repeat: no-repeat;
-
     animation-name: keyframes-split;
     animation-duration: 0.12s;
     animation-delay: 0s;
     animation-iteration-count: infinite;
-    
     animation-fill-mode: forwards;
     animation-timing-function: steps(1);
 }
@@ -27,4 +25,3 @@
         background-image: url("./img/new3.png");
     }
 }
-

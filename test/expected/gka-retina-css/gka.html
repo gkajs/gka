@@ -28,9 +28,9 @@
         });
     }
 
-    preloadImage(["new1.png","new2.png","new3.png"], function() {
+    preloadImage(["gkatest_1.png","gkatest_2.png","gkatest_3.png","gkatest_4.png","gkatest_5.png","gkatest_6.png","gkatest_7.png","gkatest_8.png"], function() {
         document.getElementById('gka').className += " animation"
-    }, "img/")
+    }, "img/" + (window.devicePixelRatio >= 2? '2x/': ''))
     </script>
 </body>
 </html>
