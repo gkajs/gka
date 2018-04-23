@@ -90,6 +90,11 @@ argv = yargs
         alias : 'bgcolor',
         describe: 'set images bgcolor',
     })
+    .option('ratio', {
+        alias : 'ratio',
+        describe: 'set ratio',
+        type: "number",
+    })
     .option('i', {
         default: false,
         boolean: true,
@@ -156,7 +161,8 @@ function run(argv, dir, template) {
         template: template,
         // f
         frameduration: argv.frameduration,
-
+        // ratio
+        ratio: argv.ratio,
         env: argv.env
     });
 }
