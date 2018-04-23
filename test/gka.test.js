@@ -18,6 +18,7 @@ var commanderList = [
     'node ./bin/gka.js ./test/split -t svg -csu',
     'node ./bin/gka.js ./test/split -t canvas',
     'node ./bin/gka.js ./test/split -t canvas -csu',
+    'node ./bin/gka.js ./test/diff -t canvas --diff',
     'node ./bin/gka.js ./test/split --split -cus -p a -t canvas -f 0.08',
     'node ./bin/gka.js ./test/retina',
     'node ./bin/gka.js ./test/mulit',

@@ -1,0 +1,63 @@
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=0,maximum-scale=1">
+    
+    <title>gka-preview</title>
+</head>
+<body>
+
+    <canvas id="gka" width="633" height="506"></canvas>
+    <script src="./gka-data.js"></script>
+    <script>
+    function preloadImage(names, cb, prefix){
+        window.gkaCache = window.gkaCache || [];
+        var n = 0,img,imgs = {};
+        names.forEach(function(name) {
+            img = new Image();
+            window.gkaCache.push(img);
+            img.onload = (function(name, img) {
+                return function() {
+                    imgs[name] = img;
+                    (++n === names.length) && cb && cb(imgs);
+                }
+            })(name, img);
+            img.src = (prefix || '') + name;
+        });
+    }
+    preloadImage(["keweizhua_0.png","keweizhua_2.png","keweizhua_3.png"], function(imgs) {
+       var canvas = document.getElementById('gka'),
+            ctx = canvas.getContext('2d'),
+            frames = data.frames,
+            i = 0,
+            o = {},
+            key = Object.keys(data.animations)[0],
+            list = data.animations[key],
+            len = list.length;
+
+        var cacheCanvas = document.createElement("canvas"),
+            ctxCache = cacheCanvas.getContext("2d");
+
+        cacheCanvas.width = canvas.width;
+        cacheCanvas.height = canvas.height;
+
+        setInterval(function(){
+            o = list[i];
+            ctxCache.clearRect(0, 0, canvas.width, canvas.height);
+            o = Object.prototype.toString.call(o)=='[object Array]'? o: [o];
+            for (var j = 0, t; j < o.length; j++) {
+                t = data.frames[o[j]];
+                ctxCache.drawImage((imgs[t.file] || imgs[data.file]), (t.x || data.x || 0), (t.y || data.y || 0), (t.width || data.width), (t.height || data.height), (t.offX || data.offX || 0), (t.offY || data.offY || 0), (t.width || data.width), (t.height || data.height));
+            }
+            
+            if (i === 0) {
+                ctx.clearRect(0, 0, canvas.width, canvas.height);
+            }
+
+            ctx.drawImage(cacheCanvas, 0, 0, canvas.width, canvas.height);
+            i = ++i === len? 0: i;
+        }, 40)
+    }, "img/")
+    </script>
+</body>
+</html>
