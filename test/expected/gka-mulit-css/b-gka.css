@@ -1,0 +1,63 @@
+.gka-wrap {
+    width: 400px;
+    height: 300px;
+}
+
+.animation {
+    width: 400px;
+    height: 300px;
+    background-size: 400px 300px;
+    background-image: url("./img/a10.png");
+    background-repeat: no-repeat;
+
+    animation-name: keyframes-b;
+    animation-duration: 0.44s;
+    animation-delay: 0s;
+    animation-iteration-count: infinite;
+    
+    animation-fill-mode: forwards;
+    animation-timing-function: steps(1);
+}
+
+@-webkit-keyframes keyframes-b {
+    0% {
+        width: 400px;
+        height: 300px;
+        background-image: url("./img/a10.png");
+        background-size: 400px 300px;
+    }
+    9.09% {
+        background-image: url("./img/a11.png");
+    }
+    18.18% {
+        background-image: url("./img/a12.png");
+    }
+    27.27% {
+        background-image: url("./img/a13.png");
+    }
+    36.36% {
+        background-image: url("./img/a14.png");
+    }
+    45.45% {
+        background-image: url("./img/a15.png");
+    }
+    54.55% {
+        background-image: url("./img/a16.png");
+    }
+    63.64% {
+        background-image: url("./img/a17.png");
+    }
+    72.73% {
+        background-image: url("./img/a18.png");
+    }
+    81.82% {
+        background-image: url("./img/a19.png");
+    }
+    90.91% {
+        background-image: url("./img/a20.png");
+    }
+    100% {
+        background-image: url("./img/a20.png");
+    }
+}
+
