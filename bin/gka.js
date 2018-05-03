@@ -7,7 +7,6 @@ var yargs = require('yargs'),
     path = require("path"),
     pkg = require('../package.json'),
     tpl = require("./tpl"),
-    adapt_lt_2_6_0 = require("./adapt").adapt_lt_2_6_0,
     gka = require("../lib/gka"),
     _ = argv._;
 
@@ -167,22 +166,34 @@ function run(argv, dir, template) {
     });
 }
 
-if (template === "") {
-    var tplList = tpl().map(t => t.substring(8));
+const localTpls = ['css', 'canvas', 'svg'];
+
+if (template === '') {
+    let tplList = tpl();
+    var tplListName = tplList.map(t => t.name);
     inquirer.prompt([{
         type: 'list',
         name: 'template',
         message: 'which template do you like: ',
-        choices: tplList,
+        choices: tplListName,
         filter: function (val) {
           return val.toLowerCase();
         }
     }]).then((answers) => {
-        console.log(answers.template)
-        run(argv, dir, answers.template)
+        let answerTplName = answers.template;
+        let t = tplList.filter(t => t.name === answerTplName)[0];
+
+        run(argv, dir, t.target)
     })
+} else if (!!~localTpls.indexOf(template)) {
+    run(argv, dir, template)
 } else {
-    // 兼容旧版
-    var obj = adapt_lt_2_6_0(argv, template);
-    run(obj.argv, dir, obj.template)
+    let tplList = tpl();
+    let t = tplList.filter(tpl => tpl.name === template)[0];
+    if (t) {
+        run(argv, dir, t.target)
+    } else {
+        throw new Error(`can not find template: ${template}`);
+    }
 }
+    

@@ -6,5 +6,5 @@ docs
 npm-debug.log
 TODO.md
 test
-/_lib
+debug
 package-lock.json 

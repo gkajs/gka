@@ -3,5 +3,5 @@ node_modules
 .DS_Store
 npm-debug.log
 TODO.md
-/_lib
+debug
 package-lock.json

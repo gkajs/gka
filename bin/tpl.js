@@ -45,30 +45,28 @@ function getPkgTpls() {
     });
 }
 
-function get(dir, name, type) {
-    var file = path.join(dir, name, type);
-    return fs.existsSync(file)? require(file): null;
-}
+let result = [];
 
-// var result = {};
-
-// function setTplMap(name, dir){
-//     result[name] = get(dir, name, "index.js");
-// }
-
-var result = [];
-
-function setTplMap(name){
+function setTplMap(name, dir){
+    let target = (dir? path.join(dir, name): name);
+    if(name.indexOf("gka-tpl") > -1) {
+        name = name.substring(8);
+    }
     if (result.indexOf(name) === -1) {
-        result.push(name);
+        result.push({
+            name,
+            target: target
+        });
     }
 }
 
 function getAllTpls() {
+    const localTpls = ['css', 'canvas', 'svg'];
 
-    var localTpls = ['css', 'canvas', 'svg'];
-    result.concat(localTpls);
-
+    localTpls.map(name => {
+        setTplMap(name);
+    })
+    
     getPkgTpls();
     getGlobalTpls();
     
