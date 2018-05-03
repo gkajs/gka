@@ -9,12 +9,10 @@
     background-size: 400px 300px;
     background-image: url("./img/a01.png");
     background-repeat: no-repeat;
-
     animation-name: keyframes-a;
     animation-duration: 0.36s;
     animation-delay: 0s;
     animation-iteration-count: infinite;
-    
     animation-fill-mode: forwards;
     animation-timing-function: steps(1);
 }
@@ -54,4 +52,3 @@
         background-image: url("./img/a09.png");
     }
 }
-
