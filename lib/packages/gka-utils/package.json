@@ -1,0 +1,15 @@
+{
+  "name": "gka-utils",
+  "version": "0.0.4",
+  "description": "gka utils",
+  "main": "index.js",
+  "scripts": {
+    "test": ""
+  },
+  "keywords": [
+    "gka",
+    "utils"
+  ],
+  "author": "joeyguo",
+  "license": "MIT"
+}
