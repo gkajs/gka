@@ -5,6 +5,7 @@ var md5 = require('md5');
 var assert = require('assert');
 var execSync = require('child_process').execSync;
 var expectedDir = path.join(__dirname, 'expected');
+// var expectedDir = path.join(__dirname, 'expected-win');
 
 // --- config -----
 // 删除生成文件
