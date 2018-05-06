@@ -193,7 +193,11 @@ if (template === '') {
     if (t) {
         run(argv, dir, t.target)
     } else {
-        throw new Error(`can not find template: ${template}`);
+        if (fs.existsSync(template)) {
+            run(argv, dir, template)
+        } else {
+            throw new Error(`can not find template: ${template}`);
+        }
     }
 }
     
