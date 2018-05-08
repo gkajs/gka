@@ -1,6 +1,6 @@
 {
   "name": "gka",
-  "version": "2.8.1",
+  "version": "2.8.2",
   "description": "Generate Keyframes Animation",
   "keywords": [
     "util",
@@ -33,8 +33,9 @@
   "dependencies": {
     "chalk": "^2.4.1",
     "gka-tpl-createjs": "^2.8.0",
-    "gka-tpl-percent": "^2.8.0",
+    "gka-tpl-percent": "^2.8.1",
     "gka-tpl-studiojs": "^2.8.0",
+    "global-modules": "^1.0.0",
     "image-size": "^0.5.0",
     "imagemin": "^5.2.2",
     "imagemin-gifsicle": "^5.1.0",
