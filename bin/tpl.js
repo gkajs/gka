@@ -7,11 +7,11 @@ var gkaNodeModulesDir = path.join(__dirname, '..', 'node_modules');
 
 gkaNodeModulesDir = fs.existsSync(gkaNodeModulesDir)? gkaNodeModulesDir: path.join(__dirname, '..', '..');
 
-function getNodePath (argument) {
-    var ps = spawn.sync('npm', ['root', '-g'], {}),
-    npmRoot = (ps && ps.stdout) ? ps.stdout.toString().replace(/[\n\t\r]/g,"") : "";
-    return npmRoot;
-}
+// function getNodePath (argument) {
+//     var ps = spawn.sync('npm', ['root', '-g'], {}),
+//     npmRoot = (ps && ps.stdout) ? ps.stdout.toString().replace(/[\n\t\r]/g,"") : "";
+//     return npmRoot;
+// }
 
 function getGlobalTpls() {
     var npmRoot = process.env.NODE_PATH,
@@ -20,7 +20,8 @@ function getGlobalTpls() {
     try {
         tpls = fs.readdirSync(npmRoot); // NODE_PATH 无设置或设置多个值，则使用 catch 中方案
     } catch (e) {
-        npmRoot = getNodePath();
+        // npmRoot = getNodePath();
+        npmRoot = require('global-modules');
         try {
             tpls = fs.readdirSync(npmRoot);
         } catch (e) {
