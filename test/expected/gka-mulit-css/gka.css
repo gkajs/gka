@@ -6,9 +6,9 @@
 .animation {
     width: 400px;
     height: 300px;
-    background-size: 400px 300px;
     background-image: url("./img/a01.png");
-    background-repeat: no-repeat;
+    background-size: 400px 300px;
+    background-repeat: no-repeat, no-repeat;
     animation-name: keyframes-a, keyframes-b;
     animation-duration: 0.36s, 0.44s;
     animation-delay: 0s, 0.36s;
@@ -17,7 +17,7 @@
     animation-timing-function: steps(1), steps(1);
 }
 
-@-webkit-keyframes keyframes-a {
+@keyframes keyframes-a {
     0% {
         width: 400px;
         height: 300px;
@@ -45,15 +45,13 @@
     77.78% {
         background-image: url("./img/a08.png");
     }
-    88.89% {
-        background-image: url("./img/a09.png");
-    }
+    88.89%,
     100% {
         background-image: url("./img/a09.png");
     }
 }
 
-@-webkit-keyframes keyframes-b {
+@keyframes keyframes-b {
     0% {
         width: 400px;
         height: 300px;
@@ -87,9 +85,7 @@
     81.82% {
         background-image: url("./img/a19.png");
     }
-    90.91% {
-        background-image: url("./img/a20.png");
-    }
+    90.91%,
     100% {
         background-image: url("./img/a20.png");
     }

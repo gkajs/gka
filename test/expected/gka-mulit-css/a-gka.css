@@ -6,8 +6,8 @@
 .animation {
     width: 400px;
     height: 300px;
-    background-size: 400px 300px;
     background-image: url("./img/a01.png");
+    background-size: 400px 300px;
     background-repeat: no-repeat;
     animation-name: keyframes-a;
     animation-duration: 0.36s;
@@ -17,7 +17,7 @@
     animation-timing-function: steps(1);
 }
 
-@-webkit-keyframes keyframes-a {
+@keyframes keyframes-a {
     0% {
         width: 400px;
         height: 300px;
@@ -45,9 +45,7 @@
     77.78% {
         background-image: url("./img/a08.png");
     }
-    88.89% {
-        background-image: url("./img/a09.png");
-    }
+    88.89%,
     100% {
         background-image: url("./img/a09.png");
     }

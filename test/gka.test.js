@@ -22,6 +22,14 @@ var commanderMap = [
         expected: 'gka-split-css-c-u-s',
     },
     {
+        commander: 'node ./bin/gka.js ./test/retina',
+        expected: 'gka-retina-css',
+    },
+    {
+        commander: 'node ./bin/gka.js ./test/mulit',
+        expected: 'gka-mulit-css',
+    },
+    {
         commander: 'node ./bin/gka.js ./test/split -t svg',
         expected: 'gka-split-svg',
     },
@@ -44,14 +52,6 @@ var commanderMap = [
     {
         commander: 'node ./bin/gka.js ./test/split --split -cus -p a -t canvas -f 0.08',
         expected: 'gka-split-canvas-c-u-s-a-sp',
-    },
-    {
-        commander: 'node ./bin/gka.js ./test/retina',
-        expected: 'gka-retina-css',
-    },
-    {
-        commander: 'node ./bin/gka.js ./test/mulit',
-        expected: 'gka-mulit-css',
     },
     {
         commander: 'node ./bin/gka.js ./test/split -t percent -su',

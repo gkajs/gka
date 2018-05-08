@@ -6,8 +6,9 @@
 .animation {
     width: 661px;
     height: 20px;
-    background-size: 1983px 20px;
     background-image: url("./img/sprites.png");
+    background-size: 1983px 20px;
+    transform: translate(6px, 1px);
     background-repeat: no-repeat;
     animation-name: keyframes-split;
     animation-duration: 0.12s;
@@ -17,21 +18,19 @@
     animation-timing-function: steps(1);
 }
 
-@-webkit-keyframes keyframes-split {
+@keyframes keyframes-split {
     0% {
         width: 661px;
         height: 20px;
         background-image: url("./img/sprites.png");
-        transform: translate(6px, 1px);
         background-size: 1983px 20px;
+        transform: translate(6px, 1px);
     }
     33.33% {
-        background-position: -661px 0;
+        background-position: -661px 0px;
     }
-    66.67% {
-        background-position: -1322px 0;
-    }
+    66.67%,
     100% {
-        background-position: -1322px 0;
+        background-position: -1322px 0px;
     }
 }

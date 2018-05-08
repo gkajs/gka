@@ -6,8 +6,8 @@
 .animation {
     width: 50px;
     height: 50px;
-    background-size: 50px 50px;
     background-image: url("./img/gkatest_1.png");
+    background-size: 50px 50px;
     background-repeat: no-repeat;
     animation-name: keyframes-name;
     animation-duration: 0.32s;
@@ -17,7 +17,7 @@
     animation-timing-function: steps(1);
 }
 
-@-webkit-keyframes keyframes-name {
+@keyframes keyframes-name {
     0% {
         width: 50px;
         height: 50px;
@@ -42,9 +42,7 @@
     75.00% {
         background-image: url("./img/gkatest_7.png");
     }
-    87.50% {
-        background-image: url("./img/gkatest_8.png");
-    }
+    87.50%,
     100% {
         background-image: url("./img/gkatest_8.png");
     }
@@ -59,8 +57,8 @@
     .animation {
         width: 25px;
         height: 25px;
-        background-size: 25px 25px;
         background-image: url("./img/2x/gkatest_1.png");
+        background-size: 25px 25px;
         background-repeat: no-repeat;
         animation-name: keyframes-name;
         animation-duration: 0.32s;
@@ -69,7 +67,7 @@
         animation-fill-mode: forwards;
         animation-timing-function: steps(1);
     }
-    @-webkit-keyframes keyframes-name {
+    @keyframes keyframes-name {
         0% {
             width: 25px;
             height: 25px;
@@ -94,9 +92,7 @@
         75.00% {
             background-image: url("./img/2x/gkatest_7.png");
         }
-        87.50% {
-            background-image: url("./img/2x/gkatest_8.png");
-        }
+        87.50%,
         100% {
             background-image: url("./img/2x/gkatest_8.png");
         }

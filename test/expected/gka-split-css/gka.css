@@ -6,8 +6,8 @@
 .animation {
     width: 670px;
     height: 23px;
-    background-size: 670px 23px;
     background-image: url("./img/new1.png");
+    background-size: 670px 23px;
     background-repeat: no-repeat;
     animation-name: keyframes-split;
     animation-duration: 0.12s;
@@ -17,7 +17,7 @@
     animation-timing-function: steps(1);
 }
 
-@-webkit-keyframes keyframes-split {
+@keyframes keyframes-split {
     0% {
         width: 670px;
         height: 23px;
@@ -27,9 +27,7 @@
     33.33% {
         background-image: url("./img/new2.png");
     }
-    66.67% {
-        background-image: url("./img/new3.png");
-    }
+    66.67%,
     100% {
         background-image: url("./img/new3.png");
     }

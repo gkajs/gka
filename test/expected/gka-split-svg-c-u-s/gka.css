@@ -1,6 +1,9 @@
 .animation {
-    border-top: 1px solid transparent;
+    width: 661px;
+    height: 20px;
     background-image: url("./img/sprites.png");
+    margin-left: 6px;
+    border-top: 1px solid transparent;
     background-repeat: no-repeat;
     animation-name: keyframes-split;
     animation-duration: 0.12s;
@@ -10,7 +13,7 @@
     animation-timing-function: steps(1);
 }
 
-@-webkit-keyframes keyframes-split {
+@keyframes keyframes-split {
     0% {
         width: 661px;
         height: 20px;
@@ -19,12 +22,10 @@
         border-top: 1px solid transparent;
     }
     33.33% {
-        background-position: -661px 0;
+        background-position: -661px 0px;
     }
-    66.67% {
-        background-position: -1322px 0;
-    }
+    66.67%,
     100% {
-        background-position: -1322px 0;
+        background-position: -1322px 0px;
     }
 }
