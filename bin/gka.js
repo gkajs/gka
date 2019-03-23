@@ -104,6 +104,11 @@ argv = yargs
         alias : 'output',
         describe: 'output dir path'
     })
+    .option('minirate', {
+      alias : 'minirate',
+      describe: 'set minify rate',
+      type: "string",
+    })
     .help('h')
     .alias('h', 'help')
     .usage('\nUsage: \n  gka <dir> [options] \n')
@@ -162,6 +167,8 @@ function run(argv, dir, template) {
         frameduration: argv.frameduration,
         // ratio
         ratio: argv.ratio,
+        // minirate
+        minirate: argv.minirate,
         env: argv.env
     });
 }
