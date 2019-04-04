@@ -124,6 +124,9 @@ gka <dir> [options]
 --split [boolean]             #  开启图片空白拆分优化，与 -t canvas 结合使用
 
 --diff [boolean]              #  开启图片像素差优化，与 -t canvas 结合使用
+
+--minirate [string]           #  自定义压缩比率，格式: min-max，与 -m 结合使用
+
 ```
 
 ### Templates 模板列表
