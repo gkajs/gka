@@ -35,7 +35,7 @@
 ## 安装
 
 ```bash
-npm i gka -g
+sudo npm install -g gka --unsafe-perm=true --allow-root
 ```
 注：安装时如出现权限问题，可先查看此[issues](https://github.com/gkajs/gka/issues/23)
 
