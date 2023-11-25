@@ -153,7 +153,7 @@ function run(argv, dir, template) {
         diff: argv.diff,
         // bgcolor
         bgcolor: argv.bgcolor,
-        // m 
+        // m
         mini: argv.mini,
         // p
         prefix: argv.prefix,
@@ -173,7 +173,7 @@ function run(argv, dir, template) {
     });
 }
 
-const localTpls = ['css', 'canvas', 'svg'];
+const localTpls = ['css', 'canvas', 'svg', 'wechat-svg'];
 
 if (template === '') {
     let tplList = tpl();
@@ -207,4 +207,3 @@ if (template === '') {
         }
     }
 }
-    

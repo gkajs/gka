@@ -2,9 +2,10 @@ node_modules
 docs
 .svn
 .git
+.vscode
 .DS_Store
 npm-debug.log
 TODO.md
 test
 debug
-package-lock.json 
+package-lock.json

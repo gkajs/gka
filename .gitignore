@@ -1,6 +1,7 @@
 node_modules
 .svn
 .DS_Store
+.vscode
 npm-debug.log
 TODO.md
 debug
