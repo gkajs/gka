@@ -24,24 +24,31 @@
         background-image: url("./img/gkatest_1.png");
         background-size: 50px 50px;
     }
+
     12.50% {
         background-image: url("./img/gkatest_2.png");
     }
+
     25.00% {
         background-image: url("./img/gkatest_3.png");
     }
+
     37.50% {
         background-image: url("./img/gkatest_4.png");
     }
+
     50.00% {
         background-image: url("./img/gkatest_5.png");
     }
+
     62.50% {
         background-image: url("./img/gkatest_6.png");
     }
+
     75.00% {
         background-image: url("./img/gkatest_7.png");
     }
+
     87.50%,
     100% {
         background-image: url("./img/gkatest_8.png");
@@ -54,6 +61,7 @@
         width: 25px;
         height: 25px;
     }
+
     .animation {
         width: 25px;
         height: 25px;
@@ -67,6 +75,7 @@
         animation-fill-mode: forwards;
         animation-timing-function: steps(1);
     }
+
     @keyframes keyframes-name {
         0% {
             width: 25px;
@@ -74,24 +83,31 @@
             background-image: url("./img/2x/gkatest_1.png");
             background-size: 25px 25px;
         }
+
         12.50% {
             background-image: url("./img/2x/gkatest_2.png");
         }
+
         25.00% {
             background-image: url("./img/2x/gkatest_3.png");
         }
+
         37.50% {
             background-image: url("./img/2x/gkatest_4.png");
         }
+
         50.00% {
             background-image: url("./img/2x/gkatest_5.png");
         }
+
         62.50% {
             background-image: url("./img/2x/gkatest_6.png");
         }
+
         75.00% {
             background-image: url("./img/2x/gkatest_7.png");
         }
+
         87.50%,
         100% {
             background-image: url("./img/2x/gkatest_8.png");

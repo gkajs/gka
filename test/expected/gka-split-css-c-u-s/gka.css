@@ -26,9 +26,11 @@
         background-size: 1983px 20px;
         transform: translate(6px, 1px);
     }
+
     33.33% {
         background-position: -661px 0px;
     }
+
     66.67%,
     100% {
         background-position: -1322px 0px;
