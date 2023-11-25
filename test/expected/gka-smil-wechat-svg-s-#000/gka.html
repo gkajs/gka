@@ -1,0 +1,33 @@
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=0,maximum-scale=1">
+    
+    <title>gka-preview</title>
+</head>
+<body>
+
+    <div style="position: fixed; bottom: 60px;">
+        width：<input type="range" min="0" max="170" value="85" oninput="container.style.width=this.value+'px';">
+    </div>
+    <svg id="container" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 85 85" style="width: 85px">
+        <g transform="translate(0 0)">
+            <animateTransform
+                attributeName="transform"
+                type="translate"
+                begin="0s"
+                dur="1.030000s"
+                values="0 0; 0 -85; 0 -170; 0 -255; 0 -340; 0 -425; 0 -510; 0 -595; 0 -680; 0 -765; 0 -850; 0 -935; 0 -1020; 0 -1105; 0 -1190; 0 -1275; 0 -1360; 0 -1445; 0 -1445"
+                keyTimes="0.000000; 0.055556; 0.111111; 0.166667; 0.222222; 0.277778; 0.333333; 0.388889; 0.444444; 0.500000; 0.555556; 0.611111; 0.666667; 0.722222; 0.777778; 0.833333; 0.888889; 0.944444; 1"
+                calcMode="discrete"
+                repeatCount="indefinite"
+                fill="freeze"
+                restart="never"
+            />
+            <foreignObject x="0" y="0" width="85" height="1530">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 85 1530" preserveAspectRatio="xMidYMin meet" style="width: 100%; background-size: cover; background-position: left top; background-repeat: no-repeat; background-image: url(./img/sprites.png)"></svg>
+            </foreignObject>
+        </g>
+    </svg>
+</body>
+</html>
