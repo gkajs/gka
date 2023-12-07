@@ -21,9 +21,11 @@
         margin-left: 6px;
         border-top: 1px solid transparent;
     }
+
     33.33% {
         background-position: -661px 0px;
     }
+
     66.67%,
     100% {
         background-position: -1322px 0px;

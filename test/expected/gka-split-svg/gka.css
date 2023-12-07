@@ -17,9 +17,11 @@
         height: 23px;
         background-image: url("./img/new1.png");
     }
+
     33.33% {
         background-image: url("./img/new2.png");
     }
+
     66.67%,
     100% {
         background-image: url("./img/new3.png");

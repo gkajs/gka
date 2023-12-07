@@ -65,6 +65,14 @@ var commanderMap = [
         commander: 'node ./bin/gka.js ./test/split -t createjs -csu',
         expected: 'gka-split-createjs-c-u-s',
     },
+    {
+        commander: 'node ./bin/gka.js ./test/smil -t wechat-svg -f 0.05722222 --bgcolor \'#000\'',
+        expected: 'gka-smil-wechat-svg-#000',
+    },
+    {
+        commander: 'node ./bin/gka.js ./test/smil -t wechat-svg -f 0.05722222 --bgcolor \'#000\' -s',
+        expected: 'gka-smil-wechat-svg-s-#000',
+    },
 ]
 // -----------
 
@@ -101,20 +109,20 @@ function getFiles (dir, _files){
     return _files;
 }
 
-function deleteall(path) {  
-    var files = [];  
-    if(fs.existsSync(path)) {  
-        files = fs.readdirSync(path);  
-        files.forEach(function(file, index) {  
-            var curPath = path + "/" + file;  
+function deleteall(path) {
+    var files = [];
+    if(fs.existsSync(path)) {
+        files = fs.readdirSync(path);
+        files.forEach(function(file, index) {
+            var curPath = path + "/" + file;
             if(fs.statSync(curPath).isDirectory()) {
-                deleteall(curPath);  
+                deleteall(curPath);
             } else {
-                fs.unlinkSync(curPath);  
-            }  
-        });  
-        fs.rmdirSync(path);  
-    }  
+                fs.unlinkSync(curPath);
+            }
+        });
+        fs.rmdirSync(path);
+    }
 }
 
 function getDirFile2Md5 (dir) {

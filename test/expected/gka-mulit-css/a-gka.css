@@ -24,27 +24,35 @@
         background-image: url("./img/a_a01.png");
         background-size: 400px 300px;
     }
+
     11.11% {
         background-image: url("./img/a_a02.png");
     }
+
     22.22% {
         background-image: url("./img/a_a03.png");
     }
+
     33.33% {
         background-image: url("./img/a_a04.png");
     }
+
     44.44% {
         background-image: url("./img/a_a05.png");
     }
+
     55.56% {
         background-image: url("./img/a_a06.png");
     }
+
     66.67% {
         background-image: url("./img/a_a07.png");
     }
+
     77.78% {
         background-image: url("./img/a_a08.png");
     }
+
     88.89%,
     100% {
         background-image: url("./img/a_a09.png");
